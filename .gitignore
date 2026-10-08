@@ -1,0 +1,29 @@
+# Dependencies and generated Next.js output
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+
+# Local environment files and credentials (keep safe examples if added)
+.env*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+
+# Deployment/local tooling state
+.vercel/
+.turbo/
+
+# Local QA captures and scratch scripts
+/homepage-user-banner-check.png
+/qa-*.mjs
+/scratch_diagnose.mjs
+/take_screenshots*.mjs
+*.tsbuildinfo

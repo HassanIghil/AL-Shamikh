@@ -1,0 +1,256 @@
+.jeddah-page {
+  --jd-emerald: #062b22;
+  --jd-mid: #08382c;
+  --jd-soft: #0b4636;
+  --jd-gold: #c9a25c;
+  --jd-gold-light: #d6b46f;
+  --jd-cream: #fcfaf5;
+  --jd-cream-deep: #f8f3e9;
+  --jd-muted: #6c7972;
+  overflow: clip;
+  color: var(--ink);
+  background: var(--jd-cream);
+}
+.jeddah-container { width: min(calc(100% - 64px),1360px); margin-inline: auto; }
+.jeddah-kicker { display: inline-block; color: var(--jd-gold); font-family: 'Alexandria','Tajawal',sans-serif; font-size: 13px; font-weight: 700; }
+
+/* Local hero: image first in the visual field, content on emerald */
+.jeddah-hero { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); min-height: 492px; color: #fff; background: var(--jd-emerald); }
+.jeddah-hero-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 39px clamp(34px,5vw,76px); }
+.jeddah-breadcrumb { display: flex; align-items: center; gap: 9px; margin-bottom: 24px; color: #e3e9e2; font-size: 14px; }
+.jeddah-breadcrumb svg { color: var(--jd-gold-light); transform: rotate(180deg); }
+.jeddah-breadcrumb span { color: #f0d8a0; font-weight: 700; }
+.jeddah-pill { margin-bottom: 13px; padding: 6px 14px; border: 1px solid rgba(214,180,111,.65); border-radius: 999px; color: #f2dca7; font-size: 13px; font-weight: 700; }
+.jeddah-hero h1 { max-width: 610px; margin-bottom: 12px; color: #fff; font-size: clamp(35px,3.65vw,51px); line-height: 1.43; letter-spacing: -.02em; }
+.jeddah-hero-copy > p { max-width: 640px; margin-bottom: 13px; color: #e1ebe4; font-size: 15px; line-height: 1.9; }
+.jeddah-service-area { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 18px; color: #edd69d; font-size: 13px; font-weight: 600; }
+.jeddah-service-area svg { color: var(--jd-gold-light); }
+.jeddah-hero-copy .button { min-height: 47px; }
+.jeddah-hero-photo { position: relative; min-height: 492px; overflow: hidden; background: #1b4939; }
+.jeddah-hero-photo img { object-fit: cover; object-position: center 49%; }
+.jeddah-hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,rgba(6,43,34,.45),transparent 49%),linear-gradient(0deg,rgba(3,25,19,.5),transparent 38%); }
+.jeddah-hero-photo > span { position: absolute; z-index: 1; bottom: 23px; left: 27px; color: rgba(255,255,255,.93); font-size: 13px; }
+
+/* Compact local trust strip */
+.jeddah-trust { padding: 21px 0; background: var(--jd-cream-deep); border-bottom: 1px solid rgba(201,162,92,.35); }
+.jeddah-trust-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); }
+.jeddah-trust-item { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 60px; padding: 9px 16px; border-left: 1px solid rgba(201,162,92,.44); }
+.jeddah-trust-item:last-child { border-left: 0; }
+.jeddah-trust-item > svg { flex: none; color: var(--jd-gold); }
+.jeddah-trust-item strong,.jeddah-trust-item small { display: block; }
+.jeddah-trust-item strong { color: var(--jd-emerald); font-size: 14px; }
+.jeddah-trust-item small { margin-top: 2px; color: var(--jd-muted); font-size: 12px; line-height: 1.5; }
+
+/* Direct answer section */
+.jeddah-answer { padding: 65px 0 68px; background: #fffdf9; }
+.jeddah-answer-inner { display: grid; grid-template-columns: minmax(0,.78fr) minmax(0,1.22fr); align-items: start; gap: clamp(30px,6vw,80px); }
+.jeddah-answer h2 { max-width: 520px; margin-top: 7px; color: var(--jd-emerald); font-size: clamp(27px,2.7vw,37px); line-height: 1.5; }
+.jeddah-answer-copy p { color: #52665b; font-size: 16px; line-height: 2; }
+.jeddah-answer-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 15px; }
+.jeddah-answer-links a,.jeddah-text-link,.jeddah-projects-heading > a { display: inline-flex; align-items: center; gap: 6px; color: var(--jd-emerald); font-size: 13px; font-weight: 700; }
+.jeddah-answer-links svg,.jeddah-text-link svg,.jeddah-projects-heading > a svg { color: var(--jd-gold); }
+
+/* Alternating service compositions */
+.jeddah-solution { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); min-height: 408px; background: #f5efe3; }
+.jeddah-solution-photo { position: relative; grid-column: 1; grid-row: 1; min-height: 408px; overflow: hidden; background: #dfdfd7; }
+.jeddah-solution-photo img { object-fit: cover; transition: transform .45s ease; }
+.jeddah-solution:hover .jeddah-solution-photo img { transform: scale(1.025); }
+.jeddah-solution-photo::after { content: ''; position: absolute; inset: 54% 0 0; background: linear-gradient(transparent,rgba(3,25,19,.67)); }
+.jeddah-solution-photo > span { position: absolute; z-index: 1; bottom: 19px; right: max(20px,calc((100vw - 1360px)/2)); color: #fff; font-size: 13px; font-weight: 600; }
+.jeddah-solution-copy { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(30px,5vw,70px); }
+.jeddah-solution-copy h2 { margin: 5px 0 10px; color: var(--jd-emerald); font-size: clamp(28px,2.8vw,38px); line-height: 1.45; }
+.jeddah-solution-copy > p { max-width: 610px; color: #5c6d63; font-size: 15px; line-height: 1.9; }
+.jeddah-solution-copy ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px 20px; margin: 18px 0 0; padding: 0; list-style: none; }
+.jeddah-solution-copy li { display: flex; align-items: center; gap: 8px; color: #43594e; font-size: 13px; }
+.jeddah-solution-copy li > span { width: 6px; height: 6px; flex: none; border-radius: 50%; background: var(--jd-gold); }
+.jeddah-solution-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; margin-top: 23px; }
+.jeddah-solution-actions .button { min-height: 44px; padding-inline: 16px; font-size: 13px; }
+.jeddah-retail-solution { background: var(--jd-cream); }
+.jeddah-retail-solution .jeddah-solution-photo { grid-column: 2; }
+.jeddah-retail-solution .jeddah-solution-copy { grid-column: 1; grid-row: 1; }
+.jeddah-retail-solution .jeddah-solution-photo > span { right: auto; left: max(20px,calc((100vw - 1360px)/2)); }
+
+/* Pharmacy and grocery feature pair */
+.jeddah-specialty { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; width: min(calc(100% - 64px),1360px); margin: 72px auto 78px; }
+.jeddah-specialty-card { display: grid; grid-template-columns: minmax(0,.92fr) minmax(0,1.08fr); min-height: 282px; border: 1px solid rgba(201,162,92,.3); background: #fff; }
+.jeddah-specialty-photo { position: relative; min-height: 282px; overflow: hidden; background: #e6e5df; }
+.jeddah-specialty-photo img { object-fit: cover; transition: transform .4s ease; }
+.jeddah-specialty-card:hover .jeddah-specialty-photo img { transform: scale(1.025); }
+.jeddah-specialty-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(18px,2.8vw,34px); }
+.jeddah-specialty-copy h2 { margin: 5px 0 8px; color: var(--jd-emerald); font-size: clamp(20px,2vw,26px); line-height: 1.5; }
+.jeddah-specialty-copy > p { margin-bottom: 14px; color: #637269; font-size: 13px; line-height: 1.8; }
+.jeddah-specialty-copy .button { min-height: 41px; padding: 9px 13px; font-size: 12px; }
+
+/* Dark local decision factors */
+.jeddah-decision { position: relative; padding: 68px 0 62px; overflow: hidden; color: #fff; background: linear-gradient(90deg,rgba(4,35,28,.96),rgba(4,35,28,.96)),url('/photos/warehouse-4.jpeg') center 50%/cover; }
+.jeddah-dark-heading { max-width: 850px; margin: 0 auto 34px; text-align: center; }
+.jeddah-dark-heading h2 { margin: 6px 0 7px; color: #fff; font-size: clamp(27px,2.8vw,38px); line-height: 1.45; }
+.jeddah-dark-heading p { color: #d6e2d9; font-size: 14px; }
+.jeddah-factors { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); }
+.jeddah-factor { display: flex; flex-direction: column; align-items: center; min-height: 142px; padding: 17px 14px; text-align: center; border-left: 1px solid rgba(214,180,111,.3); }
+.jeddah-factor:last-child { border-left: 0; }
+.jeddah-factor > svg { margin-bottom: 9px; color: var(--jd-gold-light); }
+.jeddah-factor strong { color: #fff; font-size: 15px; }
+.jeddah-factor p { max-width: 195px; margin-top: 4px; color: #d1dfd6; font-size: 12px; line-height: 1.7; }
+
+/* Local delivery process */
+.jeddah-process { padding: 70px 0 77px; background: var(--jd-cream-deep); }
+.jeddah-section-heading { margin: 0 auto 37px; text-align: center; }
+.jeddah-section-heading h2 { margin-top: 6px; color: var(--jd-emerald); font-size: clamp(27px,2.7vw,37px); }
+.jeddah-steps { position: relative; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); margin: 0; padding: 0; list-style: none; }
+.jeddah-steps::before { content: ''; position: absolute; top: 25px; right: 9%; left: 9%; height: 1px; background: rgba(201,162,92,.66); }
+.jeddah-steps li { position: relative; padding: 0 15px; text-align: center; }
+.jeddah-step-number { position: relative; z-index: 1; display: grid; width: 50px; height: 50px; place-items: center; margin: 0 auto 13px; border: 1px solid var(--jd-gold); border-radius: 50%; color: #95713a; background: var(--jd-cream-deep); font-family: 'Alexandria',sans-serif; font-size: 12px; direction: ltr; }
+.jeddah-steps strong { display: block; color: var(--jd-emerald); font-size: 14px; }
+.jeddah-steps p { max-width: 195px; margin: 5px auto 0; color: var(--jd-muted); font-size: 12px; line-height: 1.7; }
+
+/* Relevant work, with no unsupported project location claims */
+.jeddah-projects { padding: 70px 0 77px; background: #fffdf9; }
+.jeddah-projects-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 21px; }
+.jeddah-projects-heading h2 { margin-top: 5px; color: var(--jd-emerald); font-size: clamp(26px,2.6vw,36px); }
+.jeddah-project-grid { display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-auto-rows: 172px; grid-auto-flow: dense; gap: 12px; }
+.jeddah-project-tile { position: relative; display: block; grid-column: span 3; overflow: hidden; background: #e6e5df; }
+.jeddah-project-tile:nth-child(1),.jeddah-project-tile:nth-child(4) { grid-column: span 6; grid-row: span 2; }
+.jeddah-project-tile:nth-child(2),.jeddah-project-tile:nth-child(3),.jeddah-project-tile:nth-child(5),.jeddah-project-tile:nth-child(6) { grid-column: span 3; }
+.jeddah-project-tile img { object-fit: cover; transition: transform .45s ease; }
+.jeddah-project-tile:hover img { transform: scale(1.035); }
+.jeddah-project-tile::after { content: ''; position: absolute; inset: 38% 0 0; background: linear-gradient(transparent,rgba(3,25,19,.78)); }
+.jeddah-project-tile > span { position: absolute; z-index: 1; right: 13px; bottom: 12px; color: #fff; font-size: 13px; font-weight: 700; }
+
+/* Short local search answer */
+.jeddah-search-answer { padding: 36px 0; background: #f3ead9; border-block: 1px solid rgba(201,162,92,.5); }
+.jeddah-search-answer-inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.jeddah-search-answer h2 { margin: 4px 0 6px; color: var(--jd-emerald); font-size: clamp(22px,2.3vw,30px); }
+.jeddah-search-answer p { max-width: 850px; color: #586b60; font-size: 14px; line-height: 1.85; }
+.jeddah-search-answer .button { flex: none; }
+
+/* Visible FAQ and internal route architecture */
+.jeddah-faq { padding: 70px 0 75px; background: var(--jd-cream); }
+.jeddah-faq-inner { display: grid; grid-template-columns: minmax(0,.76fr) minmax(0,1.24fr); align-items: start; gap: clamp(35px,7vw,95px); }
+.jeddah-faq-heading h2 { margin-top: 6px; color: var(--jd-emerald); font-size: clamp(26px,2.7vw,36px); line-height: 1.5; }
+.jeddah-faq-list { border-top: 1px solid rgba(201,162,92,.42); }
+.jeddah-faq-list details { border-bottom: 1px solid rgba(201,162,92,.42); }
+.jeddah-faq-list summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 15px 2px; color: var(--jd-emerald); font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; }
+.jeddah-faq-list summary::-webkit-details-marker { display: none; }
+.jeddah-faq-list summary > span { display: grid; width: 27px; height: 27px; flex: none; place-items: center; border: 1px solid rgba(201,162,92,.55); border-radius: 50%; color: var(--jd-gold); font-size: 19px; font-weight: 400; transition: transform .2s ease; }
+.jeddah-faq-list details[open] summary > span { transform: rotate(45deg); }
+.jeddah-faq-list details p { padding: 0 2px 15px; color: #637269; font-size: 13px; line-height: 1.85; }
+.jeddah-related { padding: 49px 0 54px; background: var(--jd-cream-deep); border-top: 1px solid rgba(201,162,92,.28); }
+.jeddah-related-heading { margin-bottom: 20px; }
+.jeddah-related-heading h2 { margin-top: 4px; color: var(--jd-emerald); font-size: clamp(23px,2.4vw,31px); }
+.jeddah-related-links { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid rgba(201,162,92,.4); border-right: 1px solid rgba(201,162,92,.4); }
+.jeddah-related-links a { display: flex; align-items: center; gap: 9px; min-height: 59px; padding: 12px 15px; border-bottom: 1px solid rgba(201,162,92,.4); border-left: 1px solid rgba(201,162,92,.4); color: var(--jd-emerald); font-size: 13px; font-weight: 700; }
+.jeddah-related-links a > svg:first-child { flex: none; color: var(--jd-gold); }
+.jeddah-related-links a > svg:last-child { width: 15px; margin-right: auto; color: var(--jd-gold); }
+.jeddah-related-links a:hover { background: rgba(255,255,255,.5); }
+
+@media (max-width: 1050px) {
+  .jeddah-hero { min-height: 465px; }
+  .jeddah-hero-photo { min-height: 465px; }
+  .jeddah-hero-copy { padding-inline: 31px; }
+  .jeddah-hero h1 { font-size: clamp(32px,4vw,43px); }
+  .jeddah-trust-item { gap: 8px; padding-inline: 9px; }
+  .jeddah-trust-item strong { font-size: 13px; }
+  .jeddah-trust-item small { font-size: 11px; }
+  .jeddah-specialty { grid-template-columns: 1fr; }
+  .jeddah-specialty-card { min-height: 250px; }
+  .jeddah-specialty-photo { min-height: 250px; }
+}
+
+@media (max-width: 720px) {
+  .jeddah-container { width: calc(100% - 34px); }
+  .jeddah-hero { display: flex; flex-direction: column; min-height: 0; }
+  .jeddah-hero-photo { order: 0; width: 100%; min-height: 0; height: 247px; }
+  .jeddah-hero-photo::after { background: linear-gradient(0deg,rgba(3,25,19,.47),transparent 43%); }
+  .jeddah-hero-photo > span { bottom: 13px; left: 15px; font-size: 11px; }
+  .jeddah-hero-copy { order: 1; width: 100%; padding: 21px 17px 27px; }
+  .jeddah-breadcrumb { margin-bottom: 15px; font-size: 12px; }
+  .jeddah-pill { margin-bottom: 8px; padding: 5px 11px; font-size: 11px; }
+  .jeddah-hero h1 { margin-bottom: 6px; font-size: 29px; line-height: 1.45; }
+  .jeddah-hero-copy > p { margin-bottom: 9px; font-size: 13px; line-height: 1.8; }
+  .jeddah-service-area { margin-bottom: 12px; font-size: 11px; }
+  .jeddah-hero-copy .button { min-height: 44px; padding-inline: 15px; font-size: 13px; }
+  .jeddah-trust { padding: 12px 0; }
+  .jeddah-trust-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .jeddah-trust-item { justify-content: flex-start; min-height: 65px; padding: 8px 9px; border-bottom: 1px solid rgba(201,162,92,.34); }
+  .jeddah-trust-item:nth-child(odd) { border-left: 1px solid rgba(201,162,92,.4); }
+  .jeddah-trust-item:nth-child(even) { border-left: 0; }
+  .jeddah-trust-item:nth-child(n+3) { border-bottom: 0; }
+  .jeddah-trust-item > svg { width: 19px; }
+  .jeddah-trust-item strong { font-size: 11px; }
+  .jeddah-trust-item small { font-size: 10px; }
+  .jeddah-answer { padding: 39px 0 41px; }
+  .jeddah-answer-inner { grid-template-columns: 1fr; gap: 12px; }
+  .jeddah-answer h2 { margin-top: 4px; font-size: 23px; }
+  .jeddah-answer-copy p { font-size: 13px; line-height: 1.85; }
+  .jeddah-answer-links { gap: 11px 16px; margin-top: 10px; }
+  .jeddah-answer-links a { font-size: 12px; }
+  .jeddah-solution { display: flex; flex-direction: column; min-height: 0; }
+  .jeddah-solution-photo { order: 0; min-height: 0; height: 226px; }
+  .jeddah-solution-photo > span,.jeddah-retail-solution .jeddah-solution-photo > span { right: 14px; bottom: 12px; left: auto; font-size: 11px; }
+  .jeddah-solution-copy { order: 1; padding: 24px 17px 27px; }
+  .jeddah-solution-copy h2 { margin: 4px 0 6px; font-size: 23px; }
+  .jeddah-solution-copy > p { font-size: 13px; line-height: 1.8; }
+  .jeddah-solution-copy ul { gap: 8px 12px; margin-top: 13px; }
+  .jeddah-solution-copy li { gap: 6px; font-size: 11px; }
+  .jeddah-solution-copy li > span { width: 5px; height: 5px; }
+  .jeddah-solution-actions { align-items: flex-start; flex-direction: column; gap: 11px; margin-top: 15px; }
+  .jeddah-solution-actions .button { min-height: 41px; font-size: 12px; }
+  .jeddah-specialty { display: flex; flex-direction: column; gap: 12px; width: calc(100% - 34px); margin: 42px auto 46px; }
+  .jeddah-specialty-card { display: flex; flex-direction: column; min-height: 0; }
+  .jeddah-specialty-photo { order: 0; min-height: 0; height: 208px; }
+  .jeddah-specialty-copy { order: 1; padding: 19px 16px 21px; }
+  .jeddah-specialty-copy h2 { margin: 4px 0 6px; font-size: 20px; }
+  .jeddah-specialty-copy > p { margin-bottom: 11px; font-size: 12px; }
+  .jeddah-specialty-copy .button { min-height: 39px; font-size: 11px; }
+  .jeddah-decision { padding: 41px 0 39px; }
+  .jeddah-dark-heading { margin-bottom: 20px; }
+  .jeddah-dark-heading h2 { margin: 4px 0 6px; font-size: 23px; }
+  .jeddah-dark-heading p { font-size: 12px; }
+  .jeddah-factors { grid-template-columns: 1fr; }
+  .jeddah-factor { display: grid; grid-template-columns: 34px 1fr; grid-template-rows: auto auto; align-items: center; min-height: 0; padding: 11px 4px; text-align: right; border-left: 0; border-bottom: 1px solid rgba(214,180,111,.25); }
+  .jeddah-factor:last-child { border-bottom: 0; }
+  .jeddah-factor > svg { grid-row: 1 / span 2; width: 21px; margin: 0; }
+  .jeddah-factor strong { font-size: 13px; }
+  .jeddah-factor p { max-width: none; margin-top: 2px; font-size: 11px; }
+  .jeddah-process { padding: 43px 0 46px; }
+  .jeddah-section-heading { margin-bottom: 22px; }
+  .jeddah-section-heading h2 { margin-top: 4px; font-size: 23px; }
+  .jeddah-steps { display: flex; flex-direction: column; }
+  .jeddah-steps::before { top: 18px; right: 18px; left: auto; width: 1px; height: calc(100% - 36px); }
+  .jeddah-steps li { display: grid; grid-template-columns: 39px minmax(0,1fr); grid-template-rows: auto auto; column-gap: 12px; min-height: 77px; padding: 0 0 15px; text-align: right; }
+  .jeddah-step-number { grid-row: 1 / span 2; width: 38px; height: 38px; margin: 0; font-size: 10px; }
+  .jeddah-steps strong { align-self: end; font-size: 13px; }
+  .jeddah-steps p { max-width: none; margin: 3px 0 0; font-size: 11px; }
+  .jeddah-projects { padding: 44px 0 47px; }
+  .jeddah-projects-heading { align-items: flex-start; margin-bottom: 14px; }
+  .jeddah-projects-heading h2 { margin-top: 4px; font-size: 22px; }
+  .jeddah-projects-heading > a { gap: 4px; font-size: 11px; white-space: nowrap; }
+  .jeddah-project-grid { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .jeddah-project-tile,.jeddah-project-tile:nth-child(n) { flex: 0 0 76%; height: 180px; scroll-snap-align: start; }
+  .jeddah-project-tile > span { right: 11px; bottom: 10px; font-size: 12px; }
+  .jeddah-search-answer { padding: 27px 0; }
+  .jeddah-search-answer-inner { align-items: flex-start; flex-direction: column; gap: 13px; }
+  .jeddah-search-answer h2 { margin: 3px 0 5px; font-size: 20px; }
+  .jeddah-search-answer p { font-size: 12px; line-height: 1.75; }
+  .jeddah-search-answer .button { min-height: 42px; padding-inline: 15px; font-size: 12px; }
+  .jeddah-faq { padding: 44px 0 48px; }
+  .jeddah-faq-inner { grid-template-columns: 1fr; gap: 17px; }
+  .jeddah-faq-heading h2 { margin-top: 4px; font-size: 23px; }
+  .jeddah-faq-list summary { gap: 12px; padding: 13px 1px; font-size: 12px; }
+  .jeddah-faq-list summary > span { width: 24px; height: 24px; font-size: 17px; }
+  .jeddah-faq-list details p { padding-bottom: 12px; font-size: 11px; }
+  .jeddah-related { padding: 35px 0 39px; }
+  .jeddah-related-heading { margin-bottom: 14px; }
+  .jeddah-related-heading h2 { margin-top: 3px; font-size: 21px; }
+  .jeddah-related-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .jeddah-related-links a { gap: 6px; min-height: 54px; padding: 10px 8px; font-size: 10px; }
+  .jeddah-related-links a > svg:first-child { width: 16px; }
+  .jeddah-related-links a > svg:last-child { width: 13px; }
+}
+
+@media (max-width: 370px) {
+  .jeddah-container { width: calc(100% - 28px); }
+  .jeddah-hero-copy { padding-inline: 14px; }
+  .jeddah-related-links a { font-size: 9px; }
+}

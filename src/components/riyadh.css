@@ -1,0 +1,279 @@
+.riyadh-page { --ry-emerald:#062B22; --ry-emerald-light:#0B4636; --ry-gold:#C9A25C; --ry-gold-light:#D6B46F; --ry-cream:#FCFAF5; --ry-warm:#F8F3E9; color:#163B32; direction:rtl; overflow:hidden; }
+.riyadh-page h1,.riyadh-page h2,.riyadh-page h3 { font-family:'Alexandria',sans-serif; font-weight:700; }
+.riyadh-page p,.riyadh-page li,.riyadh-page a,.riyadh-page span { font-family:'Tajawal',sans-serif; }
+.riyadh-container { width:min(1240px,calc(100% - 72px)); margin-inline:auto; }
+.riyadh-kicker { display:inline-flex; color:var(--ry-gold); font-size:12px; font-weight:700; letter-spacing:.025em; }
+.riyadh-hero { position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); min-height:505px; color:#fff; background:radial-gradient(ellipse at 82% 7%,rgba(19,88,64,.35),transparent 43%),var(--ry-emerald); isolation:isolate; }
+.riyadh-hero-copy { grid-column:1; position:relative; z-index:2; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:37px clamp(36px,5.3vw,78px) 46px; }
+.riyadh-breadcrumb { display:flex; align-items:center; gap:9px; margin-bottom:23px; color:rgba(255,255,255,.72); font-size:12px; }
+.riyadh-breadcrumb a { color:rgba(255,255,255,.78); }
+.riyadh-breadcrumb span { color:var(--ry-gold-light); font-weight:700; }
+.riyadh-pill { display:inline-flex; align-items:center; min-height:31px; margin-bottom:12px; padding:4px 13px; border:1px solid rgba(214,180,111,.65); border-radius:999px; color:var(--ry-gold-light); font-size:12px; }
+.riyadh-hero h1 { max-width:610px; margin:0 0 12px; color:#fff; font-size:clamp(33px,3.4vw,49px); line-height:1.4; letter-spacing:-.025em; }
+.riyadh-hero-copy>p { max-width:620px; margin-bottom:13px; color:#e2ece6; font-size:14px; line-height:1.9; }
+.riyadh-hero-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:11px; }
+.riyadh-hero-tags span { padding:4px 10px; border:1px solid rgba(255,255,255,.17); border-radius:999px; color:rgba(255,255,255,.8); font-size:10px; }
+.riyadh-service-area { display:inline-flex; align-items:center; gap:6px; margin-bottom:15px; color:var(--ry-gold-light); font-size:12px; font-weight:700; }
+.riyadh-service-area svg { color:var(--ry-gold); }
+.riyadh-hero-copy .button { min-height:45px; padding-inline:19px; }
+.riyadh-hero-photo { grid-column:2; position:relative; min-height:463px; align-self:stretch; margin:20px 20px 20px 0; overflow:hidden; border:1px solid rgba(214,180,111,.54); border-radius:18px 42px 18px 18px; background:#183e32; box-shadow:0 18px 40px rgba(0,0,0,.18); }
+.riyadh-hero-photo img { object-fit:cover; object-position:center 53%; }
+.riyadh-hero-photo::after { content:''; position:absolute; inset:45% 0 0; background:linear-gradient(0deg,rgba(3,25,19,.75),transparent); pointer-events:none; }
+.riyadh-hero-photo>span { position:absolute; z-index:1; right:18px; bottom:16px; display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; }
+.riyadh-hero-photo>span svg { color:var(--ry-gold-light); }
+.riyadh-hero-index { position:absolute; z-index:3; bottom:28px; left:31px; display:flex; align-items:center; gap:9px; color:rgba(255,255,255,.6); font:10px Arial,sans-serif; letter-spacing:.12em; direction:ltr; }
+.riyadh-hero-index i { display:inline-block; width:25px; height:1px; background:var(--ry-gold); }
+.riyadh-trust { position:relative; z-index:2; padding:18px 0; border-bottom:1px solid rgba(201,162,92,.35); background:var(--ry-warm); }
+.riyadh-trust-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+.riyadh-trust-item { display:flex; align-items:center; justify-content:center; gap:12px; min-height:58px; padding-inline:13px; border-left:1px solid rgba(201,162,92,.38); }
+.riyadh-trust-item:last-child { border-left:0; }
+.riyadh-trust-item>svg { flex:none; color:var(--ry-gold); }
+.riyadh-trust-item span { display:flex; flex-direction:column; gap:2px; }
+.riyadh-trust-item strong { color:var(--ry-emerald); font-size:13px; }
+.riyadh-trust-item small { color:#7b817c; font-size:11px; }
+.riyadh-answer { padding:58px 0 62px; background:var(--ry-cream); }
+.riyadh-answer-inner { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center; gap:55px; }
+.riyadh-answer-heading { padding-right:21px; border-right:2px solid var(--ry-gold); }
+.riyadh-answer h2 { max-width:570px; margin-top:8px; color:var(--ry-emerald); font-size:clamp(24px,2.5vw,34px); line-height:1.55; }
+.riyadh-answer-copy p { color:#61716a; font-size:14px; line-height:2; }
+.riyadh-answer-copy>a { display:inline-flex; align-items:center; gap:6px; margin-top:12px; color:var(--ry-emerald-light); font-size:12px; font-weight:700; }
+.riyadh-answer-copy>a svg { color:var(--ry-gold); }
+.riyadh-warehouse { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); min-height:425px; background:#f3ead9; }
+.riyadh-warehouse-photo { position:relative; min-height:425px; overflow:hidden; }
+.riyadh-warehouse-photo img { object-fit:cover; object-position:center 48%; }
+.riyadh-warehouse-photo::after { content:''; position:absolute; inset:58% 0 0; background:linear-gradient(0deg,rgba(3,25,19,.7),transparent); }
+.riyadh-warehouse-photo>span { position:absolute; z-index:1; right:25px; bottom:21px; color:#fff; font-size:13px; font-weight:700; }
+.riyadh-warehouse-copy { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:45px clamp(32px,5vw,75px); }
+.riyadh-warehouse-copy h2,.riyadh-retail-copy h2,.riyadh-grocery-copy h2,.riyadh-pharmacy-copy h2 { margin:6px 0 10px; color:var(--ry-emerald); font-size:clamp(25px,2.7vw,37px); line-height:1.5; }
+.riyadh-warehouse-copy>p,.riyadh-retail-copy>p,.riyadh-grocery-copy>p,.riyadh-pharmacy-copy>p { max-width:560px; margin-bottom:15px; color:#66746d; font-size:14px; line-height:1.9; }
+.riyadh-warehouse-copy ul,.riyadh-retail-copy ul,.riyadh-grocery-copy ul { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 19px; margin:0 0 21px; padding:0; list-style:none; }
+.riyadh-warehouse-copy li { display:flex; align-items:center; gap:7px; color:#435b50; font-size:12px; }
+.riyadh-warehouse-copy li svg { flex:none; color:var(--ry-gold); }
+.riyadh-actions { display:flex; align-items:center; flex-wrap:wrap; gap:13px 20px; }
+.riyadh-text-link { display:inline-flex; align-items:center; gap:5px; color:var(--ry-emerald); font-size:12px; font-weight:700; }
+.riyadh-text-link svg { color:var(--ry-gold); }
+.riyadh-actions .button { min-height:42px; padding-inline:13px; font-size:12px; }
+.riyadh-retail { padding:66px 0; background:var(--ry-cream); }
+.riyadh-retail-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); min-height:370px; overflow:hidden; border:1px solid rgba(201,162,92,.25); background:#fff; box-shadow:0 14px 35px rgba(18,59,49,.06); }
+.riyadh-retail-photo { position:relative; min-height:370px; overflow:hidden; }
+.riyadh-retail-photo img { object-fit:cover; object-position:center 51%; }
+.riyadh-retail-photo::after { content:''; position:absolute; inset:64% 0 0; background:linear-gradient(0deg,rgba(3,25,19,.68),transparent); }
+.riyadh-retail-photo>span { position:absolute; z-index:1; right:18px; bottom:17px; color:#fff; font-size:12px; font-weight:700; }
+.riyadh-retail-copy { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:36px clamp(27px,4vw,59px); }
+.riyadh-retail-copy li { position:relative; padding-right:13px; color:#576b60; font-size:12px; }
+.riyadh-retail-copy li::before { content:''; position:absolute; top:7px; right:0; width:5px; height:5px; border-radius:50%; background:var(--ry-gold); }
+.riyadh-grocery { padding:55px 0 65px; background:#f3ead9; }
+.riyadh-grocery-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:center; gap:48px; }
+.riyadh-grocery-copy { padding:15px 0; }
+.riyadh-grocery-copy li { display:flex; align-items:center; gap:8px; color:#52645b; font-size:12px; }
+.riyadh-grocery-copy li span { width:7px; height:7px; border-radius:50%; background:var(--ry-gold); }
+.riyadh-grocery-photo { position:relative; min-height:330px; overflow:hidden; border-radius:18px 4px 18px 4px; box-shadow:0 16px 36px rgba(18,59,49,.11); }
+.riyadh-grocery-photo img { object-fit:cover; object-position:center 52%; }
+.riyadh-grocery-photo::after { content:''; position:absolute; inset:65% 0 0; background:linear-gradient(0deg,rgba(3,25,19,.7),transparent); }
+.riyadh-grocery-photo>span { position:absolute; z-index:1; right:17px; bottom:15px; color:#fff; font-size:12px; font-weight:700; }
+.riyadh-pharmacy { padding:60px 0; background:var(--ry-cream); }
+.riyadh-pharmacy-card { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr) 84px; align-items:center; gap:32px; padding:22px; border:1px solid rgba(201,162,92,.35); background:#fff; }
+.riyadh-pharmacy-photo { position:relative; min-height:270px; overflow:hidden; border-radius:12px; }
+.riyadh-pharmacy-photo img { object-fit:cover; object-position:center; }
+.riyadh-pharmacy-copy .button { min-height:43px; padding-inline:15px; font-size:12px; }
+.riyadh-pharmacy-mark { display:flex; flex-direction:column; align-items:center; gap:9px; color:var(--ry-gold); text-align:center; }
+.riyadh-pharmacy-mark span { color:#66746d; font-size:11px; line-height:1.6; }
+.riyadh-decisions { position:relative; isolation:isolate; overflow:hidden; padding:67px 0 70px; color:#fff; background:var(--ry-emerald); }
+.riyadh-decisions-bg { z-index:0; object-fit:cover; opacity:.19; }
+.riyadh-decisions-shade { position:absolute; z-index:1; inset:0; background:linear-gradient(90deg,rgba(4,35,28,.88),rgba(4,35,28,.95)),linear-gradient(0deg,rgba(4,35,28,.6),rgba(4,35,28,.45)); }
+.riyadh-decisions-inner { position:relative; z-index:2; }
+.riyadh-dark-heading { max-width:760px; margin:0 auto 31px; text-align:center; }
+.riyadh-dark-heading h2 { margin:7px 0 8px; color:#fff; font-size:clamp(26px,2.8vw,38px); line-height:1.5; }
+.riyadh-dark-heading p { color:rgba(255,255,255,.75); font-size:13px; }
+.riyadh-factors { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); }
+.riyadh-factor { display:flex; flex-direction:column; align-items:center; min-height:132px; padding:11px 17px; text-align:center; border-left:1px solid rgba(214,180,111,.28); }
+.riyadh-factor:last-child { border-left:0; }
+.riyadh-factor svg { margin-bottom:11px; color:var(--ry-gold-light); }
+.riyadh-factor strong { color:#fff; font-size:13px; }
+.riyadh-factor p { max-width:190px; margin-top:5px; color:rgba(255,255,255,.67); font-size:11px; line-height:1.6; }
+.riyadh-sector-pair { padding:72px 0 78px; background:var(--ry-cream); }
+.riyadh-section-heading { margin-bottom:23px; text-align:center; }
+.riyadh-section-heading h2 { margin-top:6px; color:var(--ry-emerald); font-size:clamp(26px,2.8vw,38px); line-height:1.5; }
+.riyadh-sector-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+.riyadh-sector-card { position:relative; display:flex; align-items:end; min-height:315px; overflow:hidden; color:#fff; background:var(--ry-emerald); isolation:isolate; }
+.riyadh-sector-card>img { z-index:0; object-fit:cover; object-position:center 50%; transition:transform .4s ease; }
+.riyadh-sector-card:hover>img { transform:scale(1.025); }
+.riyadh-sector-overlay { position:absolute; z-index:1; inset:0; background:linear-gradient(0deg,rgba(3,25,19,.96),rgba(3,25,19,.45) 57%,rgba(3,25,19,.05)); }
+.riyadh-sector-copy { position:relative; z-index:2; display:flex; flex-direction:column; align-items:flex-start; padding:25px 28px; }
+.riyadh-sector-copy>svg { margin-bottom:10px; color:var(--ry-gold-light); }
+.riyadh-sector-copy>span { color:#fff; font-family:'Alexandria',sans-serif; font-size:20px; font-weight:700; }
+.riyadh-sector-copy p { max-width:470px; margin:6px 0 12px; color:rgba(255,255,255,.82); font-size:13px; line-height:1.75; }
+.riyadh-sector-copy a { display:inline-flex; align-items:center; gap:6px; color:var(--ry-gold-light); font-size:12px; font-weight:700; }
+.riyadh-process { padding:67px 0 75px; background:var(--ry-warm); }
+.riyadh-steps { position:relative; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); margin:0; padding:0; list-style:none; }
+.riyadh-steps::before { content:''; position:absolute; top:24px; right:8%; left:8%; height:1px; background:rgba(201,162,92,.55); }
+.riyadh-steps li { position:relative; padding:0 13px; text-align:center; }
+.riyadh-step-number { position:relative; z-index:1; display:grid; width:48px; height:48px; place-items:center; margin:0 auto 12px; border:1px solid var(--ry-gold); border-radius:50%; color:#987742; background:var(--ry-warm); font:12px Arial,sans-serif; direction:ltr; }
+.riyadh-steps strong { display:block; color:var(--ry-emerald); font-size:13px; }
+.riyadh-steps p { max-width:185px; margin:5px auto 0; color:#77817b; font-size:11px; line-height:1.65; }
+.riyadh-projects { padding:70px 0 74px; background:#fffdf9; }
+.riyadh-projects-heading { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:20px; }
+.riyadh-projects-heading h2 { margin:5px 0 3px; color:var(--ry-emerald); font-size:clamp(25px,2.7vw,35px); line-height:1.5; }
+.riyadh-projects-heading p { color:#77817b; font-size:13px; }
+.riyadh-projects-heading>a { display:inline-flex; flex:none; align-items:center; gap:6px; padding:10px 14px; border:1px solid rgba(201,162,92,.58); color:var(--ry-emerald); font-size:12px; font-weight:700; }
+.riyadh-project-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:13px; }
+.riyadh-project-tile { position:relative; display:block; min-height:225px; overflow:hidden; background:#e8e6df; }
+.riyadh-project-tile img { object-fit:cover; transition:transform .4s ease; }
+.riyadh-project-tile:hover img { transform:scale(1.035); }
+.riyadh-project-tile::after { content:''; position:absolute; inset:42% 0 0; background:linear-gradient(transparent,rgba(3,25,19,.82)); }
+.riyadh-project-tile>span { position:absolute; z-index:1; right:13px; bottom:12px; display:flex; align-items:center; gap:7px; color:#fff; font-size:12px; font-weight:700; }
+.riyadh-project-tile>span svg { color:var(--ry-gold-light); }
+.riyadh-local { padding:41px 0; border-block:1px solid rgba(201,162,92,.48); background:#f2e8d5; }
+.riyadh-local-inner { display:flex; align-items:center; justify-content:space-between; gap:30px; }
+.riyadh-local h2 { margin:5px 0 7px; color:var(--ry-emerald); font-size:clamp(23px,2.5vw,32px); line-height:1.5; }
+.riyadh-local p { max-width:850px; color:#5f6f67; font-size:13px; line-height:1.85; }
+.riyadh-local .button { flex:none; }
+.riyadh-faq { padding:70px 0 74px; background:var(--ry-cream); }
+.riyadh-faq-inner { display:grid; grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr); align-items:start; gap:60px; }
+.riyadh-faq-heading h2 { margin:7px 0 8px; color:var(--ry-emerald); font-size:clamp(25px,2.7vw,36px); line-height:1.55; }
+.riyadh-faq-heading p { color:#758078; font-size:13px; }
+.riyadh-faq-list { border-top:1px solid rgba(201,162,92,.4); }
+.riyadh-faq-list details { border-bottom:1px solid rgba(201,162,92,.4); }
+.riyadh-faq-list summary { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:14px 2px; color:var(--ry-emerald); font-size:13px; font-weight:700; cursor:pointer; list-style:none; }
+.riyadh-faq-list summary::-webkit-details-marker { display:none; }
+.riyadh-faq-list summary>span { display:grid; width:27px; height:27px; flex:none; place-items:center; border:1px solid rgba(201,162,92,.53); border-radius:50%; color:var(--ry-gold); font-size:18px; font-weight:400; transition:transform .2s ease; }
+.riyadh-faq-list details[open] summary>span { transform:rotate(45deg); }
+.riyadh-faq-list details p { padding:0 2px 14px; color:#68766f; font-size:12px; line-height:1.8; }
+.riyadh-related { padding:47px 0 53px; background:var(--ry-warm); }
+.riyadh-related-heading { margin-bottom:18px; }
+.riyadh-related-heading h2 { font-size:clamp(23px,2.5vw,32px); }
+.riyadh-related-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid rgba(201,162,92,.4); border-right:1px solid rgba(201,162,92,.4); }
+.riyadh-related-links a { display:flex; align-items:center; gap:9px; min-height:57px; padding:11px 14px; border-bottom:1px solid rgba(201,162,92,.4); border-left:1px solid rgba(201,162,92,.4); color:var(--ry-emerald); font-size:12px; font-weight:700; }
+.riyadh-related-links a>svg:first-child { flex:none; color:var(--ry-gold); }
+.riyadh-related-links a>svg:last-child { width:15px; margin-right:auto; color:var(--ry-gold); }
+.riyadh-final-cta { padding:36px 0; color:#fff; border-top:1px solid var(--ry-gold); background:radial-gradient(ellipse at 10% 0%,rgba(19,88,64,.48),transparent 42%),var(--ry-emerald); }
+.riyadh-final-inner { display:flex; align-items:center; justify-content:space-between; gap:25px; }
+.riyadh-final-cta h2 { margin:4px 0 6px; color:#fff; font-size:clamp(23px,2.4vw,31px); }
+.riyadh-final-cta p { color:rgba(255,255,255,.77); font-size:13px; }
+.riyadh-final-cta .button { flex:none; }
+@media (max-width:1050px) {
+  .riyadh-container { width:calc(100% - 48px); }
+  .riyadh-hero { min-height:475px; }
+  .riyadh-hero-copy { padding-inline:30px; }
+  .riyadh-hero-photo { min-height:433px; }
+  .riyadh-answer-inner { gap:33px; }
+  .riyadh-warehouse-copy { padding-inline:30px; }
+  .riyadh-pharmacy-card { grid-template-columns:minmax(0,1fr) minmax(0,1fr) 55px; gap:18px; }
+}
+@media (max-width:720px) {
+  .riyadh-container { width:calc(100% - 34px); }
+  .riyadh-hero { display:flex; flex-direction:column; min-height:0; }
+  .riyadh-hero-photo { order:0; min-height:0; height:250px; margin:0; border:0; border-radius:0; }
+  .riyadh-hero-photo>span { right:14px; bottom:12px; font-size:11px; }
+  .riyadh-hero-index { display:none; }
+  .riyadh-hero-copy { order:1; width:100%; padding:22px 18px 27px; }
+  .riyadh-breadcrumb { margin-bottom:13px; font-size:11px; }
+  .riyadh-pill { min-height:27px; margin-bottom:8px; font-size:10px; }
+  .riyadh-hero h1 { margin-bottom:7px; font-size:29px; line-height:1.45; }
+  .riyadh-hero-copy>p { margin-bottom:11px; font-size:12px; line-height:1.8; }
+  .riyadh-hero-tags { gap:5px; margin-bottom:9px; }
+  .riyadh-hero-tags span { padding:3px 8px; font-size:9px; }
+  .riyadh-service-area { margin-bottom:11px; font-size:11px; }
+  .riyadh-trust { padding:10px 0; }
+  .riyadh-trust-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .riyadh-trust-item { justify-content:flex-start; min-height:62px; padding:7px 9px; border-bottom:1px solid rgba(201,162,92,.32); }
+  .riyadh-trust-item:nth-child(odd) { border-left:1px solid rgba(201,162,92,.37); }
+  .riyadh-trust-item:nth-child(even) { border-left:0; }
+  .riyadh-trust-item:nth-child(n+3) { border-bottom:0; }
+  .riyadh-trust-item>svg { width:19px; }
+  .riyadh-trust-item strong { font-size:11px; }
+  .riyadh-trust-item small { font-size:9px; }
+  .riyadh-answer { padding:39px 0 42px; }
+  .riyadh-answer-inner { grid-template-columns:1fr; gap:15px; }
+  .riyadh-answer-heading { padding-right:13px; }
+  .riyadh-answer h2 { margin-top:4px; font-size:22px; }
+  .riyadh-answer-copy p { font-size:12px; line-height:1.85; }
+  .riyadh-answer-copy>a { margin-top:8px; font-size:11px; }
+  .riyadh-warehouse { display:flex; flex-direction:column; }
+  .riyadh-warehouse-photo { order:0; min-height:0; height:240px; }
+  .riyadh-warehouse-copy { order:1; padding:28px 20px 31px; }
+  .riyadh-warehouse-copy h2,.riyadh-retail-copy h2,.riyadh-grocery-copy h2,.riyadh-pharmacy-copy h2 { margin:4px 0 7px; font-size:23px; }
+  .riyadh-warehouse-copy>p,.riyadh-retail-copy>p,.riyadh-grocery-copy>p,.riyadh-pharmacy-copy>p { margin-bottom:12px; font-size:12px; line-height:1.8; }
+  .riyadh-warehouse-copy ul,.riyadh-retail-copy ul,.riyadh-grocery-copy ul { gap:8px 12px; margin-bottom:15px; }
+  .riyadh-warehouse-copy li,.riyadh-retail-copy li,.riyadh-grocery-copy li { font-size:11px; }
+  .riyadh-actions { align-items:flex-start; gap:10px 13px; }
+  .riyadh-text-link { font-size:11px; }
+  .riyadh-actions .button { min-height:39px; font-size:11px; }
+  .riyadh-retail { padding:40px 0; }
+  .riyadh-retail-card { display:flex; flex-direction:column; min-height:0; }
+  .riyadh-retail-photo { order:0; min-height:0; height:225px; }
+  .riyadh-retail-copy { order:1; padding:23px 18px 26px; }
+  .riyadh-retail-copy li { font-size:11px; }
+  .riyadh-grocery { padding:38px 0 43px; }
+  .riyadh-grocery-grid { grid-template-columns:1fr; gap:16px; }
+  .riyadh-grocery-copy { padding:0; }
+  .riyadh-grocery-photo { min-height:0; height:230px; border-radius:12px 3px; }
+  .riyadh-pharmacy { padding:40px 0; }
+  .riyadh-pharmacy-card { grid-template-columns:minmax(0,1fr) 48px; gap:14px; padding:13px; }
+  .riyadh-pharmacy-photo { grid-column:1 / -1; order:0; min-height:0; height:220px; }
+  .riyadh-pharmacy-copy { order:1; }
+  .riyadh-pharmacy-copy .button { min-height:38px; padding-inline:12px; font-size:11px; }
+  .riyadh-pharmacy-mark { order:2; }
+  .riyadh-pharmacy-mark svg { width:21px; }
+  .riyadh-pharmacy-mark span { font-size:9px; }
+  .riyadh-decisions { padding:42px 0 43px; }
+  .riyadh-dark-heading { margin-bottom:18px; }
+  .riyadh-dark-heading h2 { margin:4px 0 6px; font-size:22px; }
+  .riyadh-dark-heading p { font-size:11px; }
+  .riyadh-factors { grid-template-columns:1fr; }
+  .riyadh-factor { display:grid; grid-template-columns:33px 1fr; grid-template-rows:auto auto; align-items:center; min-height:0; padding:10px 4px; text-align:right; border-left:0; border-bottom:1px solid rgba(214,180,111,.25); }
+  .riyadh-factor:last-child { border-bottom:0; }
+  .riyadh-factor>svg { grid-row:1 / span 2; width:20px; margin:0; }
+  .riyadh-factor strong { font-size:12px; }
+  .riyadh-factor p { max-width:none; margin:2px 0 0; font-size:10px; }
+  .riyadh-sector-pair { padding:42px 0 47px; }
+  .riyadh-section-heading { margin-bottom:17px; }
+  .riyadh-section-heading h2 { margin-top:4px; font-size:22px; }
+  .riyadh-sector-grid { grid-template-columns:1fr; gap:10px; }
+  .riyadh-sector-card { min-height:250px; }
+  .riyadh-sector-copy { padding:20px; }
+  .riyadh-sector-copy>span { font-size:17px; }
+  .riyadh-sector-copy p { margin:5px 0 9px; font-size:11px; }
+  .riyadh-sector-copy a { font-size:11px; }
+  .riyadh-process { padding:43px 0 47px; }
+  .riyadh-steps { display:flex; flex-direction:column; }
+  .riyadh-steps::before { top:18px; right:18px; left:auto; width:1px; height:calc(100% - 36px); }
+  .riyadh-steps li { display:grid; grid-template-columns:39px minmax(0,1fr); grid-template-rows:auto auto; column-gap:12px; min-height:75px; padding:0 0 13px; text-align:right; }
+  .riyadh-step-number { grid-row:1 / span 2; width:38px; height:38px; margin:0; font-size:10px; }
+  .riyadh-steps strong { align-self:end; font-size:12px; }
+  .riyadh-steps p { max-width:none; margin:3px 0 0; font-size:10px; }
+  .riyadh-projects { padding:43px 0 47px; }
+  .riyadh-projects-heading { align-items:flex-start; flex-direction:column; gap:10px; margin-bottom:14px; }
+  .riyadh-projects-heading h2 { font-size:22px; }
+  .riyadh-projects-heading p { font-size:11px; }
+  .riyadh-projects-heading>a { padding:8px 11px; font-size:11px; }
+  .riyadh-project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  .riyadh-project-tile { min-height:155px; }
+  .riyadh-project-tile>span { right:8px; bottom:8px; gap:4px; font-size:10px; }
+  .riyadh-project-tile>span svg { width:13px; }
+  .riyadh-local { padding:28px 0; }
+  .riyadh-local-inner { align-items:flex-start; flex-direction:column; gap:13px; }
+  .riyadh-local h2 { margin:3px 0 5px; font-size:21px; }
+  .riyadh-local p { font-size:11px; line-height:1.8; }
+  .riyadh-local .button { min-height:40px; padding-inline:14px; font-size:11px; }
+  .riyadh-faq { padding:43px 0 47px; }
+  .riyadh-faq-inner { grid-template-columns:1fr; gap:17px; }
+  .riyadh-faq-heading h2 { margin:4px 0 6px; font-size:22px; }
+  .riyadh-faq-heading p { font-size:11px; }
+  .riyadh-faq-list summary { gap:12px; padding:12px 1px; font-size:11px; }
+  .riyadh-faq-list summary>span { width:24px; height:24px; font-size:16px; }
+  .riyadh-faq-list details p { padding-bottom:11px; font-size:10px; }
+  .riyadh-related { padding:35px 0 39px; }
+  .riyadh-related-heading { margin-bottom:13px; }
+  .riyadh-related-heading h2 { font-size:21px; }
+  .riyadh-related-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .riyadh-related-links a { gap:5px; min-height:52px; padding:9px 7px; font-size:9px; }
+  .riyadh-related-links a>svg:first-child { width:15px; }
+  .riyadh-related-links a>svg:last-child { width:12px; }
+  .riyadh-final-cta { padding:28px 0; }
+  .riyadh-final-inner { align-items:flex-start; flex-direction:column; gap:13px; }
+  .riyadh-final-cta h2 { font-size:21px; }
+  .riyadh-final-cta p { font-size:11px; line-height:1.75; }
+  .riyadh-final-cta .button { min-height:40px; padding-inline:14px; font-size:11px; }
+}
+@media (max-width:380px) { .riyadh-container { width:calc(100% - 28px); } .riyadh-hero-copy { padding-inline:14px; } .riyadh-related-links a { font-size:8px; } }

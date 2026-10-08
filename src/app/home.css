@@ -1,0 +1,743 @@
+/* =========================================================
+   APPROVED HOMEPAGE STYLES
+   Exact reproduction of approved desktop and mobile designs
+   ========================================================= */
+
+.homepage {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   1. HERO SECTION (Split: Left photo, Right emerald content)
+   ========================================================= */
+.home-hero {
+  position: relative;
+  height: 525px;
+  background-color: var(--emerald-950);
+  color: var(--white);
+  display: grid;
+  grid-template-columns: 52% 48%; /* In RTL: content right, photo left */
+  overflow: hidden;
+}
+
+/* Left Photo Container (in RTL) */
+.home-hero-photo {
+  position: relative;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-hero-photo img {
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.home-hero-photo-gradient {
+  position: absolute;
+  inset: 0;
+  /* Directional gradient to soften transition to right emerald side */
+  background: linear-gradient(270deg, rgba(6, 43, 34, 0.95) 0%, rgba(6, 43, 34, 0.25) 26%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Right Content Container (in RTL) */
+.home-hero-content {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 34px clamp(38px, 5vw, 76px) 32px clamp(24px, 3.2vw, 52px);
+  background: linear-gradient(90deg, #062B22 84%, #073227 100%);
+  text-align: right;
+}
+
+.home-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  border: 1px solid var(--gold-500);
+  border-radius: 99px;
+  padding: 3px 16px;
+  color: var(--gold-300);
+  font-family: 'Alexandria', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  margin-bottom: 14px;
+}
+
+.home-hero h1 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: clamp(40px, 3.55vw, 52px);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 12px;
+  max-width: 640px;
+}
+
+.home-hero h1 em {
+  color: #F0DFB8;
+  font-style: normal;
+}
+
+.home-hero-gold {
+  color: var(--gold-300);
+  font-family: 'Tajawal', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  max-width: 600px;
+}
+
+.home-hero-description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #EEF3EA;
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+/* Feature Icons Row */
+.home-hero-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  margin-bottom: 22px;
+  gap: 0;
+}
+
+.hero-feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 12px;
+  border-left: 1px solid rgba(229, 217, 179, 0.32);
+}
+
+.hero-feature-item:first-child {
+  padding-right: 0;
+}
+
+.hero-feature-item:last-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.hero-feature-item svg {
+  color: var(--gold-400);
+  flex: none;
+}
+
+.hero-feature-text strong {
+  display: block;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.hero-feature-text span {
+  display: block;
+  font-size: 12px;
+  color: #DEE6DB;
+  line-height: 1.35;
+}
+
+.home-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.home-desktop-whatsapp {
+  font-size: 15px;
+  padding: 11px 26px;
+  min-height: 48px;
+}
+
+.home-mobile-whatsapp-wrap {
+  display: none;
+}
+
+/* Final Jeddah / Riyadh banner integrated into the hero. */
+.homeCityBanner {
+  position: absolute;
+  left: 36px;
+  bottom: 16px;
+  z-index: 20;
+  display: block;
+  width: clamp(500px, 44vw, 650px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
+}
+
+/* =========================================================
+   2. HOME SOLUTIONS SECTION (5 Horizontal Cards on Desktop)
+   ========================================================= */
+.home-solutions {
+  padding: 44px 0 52px;
+  background-color: var(--cream-50);
+}
+
+.home-section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.home-section-heading .eyebrow {
+  color: var(--gold-500);
+  font-size: 13.5px;
+  margin-bottom: 4px;
+}
+
+.home-section-heading h2 {
+  font-size: clamp(28px, 2.4vw, 36px);
+  color: var(--emerald-950);
+  margin: 4px 0 6px;
+}
+
+.home-section-heading p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.home-solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-solution-card {
+  background-color: var(--white);
+  border: 1px solid rgba(201, 162, 92, 0.22);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(18, 59, 49, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+.home-solution-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(18, 59, 49, 0.09);
+}
+
+.home-solution-thumb {
+  position: relative;
+  display: block;
+  height: 152px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #E8ECE6;
+}
+
+.home-solution-thumb img {
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-solution-card:hover .home-solution-thumb img {
+  transform: scale(1.04);
+}
+
+.home-solution-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  min-height: 84px;
+}
+
+.home-solution-texts {
+  flex: 1;
+}
+
+.home-solution-texts h3 {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--emerald-950);
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+
+.home-solution-texts p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.circle-gold-arrow {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--gold-500);
+  color: var(--emerald-950);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.circle-gold-arrow:hover {
+  background-color: var(--gold-400);
+  transform: scale(1.08);
+}
+
+/* =========================================================
+   3. WHY AL SHAMIKH (Dark Emerald Full-Width Band)
+   ========================================================= */
+.home-why {
+  padding: 64px 0 68px;
+  background: linear-gradient(rgba(4, 37, 29, 0.9), rgba(4, 37, 29, 0.94)), url('/photos/warehouse-3.jpeg') center/cover no-repeat;
+  color: var(--white);
+}
+
+.home-heading-light .eyebrow {
+  color: var(--gold-400);
+}
+
+.home-heading-light h2 {
+  color: var(--white);
+  font-size: clamp(28px, 2.4vw, 35px);
+}
+
+.home-heading-light p {
+  color: #E2EADD;
+}
+
+.home-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 18px;
+}
+
+.home-why-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-left: 1px solid rgba(217, 184, 112, 0.3);
+}
+
+.home-why-col:last-child {
+  border-left: none;
+}
+
+.home-why-icon {
+  color: var(--gold-400);
+  margin-bottom: 10px;
+}
+
+.home-why-col strong {
+  display: block;
+  font-family: 'Alexandria', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.home-why-col span {
+  font-size: 13.5px;
+  color: #DCE5DA;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   4. PROJECTS PREVIEW SECTION
+   ========================================================= */
+.home-projects {
+  padding: 48px 0 60px;
+  background-color: var(--cream-50);
+}
+
+.home-projects-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.home-projects-title-wrap {
+  text-align: right;
+}
+
+.home-projects-title-wrap h2 {
+  font-size: clamp(28px, 2.4vw, 34px);
+  margin: 4px 0;
+}
+
+.home-projects-title-wrap p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.home-projects-btn {
+  background-color: #FFFFFF;
+  border: 1px solid var(--gold-500);
+  color: #6C552C;
+  font-weight: 700;
+  font-size: 14px;
+  min-height: 42px;
+  padding: 8px 18px;
+  gap: 8px;
+}
+
+.home-projects-btn:hover {
+  background-color: var(--cream-100);
+}
+
+.home-projects-grid {
+  display: grid;
+  grid-template-columns: 1.55fr repeat(4, 1fr);
+  gap: 14px;
+  height: 255px;
+}
+
+.home-project-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--card-radius);
+  background-color: var(--emerald-900);
+  box-shadow: 0 6px 20px rgba(18, 59, 49, 0.08);
+}
+
+.home-project-tile img {
+  object-fit: cover;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-project-tile:hover img {
+  transform: scale(1.04);
+}
+
+.home-project-tile::after {
+  content: '';
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(to top, rgba(3, 36, 27, 0.92) 0%, transparent 100%);
+}
+
+.home-project-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 14px 12px;
+}
+
+.home-project-caption small {
+  font-family: 'Alexandria', sans-serif;
+  color: var(--gold-400);
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.home-project-caption strong {
+  font-family: 'Alexandria', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.home-project-tile-1 .home-project-caption strong {
+  font-size: 18px;
+}
+
+/* =========================================================
+   5. FINAL CTA SECTION
+   ========================================================= */
+.home-final-cta {
+  background-color: var(--emerald-900);
+  border-top: 2px solid var(--gold-500);
+  color: var(--white);
+  padding: 44px 0;
+}
+
+.home-final-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.home-final-cta-content .eyebrow {
+  color: var(--gold-400);
+}
+
+.home-final-cta-content h2 {
+  color: var(--white);
+  font-size: clamp(26px, 2.4vw, 34px);
+  margin: 4px 0 6px;
+}
+
+.home-final-cta-content p {
+  color: #E2EBDD;
+  font-size: 16px;
+  max-width: 650px;
+}
+
+/* =========================================================
+   RESPONSIVENESS (1250px, 1024px, 768px, 430px)
+   ========================================================= */
+@media (max-width: 1250px) {
+  .home-hero h1 {
+    font-size: clamp(38px, 3.4vw, 48px);
+  }
+  .home-hero-description {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .home-hero {
+    height: 560px;
+    grid-template-columns: 55% 45%;
+  }
+  .home-hero-content {
+    padding: 28px 26px 138px 20px;
+  }
+  .home-hero h1 {
+    font-size: 38px;
+  }
+  .home-hero-description {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .home-hero-features {
+    margin-bottom: 14px;
+  }
+  .hero-feature-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+    padding: 0 6px;
+  }
+  .hero-feature-item svg {
+    width: 25px;
+    height: 25px;
+  }
+  .hero-feature-text strong {
+    font-size: 11px;
+  }
+  .hero-feature-text span {
+    font-size: 10px;
+  }
+  .home-solutions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .home-projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+  }
+  .home-project-tile {
+    height: 200px;
+  }
+}
+
+/* Mobile Layout at 768px & below (matches approved mobile mockup!) */
+@media (max-width: 768px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .home-hero-photo {
+    height: 300px;
+    width: 100%;
+    flex: none;
+  }
+
+  .home-hero-photo-gradient {
+    background: linear-gradient(180deg, transparent 40%, rgba(6, 43, 34, 0.95) 100%);
+  }
+
+  .home-hero-content {
+    padding: 28px 20px 24px;
+    align-items: center;
+    text-align: center;
+    background: #062B22;
+  }
+
+  .home-hero h1 {
+    font-size: 32px;
+  }
+
+  .home-hero-gold {
+    font-size: 15px;
+  }
+
+  .home-hero-description {
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+
+  .home-hero-features {
+    margin-bottom: 20px;
+  }
+
+  .hero-feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 8px;
+    gap: 6px;
+  }
+
+  .hero-feature-text strong {
+    font-size: 12px;
+  }
+
+  .hero-feature-text span {
+    font-size: 11px;
+  }
+
+  .home-hero-cta {
+    display: none; /* In mobile, CTA is displayed prominently below city card or at bottom */
+  }
+
+  .homeCityBanner {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: calc(100% - 28px);
+    max-width: none;
+    height: auto;
+    margin: 16px auto 0;
+    z-index: 5;
+    align-self: center;
+  }
+
+  .home-mobile-whatsapp-wrap {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .home-mobile-whatsapp-wrap .button {
+    width: 100%;
+    min-height: 48px;
+    font-size: 15px;
+  }
+
+  /* Solutions List on Mobile: exactly like mobile reference screenshot */
+  .home-solutions-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-solution-card {
+    flex-direction: row;
+    align-items: center;
+    min-height: 84px;
+  }
+
+  .home-solution-thumb {
+    width: 100px;
+    height: 84px;
+    flex: none;
+  }
+
+  .home-solution-info {
+    flex: 1;
+    min-height: auto;
+    padding: 10px 14px;
+  }
+
+  .home-solution-texts h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .home-solution-texts p {
+    display: none; /* Matches mobile mockup where cards are compact title + arrow */
+  }
+
+  /* Why Section on Mobile */
+  .home-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 0;
+  }
+
+  .home-why-col:nth-child(2) {
+    border-left: none;
+  }
+
+  .home-why-col strong {
+    font-size: 14px;
+  }
+
+  .home-why-col span {
+    font-size: 12px;
+  }
+
+  /* Projects Header & Grid on Mobile */
+  .home-projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .home-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .home-project-tile {
+    height: 150px;
+  }
+
+  .home-project-tile-1 {
+    grid-column: span 2;
+    height: 180px;
+  }
+
+  .home-project-caption strong {
+    font-size: 13.5px;
+  }
+
+  /* Final CTA on Mobile */
+  .home-final-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .home-final-cta-btn-wrap {
+    width: 100%;
+  }
+
+  .home-final-cta-btn-wrap .button {
+    width: 100%;
+  }
+}
