@@ -185,16 +185,17 @@
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
-  animation: home-city-banner-float 4s ease-in-out infinite alternate;
+  will-change: transform;
+  animation: home-city-banner-float 3.6s ease-in-out infinite alternate;
 }
 
 @keyframes home-city-banner-float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-6px); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -8px, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .homeCityBanner { animation: none; }
+  .homeCityBanner { animation: none; will-change: auto; }
 }
 
 /* =========================================================

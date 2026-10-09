@@ -30,7 +30,6 @@ export default function ScrollReveal() {
   useEffect(() => {
     if (
       !('IntersectionObserver' in window) ||
-      !('onscrollend' in document) ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
       return;
@@ -40,26 +39,16 @@ export default function ScrollReveal() {
     if (!root) return;
 
     const observed = new Set<Element>();
-    const revealing = new Set<HTMLElement>();
     const reveal = (element: HTMLElement) => {
-      if (revealing.has(element) || !element.classList.contains('scroll-reveal-pending')) return;
-      revealing.add(element);
+      if (!element.classList.contains('scroll-reveal-pending')) return;
       observer.unobserve(element);
 
-      const images = Array.from(element.querySelectorAll('img'));
-      const imagesReady = Promise.all(images.map((image) => image.decode().catch(() => undefined)));
-      let fallbackTimer: number | undefined;
-      const revealFailsafe = new Promise<void>((resolve) => {
-        fallbackTimer = window.setTimeout(resolve, 1200);
-      });
-      void Promise.race([imagesReady, revealFailsafe]).then(() => {
-        if (fallbackTimer !== undefined) window.clearTimeout(fallbackTimer);
-        if (element.isConnected) {
-          element.classList.add('scroll-revealed');
-          element.classList.remove('scroll-reveal-pending');
-        }
-        revealing.delete(element);
-      });
+      // Visibility is independent of image decoding: the browser can paint the
+      // content immediately and load/decode images on its normal schedule.
+      if (element.isConnected) {
+        element.classList.add('scroll-revealed');
+        element.classList.remove('scroll-reveal-pending');
+      }
     };
     const observer = new IntersectionObserver(
       (entries) => {
@@ -81,6 +70,7 @@ export default function ScrollReveal() {
     };
 
     const prepare = (scope: ParentNode) => {
+      const siblingCounts = new Map<Element, number>();
       scope.querySelectorAll<HTMLElement>(revealSelector).forEach((element) => {
         if (observed.has(element) || !isRevealTarget(element)) return;
         observed.add(element);
@@ -88,10 +78,10 @@ export default function ScrollReveal() {
         // Keep everything already visible at load fully visible and unanimated.
         if (element.getBoundingClientRect().top <= window.innerHeight) return;
 
-        const siblings = Array.from(element.parentElement?.querySelectorAll<HTMLElement>(revealSelector) ?? [])
-          .filter((sibling) => sibling.parentElement === element.parentElement);
-        const siblingIndex = siblings.indexOf(element);
-        element.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 75, 300)}ms`);
+        const parent = element.parentElement;
+        const siblingIndex = parent ? siblingCounts.get(parent) ?? 0 : 0;
+        if (parent) siblingCounts.set(parent, siblingIndex + 1);
+        element.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 40, 120)}ms`);
         element.classList.add('scroll-reveal-pending');
         observer.observe(element);
       });

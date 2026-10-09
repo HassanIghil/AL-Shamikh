@@ -38,6 +38,25 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
   }, [prefersReducedMotion]);
 
   useEffect(() => {
+    const gallery = galleryRef.current;
+    const pagination = gallery?.nextElementSibling;
+    if (!gallery || !(pagination instanceof HTMLElement)) return;
+
+    const containsGalleryFocus = (target: EventTarget | null) =>
+      target instanceof Node && (gallery.contains(target) || pagination.contains(target));
+    const handleFocusIn = (event: FocusEvent) => setHasFocus(containsGalleryFocus(event.target));
+    const handleFocusOut = (event: FocusEvent) => setHasFocus(containsGalleryFocus(event.relatedTarget));
+
+    document.addEventListener('focusin', handleFocusIn);
+    document.addEventListener('focusout', handleFocusOut);
+    if (containsGalleryFocus(document.activeElement)) setHasFocus(true);
+
+    return () => {
+      document.removeEventListener('focusin', handleFocusIn);
+      document.removeEventListener('focusout', handleFocusOut);
+    };
+  }, []);
+  useEffect(() => {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const mobile = window.matchMedia('(max-width: 720px)');
     const updateMotion = () => setPrefersReducedMotion(reducedMotion.matches);
@@ -137,14 +156,10 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
 
     const timeout = window.setTimeout(() => {
       scrollToSlide(activeIndex === slides.length - 1 ? slides.length : activeIndex + 1);
-    }, 4500);
+    }, 4000);
 
     return () => window.clearTimeout(timeout);
   }, [activeIndex, hasFocus, isHovered, isInView, isMobileCarousel, isTabVisible, isTouching, prefersReducedMotion, scrollToSlide, slides.length]);
-
-  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
-    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setHasFocus(false);
-  };
 
   return (
     <>
@@ -160,8 +175,6 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
         onTouchStart={() => setIsTouching(true)}
         onTouchEnd={() => setIsTouching(false)}
         onTouchCancel={() => setIsTouching(false)}
-        onFocusCapture={() => setHasFocus(true)}
-        onBlurCapture={handleBlur}
       >
         {slides.map((slide, index) => (
           <Link
@@ -197,8 +210,6 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
         aria-label="اختيار صورة المعرض"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onFocusCapture={() => setHasFocus(true)}
-        onBlurCapture={handleBlur}
       >
         {slides.map((slide, index) => (
           <button
