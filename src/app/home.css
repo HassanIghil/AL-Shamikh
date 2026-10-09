@@ -5,7 +5,8 @@
 
 .homepage {
   width: 100%;
-  overflow-x: hidden;
+  /* Clip horizontal paint without making the whole page a nested scrollport. */
+  overflow-x: clip;
 }
 
 /* =========================================================
@@ -13,12 +14,12 @@
    ========================================================= */
 .home-hero {
   position: relative;
-  height: 525px;
+  height: auto;
+  min-height: calc(100svh - var(--header-height));
   background-color: var(--emerald-950);
   color: var(--white);
   display: grid;
   grid-template-columns: 52% 48%; /* In RTL: content right, photo left */
-  overflow: hidden;
 }
 
 /* Left Photo Container (in RTL) */
@@ -27,7 +28,7 @@
   grid-column: 2;
   grid-row: 1;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -178,7 +179,8 @@
 .homeCityBanner {
   position: absolute;
   left: 36px;
-  bottom: 16px;
+  /* Keep clear of the fixed WhatsApp control at the viewport's lower-left. */
+  bottom: 84px;
   z-index: 20;
   display: block;
   width: clamp(500px, 44vw, 650px);
@@ -531,7 +533,7 @@
 
 @media (max-width: 1024px) {
   .home-hero {
-    height: 560px;
+    min-height: max(560px, calc(100svh - var(--header-height)));
     grid-template-columns: 55% 45%;
   }
   .home-hero-content {
@@ -581,6 +583,7 @@
     display: flex;
     flex-direction: column;
     height: auto;
+    min-height: 0;
   }
 
   .home-hero-photo {
