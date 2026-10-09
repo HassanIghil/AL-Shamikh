@@ -68,3 +68,28 @@ The existing local project contains location hubs at `/jeddah` and `/riyadh`, a 
 - Raw position-level results and per-query Google source URLs: [serp-results.csv](serp-results.csv).
 - Competitor pages inspected directly: Sadr, RFCO, LMST Areej, and Alesayi links above.
 - The SERP dataset reflects one desktop collection per query on the timestamps above; location, language, device, personalization, and result volatility can affect rankings.
+
+## Phase 23 fresh SERP extension
+
+Ten additional Arabic Google searches were checked for spelling and intent variants, with 82 organic rows returned (counts were below the requested ten on several queries). The full returned organic URLs, titles, snippets and positions are in [saudi-serp-supplement.csv](saudi-serp-supplement.csv). The structured payloads with an ads array returned no paid-ad entries; the two calibration responses did not expose an ads field. The supplemental file records organic rows only, not a complete local-pack export.
+
+| Query | Location | Returned organic | Topical interpretation |
+|---|---|---:|---|
+| أرفف مستودعات جدة | Jeddah | 8 | Mostly warehouse rentals, warehouse management and government policy; weak shelf-provider relevance. |
+| رفوف مخازن الرياض | Riyadh | 8 | Consumer/home storage and commercial shelves mixed; rufufna.sa, RFCO and Baytonia appeared in the first three. |
+| تجهيز مستودعات جدة | Jeddah | 9 | City/government/news material; weak commercial shelving intent. |
+| تجهيز مستودعات الرياض | Riyadh | 7 | Mostly unrelated city/news/government results. |
+| توريد وتركيب رفوف مستودعات جدة | Jeddah | 9 | Search drifted to unrelated installation/service categories. |
+| توريد وتركيب رفوف مستودعات الرياض | Riyadh | 9 | Search drifted to unrelated installation/service categories. |
+| رفوف صناعية جدة | Jeddah | 9 | Ambiguous industrial wording; results included unrelated industry/auto topics. |
+| رفوف صناعية الرياض | Riyadh | 9 | Shelf results existed but skewed consumer/home storage. |
+| رفوف حديد جدة | Jeddah | 8 | Mixed household and retail storage catalogues; rufufna.sa, JST and RFCO appeared early. |
+| رفوف حديد الرياض | Riyadh | 6 | Mostly unrelated results in this snapshot. |
+
+These noisy variations should not be promoted as a search opportunity solely because they sound commercial. Keep the validated city-qualified specialist phrases and review with GSC after launch.
+
+## Competitor patterns across the original 40-query panel
+
+Counts in al_shamikh_competitor_frequency.csv are from the older 40-query panel (39 successful); they are distinct-query appearances, not market share. Recurrent supplier domains include RFCO (22 queries / 16 top-three appearances), Sadr (16 / 10), Krfof (15 / 14), Arfaf (13 / 3), Top Rack (10 / 9), RFUFCO (9 / 5), JST (8 / 3), and Tamraf (7 / 0). Marketplace/social domains such as Haraj and Instagram/Facebook also recur, especially on retail searches. The existing competitor-analysis.md contains direct page inspection notes and source URLs; SERP snippets were not treated as full pages.
+
+Intent distinction: city warehouse terms and supplier/installation terms call for a credible local service page; heavy/pallet terms need accurate system-specific details; retail searches span product catalogs, shop fit-out suppliers, and social/marketplace results. The Riyadh pharmacy and Jeddah pharmacy panels differed in which specialist/social/marketplace domains appeared. This small panel does not establish a stable market difference or Maps eligibility.
