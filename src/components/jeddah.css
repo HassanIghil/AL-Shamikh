@@ -116,6 +116,8 @@
 .jeddah-project-tile:hover img { transform: scale(1.035); }
 .jeddah-project-tile::after { content: ''; position: absolute; inset: 38% 0 0; background: linear-gradient(transparent,rgba(3,25,19,.78)); }
 .jeddah-project-tile > span { position: absolute; z-index: 1; right: 13px; bottom: 12px; color: #fff; font-size: 13px; font-weight: 700; }
+.jeddah-project-tile-loop-clone { display: none; }
+.jeddah-project-pagination { display: none; }
 
 /* Short local search answer */
 .jeddah-search-answer { padding: 36px 0; background: #f3ead9; border-block: 1px solid rgba(201,162,92,.5); }
@@ -226,9 +228,15 @@
   .jeddah-projects-heading { align-items: flex-start; margin-bottom: 14px; }
   .jeddah-projects-heading h2 { margin-top: 4px; font-size: 22px; }
   .jeddah-projects-heading > a { gap: 4px; font-size: 11px; white-space: nowrap; }
-  .jeddah-project-grid { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .jeddah-project-grid { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .jeddah-project-tile,.jeddah-project-tile:nth-child(n) { flex: 0 0 76%; height: 180px; scroll-snap-align: start; }
+  .jeddah-project-tile-loop-clone { display: block; }
   .jeddah-project-tile > span { right: 11px; bottom: 10px; font-size: 12px; }
+  .jeddah-project-pagination { display: flex; justify-content: center; align-items: center; gap: 7px; min-height: 34px; margin-top: 7px; }
+  .jeddah-project-pagination button { display: grid; width: 30px; height: 30px; padding: 0; place-items: center; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+  .jeddah-project-pagination button > span { display: block; width: 7px; height: 7px; border-radius: 50%; background: rgba(7,55,43,.28); transition: background-color .18s ease, transform .18s ease; }
+  .jeddah-project-pagination button[aria-current="true"] > span { transform: scale(1.25); background: var(--jd-gold); }
+  .jeddah-project-pagination button:focus-visible { outline: 2px solid var(--jd-gold); outline-offset: 1px; }
   .jeddah-search-answer { padding: 27px 0; }
   .jeddah-search-answer-inner { align-items: flex-start; flex-direction: column; gap: 13px; }
   .jeddah-search-answer h2 { margin: 3px 0 5px; font-size: 20px; }
@@ -247,6 +255,11 @@
   .jeddah-related-links a { gap: 6px; min-height: 54px; padding: 10px 8px; font-size: 10px; }
   .jeddah-related-links a > svg:first-child { width: 16px; }
   .jeddah-related-links a > svg:last-child { width: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jeddah-project-pagination button > span { transition: none; }
+  .jeddah-project-tile img { transition: none; }
 }
 
 @media (max-width: 370px) {

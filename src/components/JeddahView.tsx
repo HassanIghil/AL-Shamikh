@@ -15,6 +15,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import { CtaBand, ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
+import JeddahGallery from '@/components/JeddahGallery';
 import { whatsapp } from '@/lib/data';
 import './jeddah.css';
 
@@ -135,7 +136,7 @@ export default function JeddahView() {
       <section className="jeddah-projects" aria-labelledby="jeddah-projects-title">
         <div className="jeddah-container">
           <div className="jeddah-projects-heading"><div><span className="jeddah-kicker">أنواع الحلول</span><h2 id="jeddah-projects-title">صور توضيحية للرفوف والتخزين</h2></div><Link href="/projects">استكشف صور الحلول <ArrowUpLeft size={17} aria-hidden="true" /></Link></div>
-          <div className="jeddah-project-grid">{projects.map((project) => <Link className="jeddah-project-tile" href={project.href} key={project.image}><Image src={project.image} alt={project.alt} fill sizes="(max-width: 700px) 75vw, 25vw" /><span>{project.label}</span></Link>)}</div>
+          <JeddahGallery slides={projects} />
         </div>
       </section>
 

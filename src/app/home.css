@@ -185,6 +185,16 @@
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
+  animation: home-city-banner-float 4s ease-in-out infinite alternate;
+}
+
+@keyframes home-city-banner-float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homeCityBanner { animation: none; }
 }
 
 /* =========================================================
