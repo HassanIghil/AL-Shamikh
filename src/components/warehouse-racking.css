@@ -252,3 +252,7 @@
   .warehouse-page > .cta-band { padding-block: 40px; }
   .warehouse-page > .cta-band .button { min-height: 50px; white-space: normal; }
 }
+
+@media (min-width: 769px) {
+  .warehouse-hero { min-height: max(500px, calc(100svh - var(--header-height))); }
+}

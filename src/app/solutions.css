@@ -5,7 +5,7 @@
 
 .solutions-page {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* =========================================================
@@ -13,12 +13,12 @@
    ========================================================= */
 .solutions-hero {
   position: relative;
-  height: 480px;
+  height: auto;
+  min-height: max(480px, calc(100svh - var(--header-height)));
   background-color: var(--emerald-950);
   color: var(--white);
   display: grid;
   grid-template-columns: 52% 48%; /* In RTL: Col 1 is Right content, Col 2 is Left photo */
-  overflow: hidden;
 }
 
 .solutions-hero-photo {
@@ -26,7 +26,7 @@
   grid-column: 2;
   grid-row: 1;
   width: 100%;
-  height: 100%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -599,7 +599,7 @@
    ========================================================= */
 @media (max-width: 1024px) {
   .solutions-hero {
-    height: 440px;
+    min-height: max(440px, calc(100svh - var(--header-height)));
     grid-template-columns: 55% 45%;
   }
 
@@ -643,6 +643,7 @@
     display: flex;
     flex-direction: column;
     height: auto;
+    min-height: 0;
   }
 
   .solutions-hero-photo {

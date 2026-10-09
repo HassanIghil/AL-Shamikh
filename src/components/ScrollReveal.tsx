@@ -81,7 +81,7 @@ export default function ScrollReveal() {
         const parent = element.parentElement;
         const siblingIndex = parent ? siblingCounts.get(parent) ?? 0 : 0;
         if (parent) siblingCounts.set(parent, siblingIndex + 1);
-        element.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 40, 120)}ms`);
+        element.style.setProperty('--reveal-delay', `${Math.min(siblingIndex * 60, 180)}ms`);
         element.classList.add('scroll-reveal-pending');
         observer.observe(element);
       });

@@ -208,7 +208,7 @@
   .about-sectors-heading { align-items: end; margin-bottom: 15px; }
   .about-sectors-heading h2 { margin-top: 3px; font-size: 23px; }
   .about-sectors-heading > a { gap: 4px; font-size: 11px; white-space: nowrap; }
-  .about-sector-strip { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .about-sector-strip { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .about-sector-tile { flex: 0 0 72%; height: 156px; scroll-snap-align: start; }
   .about-sector-tile > span { right: 12px; bottom: 11px; font-size: 13px; }
   .about-sector-links { justify-content: flex-start; gap: 9px 15px; margin-top: 12px; }
@@ -236,4 +236,8 @@
   .about-origin-copy { padding-inline: 10px; }
   .about-origin-copy p { font-size: 10px; }
   .about-city-links { padding-right: 0; }
+}
+
+@media (min-width: 769px) {
+  .about-hero { min-height: max(478px, calc(100svh - var(--header-height))); }
 }

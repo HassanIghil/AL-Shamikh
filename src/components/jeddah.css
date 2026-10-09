@@ -228,7 +228,7 @@
   .jeddah-projects-heading { align-items: flex-start; margin-bottom: 14px; }
   .jeddah-projects-heading h2 { margin-top: 4px; font-size: 22px; }
   .jeddah-projects-heading > a { gap: 4px; font-size: 11px; white-space: nowrap; }
-  .jeddah-project-grid { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .jeddah-project-grid { display: flex; gap: 9px; margin-inline: -17px; padding: 0 17px 8px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .jeddah-project-tile,.jeddah-project-tile:nth-child(n) { flex: 0 0 76%; height: 180px; scroll-snap-align: start; }
   .jeddah-project-tile-loop-clone { display: block; }
   .jeddah-project-tile > span { right: 11px; bottom: 10px; font-size: 12px; }
@@ -266,4 +266,8 @@
   .jeddah-container { width: calc(100% - 28px); }
   .jeddah-hero-copy { padding-inline: 14px; }
   .jeddah-related-links a { font-size: 9px; }
+}
+
+@media (min-width: 769px) {
+  .jeddah-hero { min-height: max(492px, calc(100svh - var(--header-height))); }
 }

@@ -89,7 +89,7 @@ body {
   line-height: 1.65;
   direction: rtl;
   text-align: right;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Typography Hierarchy */
@@ -700,15 +700,17 @@ img {
    Static HTML and browsers without IntersectionObserver stay fully visible. */
 .scroll-reveal-pending {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 520ms cubic-bezier(.22, .72, .25, 1),
+    transform 520ms cubic-bezier(.22, .72, .25, 1);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
 .scroll-revealed {
   opacity: 1;
-  transform: translateY(0);
-  transition-property: opacity, transform;
-  transition-duration: 420ms;
-  transition-timing-function: cubic-bezier(.22, .72, .25, 1);
+  transform: translate3d(0, 0, 0);
+  transition: opacity 520ms cubic-bezier(.22, .72, .25, 1),
+    transform 520ms cubic-bezier(.22, .72, .25, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
 

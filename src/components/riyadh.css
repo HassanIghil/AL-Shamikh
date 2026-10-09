@@ -1,4 +1,4 @@
-.riyadh-page { --ry-emerald:#062B22; --ry-emerald-light:#0B4636; --ry-gold:#C9A25C; --ry-gold-light:#D6B46F; --ry-cream:#FCFAF5; --ry-warm:#F8F3E9; color:#163B32; direction:rtl; overflow:hidden; }
+.riyadh-page { --ry-emerald:#062B22; --ry-emerald-light:#0B4636; --ry-gold:#C9A25C; --ry-gold-light:#D6B46F; --ry-cream:#FCFAF5; --ry-warm:#F8F3E9; color:#163B32; direction:rtl; overflow-x:clip; }
 .riyadh-page h1,.riyadh-page h2,.riyadh-page h3 { font-family:'Alexandria',sans-serif; font-weight:700; }
 .riyadh-page p,.riyadh-page li,.riyadh-page a,.riyadh-page span { font-family:'Tajawal',sans-serif; }
 .riyadh-container { width:min(1240px,calc(100% - 72px)); margin-inline:auto; }
@@ -277,3 +277,7 @@
   .riyadh-final-cta .button { min-height:40px; padding-inline:14px; font-size:11px; }
 }
 @media (max-width:380px) { .riyadh-container { width:calc(100% - 28px); } .riyadh-hero-copy { padding-inline:14px; } .riyadh-related-links a { font-size:8px; } }
+
+@media (min-width: 769px) {
+  .riyadh-hero { min-height: max(505px, calc(100svh - var(--header-height))); }
+}
