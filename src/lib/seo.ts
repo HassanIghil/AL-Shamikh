@@ -26,11 +26,8 @@ function getSiteOrigin(value?: string): string | undefined {
 export const siteOrigin = getSiteOrigin(configuredSiteUrl);
 
 const isPreviewDeployment = process.env.VERCEL_ENV === 'preview' || process.env.VERCEL_ENV === 'development';
-const productionBranch = process.env.CLOUDFLARE_PRODUCTION_BRANCH || 'main';
 const isCloudflarePreview =
-  (process.env.CF_PAGES === '1' && process.env.CF_PAGES_BRANCH !== productionBranch) ||
-  (process.env.WORKERS_CI === '1' && process.env.CLOUDFLARE_DEPLOYMENT_ENV !== 'production') ||
-  process.env.CLOUDFLARE_DEPLOYMENT_ENV === 'preview';
+  process.env.CF_PAGES === '1' && process.env.CF_PAGES_BRANCH !== 'main';
 
 /** Search indexing is opt-in: set NEXT_PUBLIC_SITE_URL in production only. */
 export const isSearchIndexingEnabled =

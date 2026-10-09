@@ -1,76 +1,70 @@
-# Cloudflare deployment readiness — Al Shamikh
+# Cloudflare Pages readiness — Al Shamikh
 
-**Status:** OpenNext Worker configuration prepared and locally validated. Nothing has been deployed and no custom domain was purchased or configured.
+**Recommendation:** Cloudflare Pages with Next.js static HTML export. The repository is configured for Pages, and `npm run build` generates a static `out/` site. No Worker, OpenNext adapter, `wrangler deploy`, Cloudflare runtime binding, or deployment command is required.
 
-## Recommendation
+No Pages deployment has been started. The production domain has not been purchased or configured.
 
-Use **Cloudflare Workers with the OpenNext Cloudflare adapter** for the existing deployment target. The failed deployment targeted Worker al-shamikh but its WORKER_SELF_REFERENCE pointed to the nonexistent service al-shamikh-site, which caused error 10143. The committed Wrangler configuration now names the Worker al-shamikh and points the self-reference to that same service.
+## Why static export fits this site
 
-Cloudflare currently recommends vinext for new full-stack Next.js projects. This project already uses Next.js 16.4 and its OpenNext build was succeeding; the reported failure is the Worker name binding. Keeping OpenNext avoids a framework/runtime migration while correcting the direct cause. OpenNext supports the App Router and the current build-time generated pages. See [Cloudflare OpenNext guidance](https://developers.cloudflare.com/workers/framework-guides/web-apps/opennext/) and [OpenNext caching guidance](https://opennext.js.org/cloudflare/caching).
+The site consists of a homepage, a finite set of content pages, static legal pages, and client-side WhatsApp interactions. The dynamic `[slug]` route already returns the complete supported slug list from `generateStaticParams()` and sets `dynamicParams = false`. The build emits each supported page as HTML. An ungenerated slug is not rendered dynamically; Cloudflare Pages serves the exported `404.html` for missing paths.
 
-## Configuration changes
+The routes use no request-time cookies, headers, middleware, API handlers, ISR, or server actions. Metadata, JSON-LD, robots, and sitemap are generated during the build. The contact form continues to open WhatsApp in the browser, so it needs no server endpoint.
 
-- wrangler.jsonc sets name to al-shamikh, entrypoint .open-next/worker.js, compatibility flags, .open-next/assets / ASSETS, observability, the IMAGES binding, and WORKER_SELF_REFERENCE with service: al-shamikh.
-- open-next.config.ts uses the read-only Workers Static Assets incremental cache for build-time generated routes and enables cache interception.
-- package.json and package-lock.json include @opennextjs/cloudflare and Wrangler as local dependencies. OpenNext configuration is committed in the repository; Cloudflare remote builds do not need to generate migration files.
-- scripts/build-cloudflare.mjs calls the locally installed OpenNext CLI. It marks local builds as preview output; Workers Builds must explicitly mark only the production trigger as production. It also applies a guarded, idempotent compatibility patch to OpenNext 1.20.9's manifest glob so Next.js 16.4's preview-props.json is available to the Worker for real 404 rendering. The build fails with a clear message if the upstream patch target changes.
-- next.config.ts no longer switches to Pages static export for Cloudflare. The standard Next.js build remains unchanged.
-- src/lib/seo.ts blocks Worker preview builds when WORKERS_CI=1 unless CLOUDFLARE_DEPLOYMENT_ENV=production. Temporary .workers.dev and .pages.dev URLs are rejected as canonical origins. Without a valid NEXT_PUBLIC_SITE_URL, all builds remain noindex.
-- .gitignore excludes .open-next/, .wrangler/, .dev.vars*, build output, and local credentials.
-- public/_headers applies immutable caching to hashed /_next/static/* assets.
+## Repository configuration
 
-The app uses Next Image elements. IMAGES is configured so the adapter can serve its Next-compatible image optimization endpoint. Cloudflare Images transformations may incur account charges; check the account’s current plan/pricing before deployment. The site has no request-time revalidation or revalidatePath / revalidateTag use. Its prerendered pages use Workers Static Assets; no paid R2, KV, D1, or Durable Object cache/queue is configured.
+- `next.config.ts` sets `output: 'export'` and `images.unoptimized: true`. Next Image keeps its layout and alt text but emits URLs to the original static files; it does not call the Next.js image optimization server endpoint.
+- `src/app/[slug]/page.tsx` enumerates all 11 supported slugs and has `dynamicParams = false`.
+- `src/lib/seo.ts` uses Cloudflare Pages' injected `CF_PAGES` and `CF_PAGES_BRANCH` values to make non-main branch previews noindex. The placeholder-free `NEXT_PUBLIC_SITE_URL` is also required before canonicals or indexable sitemap entries are emitted. `.pages.dev`, `.workers.dev`, localhost, and invalid origins are rejected.
+- `src/app/robots.ts` and `src/app/sitemap.ts` are statically exported. Before launch, robots blocks crawling and the sitemap is empty. On Pages preview branches, the same safeguards apply even if a site URL is supplied.
+- `public/_headers` is copied to `out/_headers` and sets long-lived immutable caching for hashed `/_next/static/*` assets.
+- Worker/OpenNext files, build scripts, and dependencies have been removed so the repository no longer advertises the old Workers deployment flow. Cloudflare Pages reads its build settings from the Pages project configuration; it does not need a Wrangler file.
+- `.node-version` pins the Pages build to Node 22.
 
-## Commands
-
-Run locally:
-
-- TypeScript: npm run typecheck
-- Standard Next.js build: npm run build
-- OpenNext Worker build: npm run build:cloudflare
-- Build and run in the local Workers runtime: npm run preview:cloudflare
-
-Cloudflare Workers Builds dashboard:
-
-- **Build command:** npm run build:cloudflare
-- **Deploy command:** npm run deploy:cloudflare
-- **Root directory:** repository root (/)
-- **Node.js:** 22 (pinned by .node-version)
-
-Do not use the Pages build command or wrangler pages deploy for this Worker configuration. npm run deploy:cloudflare was not run as part of this task.
-
-## Dashboard setup (when deployment is approved)
-
-1. In Cloudflare, open **Workers & Pages → al-shamikh → Settings → Builds** and connect the GitHub repository HassanIghil/AL-Chamikh. Confirm the dashboard Worker name is exactly al-shamikh, matching wrangler.jsonc.
-2. Set root directory to /, production branch to main, Build command to npm run build:cloudflare, and Deploy command to npm run deploy:cloudflare.
-3. For the **production build trigger only**, set build variable CLOUDFLARE_DEPLOYMENT_ENV=production. Leave NEXT_PUBLIC_SITE_URL unset until the client owns/selects the final HTTPS domain and explicitly approves launch. Until then production output remains noindex.
-4. For non-production/preview triggers, set CLOUDFLARE_DEPLOYMENT_ENV=preview or leave it unset, and leave NEXT_PUBLIC_SITE_URL unset. WORKERS_CI=1 makes those builds noindex by default. Never share production SEO variables with preview triggers.
-5. The IMAGES binding is already declared in Wrangler. Verify Cloudflare Images is available and review its current charges before deploying; if the client does not approve that service, switch Next Image to unoptimized original files before deployment and revalidate image loading.
-6. Do not create a Pages project for this configuration. A Git connection can start builds automatically; connect it only when ready for a Cloudflare preview. Do not connect or deploy as part of this preparation.
-
-## Production domain and indexing
-
-When the client has purchased the domain and launch is approved, attach the chosen apex or www hostname in the Worker’s **Settings → Domains & Routes**. Follow the DNS/verification steps Cloudflare presents. Then set NEXT_PUBLIC_SITE_URL=https://<client-owned-domain> in the production build trigger only and run a fresh production build. Do not place a .workers.dev or .pages.dev URL in this variable.
-
-Before launch, keep NEXT_PUBLIC_SITE_URL unset and keep preview triggers in preview mode. The SEO helpers then omit canonical URLs, emit noindex directives, disallow crawling in robots.txt, and return an empty sitemap. Confirm those outputs on the final preview before enabling production indexing.
-
-## Validation status
+## Validation completed
 
 - `npm run typecheck`: passed.
-- `npm run build`: passed with Next.js 16.4.0; all configured static routes were generated.
-- `npm run build:cloudflare`: passed with OpenNext Cloudflare 1.20.9; `.open-next/worker.js` generated.
-- Local Workers runtime preview: passed with Wrangler 4.149.0/workerd. Wrangler reported `WORKER_SELF_REFERENCE (al-shamikh) [connected]`, and `IMAGES` and `ASSETS` bindings were available.
-- Route checks: all 12 configured site routes returned HTTP 200; an unknown slug returned the branded 404 with HTTP 404.
-- Preview indexing check: with `CLOUDFLARE_DEPLOYMENT_ENV=preview` and a dummy `NEXT_PUBLIC_SITE_URL=https://al-shamikh.example`, rendered HTML included `noindex` and no canonical tag or dummy host; robots.txt disallowed crawling; sitemap had zero URL entries.
-- Image check: Next Image endpoint returned HTTP 200 with `image/webp`.
-- `git diff --cached --check`: passed before commit.
-- Windows note: OpenNext emitted its warning that Windows is not fully supported and recommends WSL. The local Worker preview nevertheless started and passed the checks above.
-- WhatsApp behavior was preserved without code changes; the browser form automation did not conclusively capture the popup URL, so that interaction remains unverified in this run.
-- No production deployment or domain changes were initiated.
+- `npm run build`: passed with Next.js 16.4.0 using `output: 'export'`.
+- `out/` contains 110 files, including 14 HTML files, the 12 site pages, `404.html`, `robots.txt`, `sitemap.xml`, `_headers`, `/_next/static/`, and 24 image files.
+- Every local photo, logo, and Next static asset reference found in exported HTML resolves to a file in `out/` (zero missing references). HTML contains no `/_next/image` endpoint references.
+- All 12 site pages have an H1. With preview branch variables and a dummy URL supplied, each page contains noindex metadata and no canonical tag or dummy host.
+- Preview `robots.txt` disallows crawling; preview `sitemap.xml` contains zero URLs.
+- `404.html` is present for Cloudflare Pages' not-found response.
+- GitHub's `origin/main` remains at the original website commit; the validated Pages changes are on `feat/cloudflare-hosting-prep` until merged.
+
+## Cloudflare Pages dashboard settings
+
+Create or select a **Pages** project, connect `HassanIghil/AL-Chamikh`, and set:
+
+- Framework preset: **Next.js (Static HTML Export)**
+- Production branch: `main`
+- Root directory: `/` (repository root)
+- Build command: `npm run build`
+- Build output directory: `out`
+- Node version: 22 (already pinned in `.node-version`)
+- Deploy command: none; Pages publishes the build output as part of its own deployment flow.
+
+Do not configure this repository as a Workers project. Do not set `wrangler deploy`, `opennextjs-cloudflare`, or a Worker entrypoint in Pages settings. Cloudflare's preset may show `npx next build`; that is equivalent, while this repository's configured command is `npm run build`.
+
+After the feature branch is reviewed and merged into `main`, Pages can use that production branch. Builds from feature branches are Pages preview deployments.
+
+## Environment variables and launch indexing
+
+No environment variable is needed to build the static site. Keep `NEXT_PUBLIC_SITE_URL` unset until the client owns and approves the production domain. With it unset, even the production branch emits noindex, no canonical URLs, a disallow-all robots file, and an empty sitemap.
+
+After the domain is purchased and launch is approved, set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin in the Pages **Production** environment, then rebuild the production branch. Do not add it to the Preview environment. The Pages branch check separately keeps previews noindex. Never use a temporary `.pages.dev` or `.workers.dev` hostname as the canonical origin.
+
+## Limitations
+
+Static export does not provide runtime Next.js server features or on-demand image optimization. This website does not use request-time server features. Images are served as original files from `public/`, avoiding an image service or paid transformation binding. If image variants are needed later, optimize the source files before build or select a separate image service and validate its costs.
+
+The build and generated files were validated locally; this work did not create a Pages project or run an actual Cloudflare deployment.
+
 ## Official references
 
-- [Cloudflare OpenNext adapter](https://developers.cloudflare.com/workers/framework-guides/web-apps/opennext/)
-- [OpenNext Cloudflare getting started](https://opennext.js.org/cloudflare/get-started)
-- [OpenNext Cloudflare caching](https://opennext.js.org/cloudflare/caching)
-- [OpenNext Cloudflare image optimization](https://opennext.js.org/cloudflare/howtos/image)
-- [Cloudflare Workers Builds configuration](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/)
+- [Cloudflare: deploy a static Next.js site to Pages](https://developers.cloudflare.com/pages/framework-guides/nextjs/deploy-a-static-nextjs-site/)
+- [Cloudflare Pages build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/)
+- [Cloudflare Pages build image and Node versions](https://developers.cloudflare.com/pages/configuration/build-image/)
+- [Cloudflare Pages build environment variables](https://developers.cloudflare.com/pages/configuration/build-configuration/)
+- [Next.js static exports](https://nextjs.org/docs/app/guides/static-exports)
+- [Next.js `generateStaticParams`](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
+- [Next.js Image in static exports](https://nextjs.org/docs/app/api-reference/components/image)

@@ -3,7 +3,12 @@ import path from 'node:path';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  outputFileTracingRoot: path.resolve(__dirname),
+  turbopack: { root: path.resolve(__dirname) },
+  output: 'export',
+  images: {
+    // Static export has no Next.js image optimization server endpoint.
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

@@ -32,4 +32,3 @@ service-account*.json
 /scratch_diagnose.mjs
 /take_screenshots*.mjs
 *.tsbuildinfo
-/cloudflare-env.d.ts
