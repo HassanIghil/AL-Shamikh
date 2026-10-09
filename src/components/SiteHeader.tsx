@@ -18,7 +18,7 @@ export default function SiteHeader() {
         {/* Brand Logo - Right in RTL */}
         <Link href="/" aria-label="الشامخ للرفوف والديكورات - الرئيسية" className="brand-link" onClick={() => setOpen(false)}>
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="الشامخ للرفوف والديكورات"
             width={130}
             height={56}

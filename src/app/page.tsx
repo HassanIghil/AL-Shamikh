@@ -92,13 +92,35 @@ export default function Home() {
       <section className="home-hero" aria-labelledby="home-title">
         {/* Left Warehouse Photo (in RTL, photo sits on the left) */}
         <div className="home-hero-photo">
-          <Image
-            src="/photos/home-hero-new.webp"
-            alt="رفوف عرض أنيقة ومستودع تخزين متكامل بتصميم عصري"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
+          <link
+            rel="preload"
+            as="image"
+            href="/photos/home-hero-new.webp"
+            media="(min-width: 769px)"
+            fetchPriority="high"
           />
+          <link
+            rel="preload"
+            as="image"
+            href="/photos/home-hero-1280.webp"
+            media="(max-width: 768px)"
+            fetchPriority="high"
+          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet="/photos/home-hero-1280.webp"
+              type="image/webp"
+            />
+            <Image
+              src="/photos/home-hero-new.webp"
+              alt="رفوف عرض أنيقة ومستودع تخزين متكامل بتصميم عصري"
+              fill
+              loading="eager"
+              fetchPriority="high"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </picture>
           <div className="home-hero-photo-gradient" />
         </div>
 
@@ -160,8 +182,8 @@ export default function Home() {
         <Image
           src="/images/jeddah-and-riyadh-night-banner.webp"
           alt="خدمة جدة والرياض"
-          width={2172}
-          height={724}
+          width={1400}
+          height={467}
           loading="lazy"
           sizes="(max-width: 768px) calc(100vw - 28px), 650px"
           className="homeCityBanner"

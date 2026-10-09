@@ -246,7 +246,7 @@ export function SiteFooter() {
         <div className="footer-col footer-brand-col">
           <Link href="/" className="footer-logo-link" aria-label="الشامخ للرفوف والديكورات">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="الشامخ للرفوف والديكورات"
               width={140}
               height={60}
