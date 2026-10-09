@@ -93,7 +93,7 @@
 .projects-type-title { color: var(--pj-emerald); font-size: 14px; font-weight: 700; line-height: 1.5; }
 .projects-type-arrow { color: var(--pj-gold); }
 
-.projects-process { position: relative; padding: 73px 0 68px; overflow: hidden; color: #fff; background: linear-gradient(105deg,rgba(4,36,28,.97),rgba(6,43,34,.95)),url('/photos/warehouse-3.jpeg') center 48%/cover; }
+.projects-process { position: relative; padding: 73px 0 68px; overflow: hidden; color: #fff; background: linear-gradient(105deg,rgba(4,36,28,.97),rgba(6,43,34,.95)),url('/photos/warehouse-3.webp') center 48%/cover; }
 .projects-process-heading { margin-bottom: 37px; text-align: center; }
 .projects-process-heading h2 { margin: 5px auto 7px; color: #fff; font-size: clamp(27px,2.8vw,38px); }
 .projects-process-heading p { color: #d2dfd5; font-size: 15px; }

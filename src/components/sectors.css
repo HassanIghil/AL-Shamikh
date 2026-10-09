@@ -142,7 +142,7 @@
 }
 
 .sector-whatsapp:hover { background: #0b6040; transform: translateY(-1px); }
-.sectors-hero .sector-whatsapp svg { color: #e4c98f; }
+.sectors-hero .sector-whatsapp svg { color: #fff; }
 
 .sectors-hero-index {
   position: absolute;
@@ -291,7 +291,7 @@
   position: relative;
   padding: 57px 0 62px;
   color: #fff;
-  background: linear-gradient(rgba(4, 37, 29, .92), rgba(4, 37, 29, .94)), url('/photos/warehouse-3.jpeg') center 51% / cover;
+  background: linear-gradient(rgba(4, 37, 29, .92), rgba(4, 37, 29, .94)), url('/photos/warehouse-3.webp') center 51% / cover;
 }
 
 .sectors-method-inner,

@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { ArrowUpLeft, MessageCircle } from 'lucide-react';
+import { ArrowUpLeft } from 'lucide-react';
 import { buildWhatsappUrl } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const projectTypes = [
   'مستودع أو مخزن',
@@ -82,7 +83,7 @@ export default function ContactForm() {
         </label>
       </div>
       <button className="button button-whatsapp contact-submit" type="submit">
-        <MessageCircle size={19} aria-hidden="true" />
+        <WhatsAppIcon size={19} />
         <span>إرسال عبر واتساب</span>
         <ArrowUpLeft size={16} aria-hidden="true" />
       </button>

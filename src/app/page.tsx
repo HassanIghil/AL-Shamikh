@@ -6,7 +6,6 @@ import {
   ArrowUpLeft,
   BadgeCheck,
   MapPin,
-  MessageCircle,
   Settings2,
   ShieldCheck,
   Truck,
@@ -14,6 +13,7 @@ import {
 } from 'lucide-react';
 import { messages, pageMeta, whatsapp } from '@/lib/data';
 import { canonicalUrl } from '@/lib/seo';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import './home.css';
 
 export const metadata: Metadata = {
@@ -26,19 +26,19 @@ const homeSolutions = [
   {
     title: 'رفوف مستودعات مركزية',
     description: 'حلول تخزين قوية لجميع الاحتياجات',
-    image: '/photos/hero.jpeg',
+    image: '/photos/hero.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف بقالات',
     description: 'استغلال مثالي للمساحات مع متانة عالية',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف سوبر ماركت',
     description: 'تصاميم عصرية للمتاجر والمراكز التجارية',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     href: '/retail-shelving',
   },
   {
@@ -50,7 +50,7 @@ const homeSolutions = [
   {
     title: 'رفوف تخزين منازل',
     description: 'تصاميم عملية وأنيقة لكل المساحات',
-    image: '/photos/home.jpeg',
+    image: '/photos/home.webp',
     href: '/solutions',
   },
 ];
@@ -58,12 +58,12 @@ const homeSolutions = [
 const homeProjects = [
   {
     title: 'تجهيز رفوف مستودع مركزي',
-    image: '/photos/hero.jpeg',
+    image: '/photos/hero.webp',
     type: 'مستودعات',
   },
   {
     title: 'رفوف سوبر ماركت حديثة',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     type: 'متاجر',
   },
   {
@@ -73,7 +73,7 @@ const homeProjects = [
   },
   {
     title: 'تجهيزات عرض تجارية',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     type: 'محلات',
   },
   {
@@ -151,18 +151,18 @@ export default function Home() {
               rel="noopener noreferrer"
               aria-label="تواصل عبر واتساب"
             >
-              <MessageCircle size={20} aria-hidden="true" />
+              <WhatsAppIcon size={20} />
               <span>تواصل عبر واتساب</span>
             </a>
           </div>
         </div>
 
         <Image
-          src="/images/jeddah-and-riyadh-night-banner.png"
+          src="/images/jeddah-and-riyadh-night-banner.webp"
           alt="خدمة جدة والرياض"
           width={2172}
           height={724}
-          priority
+          loading="lazy"
           sizes="(max-width: 768px) calc(100vw - 28px), 650px"
           className="homeCityBanner"
         />
@@ -175,7 +175,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircle size={20} aria-hidden="true" />
+            <WhatsAppIcon size={20} />
             <span>تواصل عبر واتساب</span>
           </a>
         </div>
@@ -320,7 +320,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircle size={20} aria-hidden="true" />
+              <WhatsAppIcon size={20} />
               <span>أرسل تفاصيل مشروعك</span>
             </a>
           </div>

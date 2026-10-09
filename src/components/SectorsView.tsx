@@ -8,13 +8,14 @@ import {
   CircleHelp,
   LayoutGrid,
   MapPin,
-  MessageCircle,
   PackageCheck,
   Ruler,
   Store,
   Truck,
 } from 'lucide-react';
+import { ResponsiveHeroImage } from '@/components/UI';
 import { buildWhatsappUrl } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import './sectors.css';
 
 const sectors = [
@@ -24,7 +25,7 @@ const sectors = [
     title: 'المستودعات والمخازن',
     description:
       'حلول تخزين تساعد على تنظيم البضائع واستغلال المساحات الرأسية والأفقية بما يتناسب مع طبيعة التشغيل.',
-    image: '/photos/hero.jpeg',
+    image: '/photos/hero.webp',
     alt: 'ممر مستودع مجهز برفوف تخزين زرقاء وبرتقالية',
     link: '/warehouse-racking',
     linkLabel: 'اكتشف حلول المستودعات',
@@ -37,7 +38,7 @@ const sectors = [
     title: 'السوبر ماركت والهايبر ماركت',
     description:
       'أنظمة عرض وتنظيم تساعد على ترتيب المنتجات، وضوح الأقسام واستغلال الممرات والمساحات التجارية.',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     alt: 'رفوف عرض لمتجر بألوان داكنة وحواف خضراء',
     link: '/retail-shelving',
     linkLabel: 'اكتشف حلول المتاجر',
@@ -50,7 +51,7 @@ const sectors = [
     title: 'البقالات والمتاجر الغذائية',
     description:
       'حلول مناسبة للمساحات الصغيرة والمتوسطة تساعد على تنظيم المنتجات وسهولة الوصول إليها واستغلال كل متر من المتجر.',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     alt: 'رفوف متجر غذائي مرتبة على امتداد الممر',
     link: '/retail-shelving',
     linkLabel: 'اكتشف حلول البقالات',
@@ -76,7 +77,7 @@ const sectors = [
     title: 'المحلات التجارية والمعارض',
     description:
       'حلول عرض وتجهيز تساعد على تقديم المنتجات بصورة مرتبة وتمنح المساحة هوية أكثر احترافية وتنظيماً.',
-    image: '/photos/black.jpeg',
+    image: '/photos/black.webp',
     alt: 'رفوف عرض تجارية داكنة بحواف خضراء',
     link: '/retail-shelving',
     linkLabel: 'اكتشف تجهيزات العرض',
@@ -89,7 +90,7 @@ const sectors = [
     title: 'المنازل وغرف التخزين',
     description:
       'حلول عملية لتنظيم غرف التخزين والمستودعات المنزلية واستغلال المساحات بصورة أفضل.',
-    image: '/photos/home.jpeg',
+    image: '/photos/home.webp',
     alt: 'رفوف تخزين منزلية عملية',
     link: '/solutions',
     linkLabel: 'اكتشف حلول التخزين',
@@ -120,7 +121,7 @@ const finalMessage =
 function WhatsAppLink({ label, message = sectorMessage }: { label: string; message?: string }) {
   return (
     <a className="sector-whatsapp" href={buildWhatsappUrl(message)} target="_blank" rel="noopener noreferrer">
-      <MessageCircle size={18} aria-hidden="true" />
+      <WhatsAppIcon size={18} />
       <span>{label}</span>
     </a>
   );
@@ -131,12 +132,10 @@ export default function SectorsView() {
     <div className="sectors-page">
       <section className="sectors-hero" aria-labelledby="sectors-title">
         <div className="sectors-hero-image">
-          <Image
-            src="/photos/market.jpeg"
-            alt="رفوف عرض وتجهيزات متجر من أحد المشاريع"
-            fill
-            priority
-            sizes="(max-width: 700px) 100vw, 50vw"
+          <ResponsiveHeroImage
+            src="/photos/hero-sectors.webp"
+            mobileSrc="/photos/hero-sectors-mobile.webp"
+            alt="استخدامات متنوعة لأنظمة رفوف العرض والتخزين في بيئة تجارية"
           />
           <span className="sectors-image-note"><MapPin size={16} /> جدة · الرياض · مختلف مناطق المملكة</span>
         </div>

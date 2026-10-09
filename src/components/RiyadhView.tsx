@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpLeft, Boxes, Building2, Check, Expand, Layers3, MapPin, Package, Repeat2, Ruler, Store, Truck, Warehouse } from 'lucide-react';
-import { WhatsAppButton } from '@/components/UI';
+import { ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
 import './riyadh.css';
 
 const heroMessage = 'السلام عليكم، وصلت لكم من صفحة خدمات الشامخ في الرياض وأرغب بالاستفسار عن مشروع رفوف وتخزين في الرياض.';
@@ -35,9 +35,9 @@ const steps = [
 ];
 const projectImages = [
   { image: '/photos/warehouse-2.jpeg', alt: 'رفوف تخزين صناعية داخل مستودع', label: 'تجهيز مستودع' },
-  { image: '/photos/white.jpeg', alt: 'رفوف عرض جدارية لمتجر', label: 'رفوف عرض متجر' },
+  { image: '/photos/white.webp', alt: 'رفوف عرض جدارية لمتجر', label: 'رفوف عرض متجر' },
   { image: '/photos/pharmacy.jpeg', alt: 'رفوف عرض منظمة داخل صيدلية', label: 'رفوف صيدلية' },
-  { image: '/photos/warehouse-3.jpeg', alt: 'نظام رفوف معدنية للتخزين الصناعي', label: 'نظام تخزين صناعي' },
+  { image: '/photos/warehouse-3.webp', alt: 'نظام رفوف معدنية للتخزين الصناعي', label: 'نظام تخزين صناعي' },
 ];
 const faqs = [
   { q: 'هل توفرون رفوف مستودعات في الرياض؟', a: 'نعم، يوفر الشامخ حلول رفوف للمستودعات والمخازن في الرياض، ويُختار النظام حسب مساحة الموقع وطبيعة التخزين والاستخدام.' },
@@ -62,7 +62,7 @@ export default function RiyadhView() {
           <span className="riyadh-service-area"><MapPin size={16} aria-hidden="true" /> الرياض والمناطق المحيطة</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من الرياض" />
         </div>
-        <div className="riyadh-hero-photo"><Image src="/photos/riyadh-hero.png" alt="رفوف عرض تجارية خضراء وسوداء بإضاءة ذهبية" fill priority sizes="(max-width: 720px) 100vw, 52vw" /><span><Layers3 size={15} aria-hidden="true" /> حلول تخزين للمساحات الكبيرة</span></div>
+        <div className="riyadh-hero-photo"><ResponsiveHeroImage src="/photos/hero-riyadh.webp" mobileSrc="/photos/hero-riyadh-mobile.webp" alt="رفوف تخزين صناعية داخل مستودع منظم لخدمات مشاريع الرياض" /><span><Layers3 size={15} aria-hidden="true" /> حلول تخزين للمساحات الكبيرة</span></div>
         <span className="riyadh-hero-index" aria-hidden="true">01 <i /> RIYADH</span>
       </section>
 
@@ -74,22 +74,22 @@ export default function RiyadhView() {
       </div></section>
 
       <section className="riyadh-warehouse" aria-labelledby="riyadh-warehouse-title">
-        <div className="riyadh-warehouse-photo"><Image src="/photos/riyadh-warehouse.png" alt="رفوف مستودع مرتفعة محملة بالبضائع" fill sizes="(max-width: 720px) 100vw, 52vw" /><span>أنظمة التخزين</span></div>
+        <div className="riyadh-warehouse-photo"><Image src="/photos/riyadh-warehouse.webp" alt="رفوف مستودع مرتفعة محملة بالبضائع" fill sizes="(max-width: 720px) 100vw, 52vw" /><span>أنظمة التخزين</span></div>
         <div className="riyadh-warehouse-copy"><span className="riyadh-kicker">المستودعات</span><h2 id="riyadh-warehouse-title">رفوف مستودعات في الرياض</h2><p>حلول تخزين للمستودعات تساعد على تنظيم البضائع واستغلال المساحة الرأسية والأفقية وفق طبيعة التشغيل.</p><ul>{warehouseSystems.map((item) => <li key={item}><Check size={15} aria-hidden="true" />{item}</li>)}</ul><div className="riyadh-actions"><Link className="riyadh-text-link" href="/warehouse-racking">اكتشف حلول رفوف المستودعات <ArrowUpLeft size={16} aria-hidden="true" /></Link><WhatsAppButton message={warehouseMessage} label="استفسر عن رفوف مستودعات الرياض" /></div></div>
       </section>
 
       <section className="riyadh-retail" aria-labelledby="riyadh-retail-title"><div className="riyadh-container riyadh-retail-card">
-        <div className="riyadh-retail-photo"><Image src="/photos/riyadh-retail.png" alt="رفوف عرض تجارية سوداء بحواف خضراء داخل متجر حديث" fill sizes="(max-width: 720px) 100vw, 48vw" /><span>تجهيزات العرض التجاري</span></div>
+        <div className="riyadh-retail-photo"><Image src="/photos/riyadh-retail.webp" alt="رفوف عرض تجارية سوداء بحواف خضراء داخل متجر حديث" fill sizes="(max-width: 720px) 100vw, 48vw" /><span>تجهيزات العرض التجاري</span></div>
         <div className="riyadh-retail-copy"><span className="riyadh-kicker">المتاجر</span><h2 id="riyadh-retail-title">تجهيز المحلات والمتاجر في الرياض</h2><p>حلول رفوف وعرض تساعد على تنظيم المساحات التجارية وتقديم المنتجات بصورة واضحة وعملية بما يناسب طبيعة النشاط.</p><ul>{retailSystems.map((item) => <li key={item}>{item}</li>)}</ul><div className="riyadh-actions"><Link className="riyadh-text-link" href="/retail-shelving">اكتشف رفوف المحلات والسوبر ماركت <ArrowUpLeft size={16} aria-hidden="true" /></Link><WhatsAppButton message={retailMessage} label="استفسر عن تجهيز متجر في الرياض" /></div></div>
       </div></section>
 
       <section className="riyadh-grocery" aria-labelledby="riyadh-grocery-title"><div className="riyadh-container riyadh-grocery-grid">
         <div className="riyadh-grocery-copy"><span className="riyadh-kicker">المشاريع الغذائية</span><h2 id="riyadh-grocery-title">رفوف السوبر ماركت والبقالات في الرياض</h2><p>أنظمة عرض مناسبة للمشاريع الغذائية تساعد على ترتيب المنتجات وتنظيم الممرات والاستفادة من مساحة المتجر.</p><ul>{grocerySystems.map((item) => <li key={item}><span />{item}</li>)}</ul></div>
-        <div className="riyadh-grocery-photo"><Image src="/photos/market.jpeg" alt="ممرات رفوف منظمة في متجر للمواد الغذائية" fill sizes="(max-width: 720px) 100vw, 56vw" /><span>رفوف العرض وتنظيم الممرات</span></div>
+        <div className="riyadh-grocery-photo"><Image src="/photos/market.webp" alt="ممرات رفوف منظمة في متجر للمواد الغذائية" fill sizes="(max-width: 720px) 100vw, 56vw" /><span>رفوف العرض وتنظيم الممرات</span></div>
       </div></section>
 
       <section className="riyadh-pharmacy" aria-labelledby="riyadh-pharmacy-title"><div className="riyadh-container riyadh-pharmacy-card">
-        <div className="riyadh-pharmacy-photo"><Image src="/photos/riyadh-pharmacy.png" alt="صيدلية حديثة بأرفف عرض ومنتجات منظمة" fill sizes="(max-width: 720px) 100vw, 44vw" /></div>
+        <div className="riyadh-pharmacy-photo"><Image src="/photos/riyadh-pharmacy.webp" alt="صيدلية حديثة بأرفف عرض ومنتجات منظمة" fill sizes="(max-width: 720px) 100vw, 44vw" /></div>
         <div className="riyadh-pharmacy-copy"><span className="riyadh-kicker">الصيدليات</span><h2 id="riyadh-pharmacy-title">رفوف صيدليات في الرياض</h2><p>حلول عرض وتنظيم للصيدليات تساعد على ترتيب المنتجات والاستفادة من المساحات الجدارية والوسطية بصورة عملية.</p><WhatsAppButton message={pharmacyMessage} label="استفسر عن رفوف الصيدليات" /></div>
         <div className="riyadh-pharmacy-mark"><Store size={26} aria-hidden="true" /><span>عرض واضح<br />وترتيب عملي</span></div>
       </div></section>
@@ -99,8 +99,8 @@ export default function RiyadhView() {
       </section>
 
       <section className="riyadh-sector-pair" aria-labelledby="riyadh-sector-title"><div className="riyadh-container"><div className="riyadh-section-heading"><span className="riyadh-kicker">حلول تناسب نشاطك</span><h2 id="riyadh-sector-title">حلول للمشاريع التجارية والصناعية</h2></div><div className="riyadh-sector-grid">
-        <article className="riyadh-sector-card"><Image src="/photos/warehouse-5.jpeg" alt="" fill sizes="(max-width: 720px) 100vw, 50vw" aria-hidden="true" /><div className="riyadh-sector-overlay" /><div className="riyadh-sector-copy"><Warehouse size={25} aria-hidden="true" /><span>المشاريع الصناعية</span><p>حلول تخزين للمستودعات والمخازن والمشاريع التي تحتاج إلى تنظيم واستغلال أكبر للمساحة.</p><Link href="/warehouse-racking">حلول رفوف المستودعات <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></article>
-        <article className="riyadh-sector-card"><Image src="/photos/black.jpeg" alt="" fill sizes="(max-width: 720px) 100vw, 50vw" aria-hidden="true" /><div className="riyadh-sector-overlay" /><div className="riyadh-sector-copy"><Store size={25} aria-hidden="true" /><span>المشاريع التجارية</span><p>حلول عرض وتجهيز للسوبر ماركت والبقالات والصيدليات والمحلات التجارية.</p><Link href="/retail-shelving">حلول رفوف المتاجر <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></article>
+        <article className="riyadh-sector-card"><Image src="/photos/warehouse-5.webp" alt="" fill sizes="(max-width: 720px) 100vw, 50vw" aria-hidden="true" /><div className="riyadh-sector-overlay" /><div className="riyadh-sector-copy"><Warehouse size={25} aria-hidden="true" /><span>المشاريع الصناعية</span><p>حلول تخزين للمستودعات والمخازن والمشاريع التي تحتاج إلى تنظيم واستغلال أكبر للمساحة.</p><Link href="/warehouse-racking">حلول رفوف المستودعات <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></article>
+        <article className="riyadh-sector-card"><Image src="/photos/black.webp" alt="" fill sizes="(max-width: 720px) 100vw, 50vw" aria-hidden="true" /><div className="riyadh-sector-overlay" /><div className="riyadh-sector-copy"><Store size={25} aria-hidden="true" /><span>المشاريع التجارية</span><p>حلول عرض وتجهيز للسوبر ماركت والبقالات والصيدليات والمحلات التجارية.</p><Link href="/retail-shelving">حلول رفوف المتاجر <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></article>
       </div></div></section>
 
       <section className="riyadh-process" aria-labelledby="riyadh-process-title"><div className="riyadh-container"><div className="riyadh-section-heading"><span className="riyadh-kicker">كيف نعمل؟</span><h2 id="riyadh-process-title">من احتياج المشروع إلى الحل المناسب</h2></div><ol className="riyadh-steps">{steps.map((step) => <li key={step.number}><span className="riyadh-step-number">{step.number}</span><strong>{step.title}</strong><p>{step.text}</p></li>)}</ol></div></section>

@@ -34,7 +34,7 @@ const rackTypes = [
     eyebrow: 'حلول مرنة للمخازن',
     title: 'رفوف التخزين المتوسط',
     description: 'حل عملي للمخازن التي تحتاج إلى مرونة في توزيع المساحات والوصول السهل إلى المنتجات والبضائع.',
-    image: '/photos/warehouse-3.jpeg',
+    image: '/photos/warehouse-3.webp',
     alt: 'نظام رفوف مستودع متوسط التخزين بأرفف زرقاء وبرتقالية',
     points: ['مرونة في التقسيم', 'سهولة الوصول', 'مناسب للاستخدام اليومي'],
   },
@@ -52,7 +52,7 @@ const rackTypes = [
     eyebrow: 'استغلال المساحة الرأسية',
     title: 'أنظمة التخزين متعددة المستويات',
     description: 'حلول تساعد على استغلال الارتفاع داخل المستودع وتحويل المساحة الرأسية إلى مستويات تخزين إضافية عند الحاجة.',
-    image: '/photos/warehouse-5.jpeg',
+    image: '/photos/warehouse-5.webp',
     alt: 'سلالم وممرات ضمن نظام تخزين مستودع متعدد المستويات',
     points: ['استفادة من الارتفاع', 'مستويات تخزين إضافية', 'توزيع بحسب احتياج الموقع'],
     cta: 'استفسر عن هذا النظام',
@@ -85,10 +85,10 @@ const process = [
 ];
 
 const gallery = [
-  { image: '/photos/hero.jpeg', alt: 'ممر مستودع تجاري مجهز برفوف تخزين زرقاء وبرتقالية', label: 'تجهيز رفوف مستودع' },
+  { image: '/photos/hero.webp', alt: 'ممر مستودع تجاري مجهز برفوف تخزين زرقاء وبرتقالية', label: 'تجهيز رفوف مستودع' },
   { image: '/photos/warehouse-2.jpeg', alt: 'رفوف صناعية زرقاء وبرتقالية على امتداد مستودع', label: 'نظام تخزين صناعي' },
-  { image: '/photos/warehouse-3.jpeg', alt: 'رفوف تخزين مستودع من زاوية جانبية', label: 'تنظيم مستودع تجاري' },
-  { image: '/photos/warehouse-5.jpeg', alt: 'سلالم وممرات في مساحة تخزين متعددة المستويات', label: 'رفوف تخزين متعددة المستويات' },
+  { image: '/photos/warehouse-3.webp', alt: 'رفوف تخزين مستودع من زاوية جانبية', label: 'تنظيم مستودع تجاري' },
+  { image: '/photos/warehouse-5.webp', alt: 'سلالم وممرات في مساحة تخزين متعددة المستويات', label: 'رفوف تخزين متعددة المستويات' },
   { image: '/photos/warehouse-4.jpeg', alt: 'رفوف تخزين عملية في مستودع داخلي', label: 'أنظمة تخزين للمخازن' },
 ];
 
@@ -108,7 +108,7 @@ export default function WarehouseRackingView() {
       <section className="warehouse-hero" aria-labelledby="warehouse-title">
         <Image
           className="warehouse-hero-image"
-          src="/photos/hero.jpeg"
+          src="/photos/hero.webp"
           alt="ممر مستودع عميق مجهز برفوف تخزين صناعية زرقاء وبرتقالية"
           fill
           priority

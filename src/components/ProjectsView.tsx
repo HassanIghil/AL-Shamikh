@@ -5,23 +5,23 @@ import {
   ArrowUpLeft,
   Boxes,
   MapPin,
-  MessageCircle,
   Ruler,
   Store,
   Warehouse,
   Wrench,
 } from 'lucide-react';
 import ProjectFilter from '@/components/ProjectFilter';
-import { WhatsAppButton } from '@/components/UI';
+import { ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { whatsapp } from '@/lib/data';
 import './projects.css';
 
 const types = [
-  { title: 'رفوف مستودعات', href: '/warehouse-racking', image: '/photos/hero.jpeg', icon: Warehouse },
-  { title: 'رفوف سوبر ماركت', href: '/retail-shelving', image: '/photos/market.jpeg', icon: Store },
-  { title: 'رفوف بقالات', href: '/retail-shelving', image: '/photos/store.jpeg', icon: Store },
+  { title: 'رفوف مستودعات', href: '/warehouse-racking', image: '/photos/hero.webp', icon: Warehouse },
+  { title: 'رفوف سوبر ماركت', href: '/retail-shelving', image: '/photos/market.webp', icon: Store },
+  { title: 'رفوف بقالات', href: '/retail-shelving', image: '/photos/store.webp', icon: Store },
   { title: 'رفوف صيدليات', href: '/retail-shelving', image: '/photos/pharmacy.jpeg', icon: Boxes },
-  { title: 'رفوف محلات', href: '/retail-shelving', image: '/photos/black.jpeg', icon: Store },
+  { title: 'رفوف محلات', href: '/retail-shelving', image: '/photos/black.webp', icon: Store },
 ];
 
 const steps = [
@@ -37,7 +37,7 @@ export default function ProjectsView() {
   return (
     <div className="projects-page">
       <section className="projects-hero" aria-labelledby="projects-title">
-        <Image className="projects-hero-image" src="/photos/hero.jpeg" alt="ممر رفوف تخزين داخل مستودع" fill priority sizes="100vw" />
+        <ResponsiveHeroImage className="projects-hero-image" src="/photos/hero-projects.webp" mobileSrc="/photos/hero-projects-mobile.webp" alt="صورة توضيحية لمستودع منظم مجهز بأنظمة رفوف تخزين" />
         <div className="projects-hero-shade" />
         <div className="projects-hero-content">
           <nav className="projects-breadcrumb" aria-label="مسار التنقل">
@@ -50,7 +50,7 @@ export default function ProjectsView() {
           <WhatsAppButton message={projectMessage} label="استفسر عن حل لمشروعك" />
         </div>
         <a className="projects-hero-photo-inset" href="#project-gallery" aria-label="استكشف صور حلول الرفوف">
-          <Image src="/photos/market.jpeg" alt="رفوف عرض في متجر" fill sizes="(max-width: 700px) 35vw, 24vw" />
+          <Image src="/photos/market.webp" alt="رفوف عرض في متجر" fill sizes="(max-width: 700px) 35vw, 24vw" />
           <span>حلول العرض والتخزين</span>
         </a>
         <span className="projects-hero-note"><MapPin size={16} aria-hidden="true" /> جدة · الرياض · مناطق المملكة</span>
@@ -76,14 +76,14 @@ export default function ProjectsView() {
 
       <section className="projects-featured" aria-labelledby="projects-featured-title">
         <div className="projects-featured-photo">
-          <Image src="/photos/warehouse-5.jpeg" alt="ممرات وسلالم معدنية ضمن مساحة تخزين متعددة المستويات" fill sizes="(max-width: 700px) 100vw, 50vw" />
+          <Image src="/photos/warehouse-5.webp" alt="ممرات وسلالم معدنية ضمن مساحة تخزين متعددة المستويات" fill sizes="(max-width: 700px) 100vw, 50vw" />
           <span>أنظمة تخزين للمساحات الداخلية</span>
         </div>
         <div className="projects-featured-copy">
           <span className="projects-kicker">حل يراعي المساحة</span>
           <h2 id="projects-featured-title">استفد من المساحة بطريقة تخدم عملك</h2>
           <p>يعتمد اختيار الرفوف على طبيعة الاستخدام، أبعاد الموقع، حركة البضائع وطريقة الوصول إليها. شاركنا تفاصيل مشروعك لمناقشة الخيارات المناسبة.</p>
-          <a className="projects-featured-link" href={whatsapp(projectMessage)} target="_blank" rel="noopener noreferrer">ناقش مشروعك معنا <ArrowUpLeft size={17} aria-hidden="true" /></a>
+          <a className="projects-featured-link" href={whatsapp(projectMessage)} target="_blank" rel="noopener noreferrer"><WhatsAppIcon size={17} />ناقش مشروعك معنا <ArrowUpLeft size={17} aria-hidden="true" /></a>
         </div>
       </section>
 

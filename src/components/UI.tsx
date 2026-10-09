@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ArrowUpLeft,
-  MessageCircle,
   MapPin,
   Truck,
   ShieldCheck,
@@ -12,16 +11,17 @@ import {
   ChevronLeft,
 } from 'lucide-react';
 import { company, messages, nav, phone, phoneClean, type Solution, buildWhatsappUrl } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const imageMap: Record<string, string> = {
-  hero: 'hero',
-  warehouse: 'warehouse-2',
-  market: 'market',
-  pharmacy: 'pharmacy',
-  black: 'black',
-  white: 'white',
-  home: 'home',
-  store: 'store',
+  hero: '/photos/hero.webp',
+  warehouse: '/photos/warehouse-2.jpeg',
+  market: '/photos/market.webp',
+  pharmacy: '/photos/pharmacy.jpeg',
+  black: '/photos/black.webp',
+  white: '/photos/white.webp',
+  home: '/photos/home.webp',
+  store: '/photos/store.webp',
 };
 
 export function Photo({
@@ -33,7 +33,7 @@ export function Photo({
   alt: string;
   className?: string;
 }) {
-  const src = kind.startsWith('/') ? kind : `/photos/${imageMap[kind] || 'hero'}.jpeg`;
+  const src = kind.startsWith('/') ? kind : imageMap[kind] || imageMap.hero;
   return (
     <div className={`photo photo-${kind} ${className}`} style={{ position: 'relative', width: '100%', height: '100%' }}>
       <Image
@@ -41,9 +41,35 @@ export function Photo({
         alt={alt}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        priority={kind === 'hero'}
       />
     </div>
+  );
+}
+
+export function ResponsiveHeroImage({
+  src,
+  mobileSrc,
+  alt,
+  className,
+}: {
+  src: string;
+  mobileSrc: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <picture>
+      <source media="(max-width: 768px)" srcSet={mobileSrc + ' 900w'} sizes="100vw" />
+      <img
+        className={className}
+        src={src}
+        alt={alt}
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+      />
+    </picture>
   );
 }
 
@@ -64,7 +90,7 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       aria-label={label}
     >
-      <MessageCircle size={19} aria-hidden="true" />
+      <WhatsAppIcon size={19} />
       <span>{label}</span>
     </a>
   );
@@ -273,7 +299,7 @@ export function SiteFooter() {
             rel="noopener noreferrer"
             className="footer-whatsapp-link"
           >
-            <MessageCircle size={17} aria-hidden="true" />
+            <WhatsAppIcon size={17} />
             <span>تواصل عبر واتساب</span>
           </a>
         </div>
@@ -308,7 +334,7 @@ export function InteriorHero({
   message?: string;
   tag?: string;
 }) {
-  const imageSrc = image.startsWith('/') ? image : `/photos/${imageMap[image] || 'hero'}.jpeg`;
+  const imageSrc = image.startsWith('/') ? image : imageMap[image] || imageMap.hero;
   return (
     <section className="interior-hero">
       <div className="interior-hero-bg">

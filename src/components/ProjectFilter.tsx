@@ -2,20 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { ArrowUpLeft, MessageCircle } from 'lucide-react';
+import { ArrowUpLeft } from 'lucide-react';
 import { whatsapp } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const projects = [
-  { title: 'تجهيز رفوف مستودع', category: 'مستودعات', image: '/photos/hero.jpeg', alt: 'ممر تخزين طويل بين رفوف مستودع زرقاء وبرتقالية' },
-  { title: 'رفوف سوبر ماركت', category: 'سوبر ماركت', image: '/photos/market.jpeg', alt: 'رفوف عرض تجارية داكنة بحواف خضراء' },
+  { title: 'تجهيز رفوف مستودع', category: 'مستودعات', image: '/photos/hero.webp', alt: 'ممر تخزين طويل بين رفوف مستودع زرقاء وبرتقالية' },
+  { title: 'رفوف سوبر ماركت', category: 'سوبر ماركت', image: '/photos/market.webp', alt: 'رفوف عرض تجارية داكنة بحواف خضراء' },
   { title: 'تجهيز رفوف صيدلية', category: 'صيدليات', image: '/photos/pharmacy.jpeg', alt: 'أرفف بيضاء مرتبة داخل صيدلية' },
-  { title: 'رفوف متجر غذائي', category: 'محلات', image: '/photos/store.jpeg', alt: 'ممر متجر مع رفوف عرض بيضاء' },
+  { title: 'رفوف متجر غذائي', category: 'محلات', image: '/photos/store.webp', alt: 'ممر متجر مع رفوف عرض بيضاء' },
   { title: 'نظام تخزين صناعي', category: 'مستودعات', image: '/photos/warehouse-2.jpeg', alt: 'رفوف تخزين صناعية زرقاء وبرتقالية' },
-  { title: 'وحدات عرض داكنة', category: 'محلات', image: '/photos/black.jpeg', alt: 'رفوف عرض داكنة بحواف خضراء' },
-  { title: 'رفوف تخزين متعددة المستويات', category: 'تخزين', image: '/photos/warehouse-5.jpeg', alt: 'سلم وممرات معدنية ضمن مساحة تخزين متعددة المستويات' },
-  { title: 'تنظيم مساحة مستودع', category: 'مستودعات', image: '/photos/warehouse-3.jpeg', alt: 'صفوف رفوف تخزين صناعية في مستودع' },
-  { title: 'رفوف عرض بيضاء', category: 'محلات', image: '/photos/white.jpeg', alt: 'وحدات رفوف عرض بيضاء في مساحة تجارية' },
-  { title: 'حلول تخزين للمساحات الداخلية', category: 'تخزين', image: '/photos/home.jpeg', alt: 'رفوف تخزين داخلية لمنتجات متنوعة' },
+  { title: 'وحدات عرض داكنة', category: 'محلات', image: '/photos/black.webp', alt: 'رفوف عرض داكنة بحواف خضراء' },
+  { title: 'رفوف تخزين متعددة المستويات', category: 'تخزين', image: '/photos/warehouse-5.webp', alt: 'سلم وممرات معدنية ضمن مساحة تخزين متعددة المستويات' },
+  { title: 'تنظيم مساحة مستودع', category: 'مستودعات', image: '/photos/warehouse-3.webp', alt: 'صفوف رفوف تخزين صناعية في مستودع' },
+  { title: 'رفوف عرض بيضاء', category: 'محلات', image: '/photos/white.webp', alt: 'وحدات رفوف عرض بيضاء في مساحة تجارية' },
+  { title: 'حلول تخزين للمساحات الداخلية', category: 'تخزين', image: '/photos/home.webp', alt: 'رفوف تخزين داخلية لمنتجات متنوعة' },
   { title: 'رفوف مستودع تجاري', category: 'مستودعات', image: '/photos/warehouse-4.jpeg', alt: 'أنظمة رفوف معدنية داخل مستودع واسع' },
 ];
 
@@ -52,7 +53,7 @@ export default function ProjectFilter() {
             >
               <Image src={project.image} alt={project.alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 34vw" />
               <span className="projects-card-category">{project.category}</span>
-              <span className="projects-card-action" aria-hidden="true"><MessageCircle size={18} /><span>استفسر عن مشروع مشابه</span><ArrowUpLeft size={17} /></span>
+              <span className="projects-card-action" aria-hidden="true"><WhatsAppIcon size={18} /><span>استفسر عن مشروع مشابه</span><ArrowUpLeft size={17} /></span>
             </a>
             <div className="projects-card-caption">
               <h3>{project.title}</h3>

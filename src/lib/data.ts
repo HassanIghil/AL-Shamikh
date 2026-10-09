@@ -38,34 +38,34 @@ export type Solution = {
 };
 
 export const solutions: Solution[] = [
-  { title: 'رفوف مستودعات مركزية', description: 'حلول تخزين قوية لجميع الاحتياجات للمستودعات والمخازن.', href: '/warehouse-racking', image: '/photos/hero.jpeg' },
-  { title: 'رفوف بقالات', description: 'استغلال مثالي للمساحات مع متانة عالية وسهولة الوصول.', href: '/retail-shelving', image: '/photos/store.jpeg' },
-  { title: 'رفوف سوبر ماركت', description: 'تصاميم عصرية للمتاجر والمراكز التجارية الكبرى.', href: '/retail-shelving', image: '/photos/market.jpeg' },
+  { title: 'رفوف مستودعات مركزية', description: 'حلول تخزين قوية لجميع الاحتياجات للمستودعات والمخازن.', href: '/warehouse-racking', image: '/photos/hero.webp' },
+  { title: 'رفوف بقالات', description: 'استغلال مثالي للمساحات مع متانة عالية وسهولة الوصول.', href: '/retail-shelving', image: '/photos/store.webp' },
+  { title: 'رفوف سوبر ماركت', description: 'تصاميم عصرية للمتاجر والمراكز التجارية الكبرى.', href: '/retail-shelving', image: '/photos/market.webp' },
   { title: 'رفوف صيدليات', description: 'حلول مخصصة لتنظيم الأدوية والمنتجات بدقة ونظافة.', href: '/retail-shelving', image: '/photos/pharmacy.jpeg' },
-  { title: 'رفوف تخزين منازل', description: 'تصاميم عملية وأنيقة لكل المساحات والغرف المنزلية.', href: '/solutions', image: '/photos/home.jpeg' },
+  { title: 'رفوف تخزين منازل', description: 'تصاميم عملية وأنيقة لكل المساحات والغرف المنزلية.', href: '/solutions', image: '/photos/home.webp' },
   { title: 'رفوف التخزين الثقيل', description: 'أنظمة متينة للمنتجات الكبيرة والصناعات الثقيلة.', href: '/warehouse-racking', image: '/photos/warehouse-2.jpeg' },
-  { title: 'رفوف التخزين المتوسط', description: 'توازن مثالي بين القوة والمرونة لتخزين الصناديق.', href: '/warehouse-racking', image: '/photos/warehouse-3.jpeg' },
-  { title: 'رفوف التخزين الخفيف', description: 'حلول اقتصادية مرنة للأوزان والمساحات الصغيرة.', href: '/warehouse-racking', image: '/photos/white.jpeg' },
-  { title: 'تجهيزات المحلات التجارية', description: 'حلول عرض متطورة لمختلف الأنشطة التجارية.', href: '/retail-shelving', image: '/photos/black.jpeg' },
-  { title: 'أنظمة متعددة المستويات', description: 'استغلال رأسي كامل للارتفاعات وزيادة السعة التخزينية.', href: '/warehouse-racking', image: '/photos/warehouse-5.jpeg' },
+  { title: 'رفوف التخزين المتوسط', description: 'توازن مثالي بين القوة والمرونة لتخزين الصناديق.', href: '/warehouse-racking', image: '/photos/warehouse-3.webp' },
+  { title: 'رفوف التخزين الخفيف', description: 'حلول اقتصادية مرنة للأوزان والمساحات الصغيرة.', href: '/warehouse-racking', image: '/photos/white.webp' },
+  { title: 'تجهيزات المحلات التجارية', description: 'حلول عرض متطورة لمختلف الأنشطة التجارية.', href: '/retail-shelving', image: '/photos/black.webp' },
+  { title: 'أنظمة متعددة المستويات', description: 'استغلال رأسي كامل للارتفاعات وزيادة السعة التخزينية.', href: '/warehouse-racking', image: '/photos/warehouse-5.webp' },
 ];
 
 export const sectors = [
-  { title: 'المستودعات والمخازن', description: 'تنظيم المخزون ومسارات العمل عبر نظام رفوف يناسب الموقع وطريقة المناولة.', image: '/photos/hero.jpeg', types: 'رفوف تخزين ثقيل ومتوسط وخفيف', href: '/warehouse-racking' },
-  { title: 'السوبر ماركت والهايبر ماركت', description: 'عرض منظم للأصناف يراعي حركة المتسوقين وطبيعة المنتجات.', image: '/photos/market.jpeg', types: 'رفوف سوبر ماركت وتجهيزات عرض', href: '/retail-shelving' },
-  { title: 'البقالات والمتاجر الغذائية', description: 'استغلال المساحة المتاحة مع إبقاء المنتجات واضحة وسهلة الوصول.', image: '/photos/store.jpeg', types: 'رفوف بقالات ورفوف عرض', href: '/retail-shelving' },
+  { title: 'المستودعات والمخازن', description: 'تنظيم المخزون ومسارات العمل عبر نظام رفوف يناسب الموقع وطريقة المناولة.', image: '/photos/hero.webp', types: 'رفوف تخزين ثقيل ومتوسط وخفيف', href: '/warehouse-racking' },
+  { title: 'السوبر ماركت والهايبر ماركت', description: 'عرض منظم للأصناف يراعي حركة المتسوقين وطبيعة المنتجات.', image: '/photos/market.webp', types: 'رفوف سوبر ماركت وتجهيزات عرض', href: '/retail-shelving' },
+  { title: 'البقالات والمتاجر الغذائية', description: 'استغلال المساحة المتاحة مع إبقاء المنتجات واضحة وسهلة الوصول.', image: '/photos/store.webp', types: 'رفوف بقالات ورفوف عرض', href: '/retail-shelving' },
   { title: 'الصيدليات', description: 'ترتيب أقسام العرض والتخزين لسهولة الاستخدام اليومي والوصول السريع.', image: '/photos/pharmacy.jpeg', types: 'رفوف صيدليات وتجهيزات عرض', href: '/retail-shelving' },
-  { title: 'المحلات التجارية والمعارض', description: 'تجهيز مساحة العرض بما يلائم نوع المنتج وتجربة الزائر.', image: '/photos/black.jpeg', types: 'رفوف محلات وتجهيزات تجارية', href: '/retail-shelving' },
-  { title: 'المنازل وغرف التخزين', description: 'حلول مرتبة للأغراض اليومية والمساحات المحدودة.', image: '/photos/home.jpeg', types: 'رفوف تخزين منزلية', href: '/solutions' },
+  { title: 'المحلات التجارية والمعارض', description: 'تجهيز مساحة العرض بما يلائم نوع المنتج وتجربة الزائر.', image: '/photos/black.webp', types: 'رفوف محلات وتجهيزات تجارية', href: '/retail-shelving' },
+  { title: 'المنازل وغرف التخزين', description: 'حلول مرتبة للأغراض اليومية والمساحات المحدودة.', image: '/photos/home.webp', types: 'رفوف تخزين منزلية', href: '/solutions' },
 ];
 
 export const gallery = [
-  { title: 'تجهيز رفوف مستودع مركزي', image: '/photos/hero.jpeg', type: 'مستودعات' },
-  { title: 'رفوف سوبر ماركت حديثة', image: '/photos/market.jpeg', type: 'متاجر' },
+  { title: 'تجهيز رفوف مستودع مركزي', image: '/photos/hero.webp', type: 'مستودعات' },
+  { title: 'رفوف سوبر ماركت حديثة', image: '/photos/market.webp', type: 'متاجر' },
   { title: 'رفوف صيدليات منظمة', image: '/photos/pharmacy.jpeg', type: 'صيدليات' },
-  { title: 'تجهيزات عرض تجارية متكاملة', image: '/photos/store.jpeg', type: 'متاجر' },
+  { title: 'تجهيزات عرض تجارية متكاملة', image: '/photos/store.webp', type: 'متاجر' },
   { title: 'أنظمة تخزين صناعية متطورة', image: '/photos/warehouse-2.jpeg', type: 'مستودعات' },
-  { title: 'رفوف عرض معدنية سوداء', image: '/photos/black.jpeg', type: 'متاجر' },
+  { title: 'رفوف عرض معدنية سوداء', image: '/photos/black.webp', type: 'متاجر' },
 ];
 
 export const pageMeta: Record<string, { title: string; description: string }> = {

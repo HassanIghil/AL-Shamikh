@@ -308,7 +308,7 @@
    ========================================================= */
 .home-why {
   padding: 64px 0 68px;
-  background: linear-gradient(rgba(4, 37, 29, 0.9), rgba(4, 37, 29, 0.94)), url('/photos/warehouse-3.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(4, 37, 29, 0.9), rgba(4, 37, 29, 0.94)), url('/photos/warehouse-3.webp') center/cover no-repeat;
   color: var(--white);
 }
 

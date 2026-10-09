@@ -15,7 +15,7 @@ import {
   Warehouse,
   Wrench,
 } from 'lucide-react';
-import { CtaBand, WhatsAppButton } from '@/components/UI';
+import { CtaBand, ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
 import './about.css';
 
 const aboutMessage = 'السلام عليكم، وصلت لكم من صفحة من نحن في موقع الشامخ وأرغب بالتواصل بخصوص مشروعي.';
@@ -45,10 +45,10 @@ const process = [
 
 const sectors = [
   { title: 'المستودعات', image: '/photos/warehouse-2.jpeg', href: '/warehouse-racking' },
-  { title: 'السوبر ماركت', image: '/photos/market.jpeg', href: '/retail-shelving' },
-  { title: 'البقالات', image: '/photos/store.jpeg', href: '/retail-shelving' },
+  { title: 'السوبر ماركت', image: '/photos/market.webp', href: '/retail-shelving' },
+  { title: 'البقالات', image: '/photos/store.webp', href: '/retail-shelving' },
   { title: 'الصيدليات', image: '/photos/pharmacy.jpeg', href: '/retail-shelving' },
-  { title: 'المحلات التجارية', image: '/photos/black.jpeg', href: '/retail-shelving' },
+  { title: 'المحلات التجارية', image: '/photos/black.webp', href: '/retail-shelving' },
 ];
 
 const trust = [
@@ -72,7 +72,7 @@ export default function AboutView() {
           <WhatsAppButton message={aboutMessage} label="تحدث معنا عن مشروعك" />
         </div>
         <div className="about-hero-photo">
-          <Image src="/photos/warehouse-3.jpeg" alt="رفوف تخزين ممتدة في مستودع" fill priority sizes="(max-width: 720px) 100vw, 58vw" />
+          <ResponsiveHeroImage src="/photos/hero-about.webp" mobileSrc="/photos/hero-about-mobile.webp" alt="مساحة استشارية مرتبة داخل بيئة عرض وتخزين احترافية" />
           <span>حلول تبدأ من احتياج المكان</span>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function AboutView() {
       <section className="about-intro" aria-labelledby="about-intro-title">
         <div className="about-container about-intro-grid">
           <div className="about-intro-photo">
-            <Image src="/photos/hero.jpeg" alt="ممر مستودع مجهز برفوف تخزين" fill sizes="(max-width: 720px) 100vw, 48vw" />
+            <Image src="/photos/hero.webp" alt="ممر مستودع مجهز برفوف تخزين" fill sizes="(max-width: 720px) 100vw, 48vw" />
             <span>مساحة منظمة · استخدام عملي</span>
           </div>
           <div className="about-intro-copy">
@@ -119,11 +119,11 @@ export default function AboutView() {
           </div>
           <div className="about-origin-panels">
             <article className="about-origin-panel">
-              <div className="about-origin-image"><Image src="/photos/white.jpeg" alt="رفوف عرض معدنية في مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
+              <div className="about-origin-image"><Image src="/photos/white.webp" alt="رفوف عرض معدنية في مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
               <div className="about-origin-copy"><span>الخيار الأول</span><h3>صناعة وطنية</h3><p>خيار ضمن المنتجات والأنظمة المتاحة لمناقشة احتياج المشروع ومواصفاته.</p></div>
             </article>
             <article className="about-origin-panel">
-              <div className="about-origin-image"><Image src="/photos/store.jpeg" alt="رفوف متجر معروضة داخل مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
+              <div className="about-origin-image"><Image src="/photos/store.webp" alt="رفوف متجر معروضة داخل مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
               <div className="about-origin-copy"><span>الخيار الثاني</span><h3>صناعة صينية</h3><p>خيار آخر ضمن الأنظمة والمنتجات، ويُناقش وفق متطلبات المشروع والمواصفات المطلوبة.</p></div>
             </article>
           </div>

@@ -14,7 +14,7 @@ import {
   Warehouse,
   Wrench,
 } from 'lucide-react';
-import { CtaBand, WhatsAppButton } from '@/components/UI';
+import { CtaBand, ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
 import { whatsapp } from '@/lib/data';
 import './jeddah.css';
 
@@ -52,12 +52,12 @@ const process = [
 ];
 
 const projects = [
-  { image: '/photos/hero.jpeg', alt: 'ممر مستودع مجهز برفوف تخزين صناعية', label: 'رفوف مستودعات', href: '/warehouse-racking' },
+  { image: '/photos/hero.webp', alt: 'ممر مستودع مجهز برفوف تخزين صناعية', label: 'رفوف مستودعات', href: '/warehouse-racking' },
   { image: '/photos/warehouse-2.jpeg', alt: 'صفوف رفوف تخزين معدنية داخل مستودع', label: 'أنظمة تخزين', href: '/warehouse-racking' },
-  { image: '/photos/market.jpeg', alt: 'رفوف عرض في متجر تجاري', label: 'رفوف متاجر', href: '/retail-shelving' },
-  { image: '/photos/jeddah-pharmacy-interior.png', alt: 'صيدلية حديثة مجهزة برفوف عرض للمنتجات', label: 'رفوف صيدليات', href: '/retail-shelving' },
-  { image: '/photos/store.jpeg', alt: 'وحدات رفوف لمتجر غذائي', label: 'رفوف بقالات', href: '/retail-shelving' },
-  { image: '/photos/black.jpeg', alt: 'رفوف عرض داكنة بحواف خضراء', label: 'تجهيزات عرض', href: '/retail-shelving' },
+  { image: '/photos/market.webp', alt: 'رفوف عرض في متجر تجاري', label: 'رفوف متاجر', href: '/retail-shelving' },
+  { image: '/photos/jeddah-pharmacy-interior.webp', alt: 'صيدلية حديثة مجهزة برفوف عرض للمنتجات', label: 'رفوف صيدليات', href: '/retail-shelving' },
+  { image: '/photos/store.webp', alt: 'وحدات رفوف لمتجر غذائي', label: 'رفوف بقالات', href: '/retail-shelving' },
+  { image: '/photos/black.webp', alt: 'رفوف عرض داكنة بحواف خضراء', label: 'تجهيزات عرض', href: '/retail-shelving' },
 ];
 
 const faqs = [
@@ -83,7 +83,7 @@ export default function JeddahView() {
           <span className="jeddah-service-area"><MapPin size={16} aria-hidden="true" /> جدة والمناطق المحيطة</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من جدة" />
         </div>
-        <div className="jeddah-hero-photo"><Image src="/photos/jeddah-green-shelving.png" alt="رفوف عرض سوداء بحواف خضراء في متجر تجاري" fill priority sizes="(max-width: 720px) 100vw, 56vw" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
+        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" alt="رفوف عرض ومساحة تجارية حديثة لخدمات المشاريع في جدة" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
       </section>
 
       <section className="jeddah-trust" aria-label="خدمات الشامخ في جدة">
@@ -98,22 +98,22 @@ export default function JeddahView() {
       </section>
 
       <section className="jeddah-solution jeddah-warehouse-solution" aria-labelledby="jeddah-warehouse-title">
-        <div className="jeddah-solution-photo"><Image src="/photos/jeddah-stocked-warehouse.png" alt="رفوف مستودع صناعية مجهزة لتخزين البضائع على منصات" fill sizes="(max-width: 720px) 100vw, 50vw" /><span>أنظمة التخزين</span></div>
+        <div className="jeddah-solution-photo"><Image src="/photos/jeddah-stocked-warehouse.webp" alt="رفوف مستودع صناعية مجهزة لتخزين البضائع على منصات" fill sizes="(max-width: 720px) 100vw, 50vw" /><span>أنظمة التخزين</span></div>
         <div className="jeddah-solution-copy"><span className="jeddah-kicker">المستودعات</span><h2 id="jeddah-warehouse-title">رفوف مستودعات في جدة</h2><p>حلول تخزين للمستودعات والمخازن تساعد على تنظيم البضائع واستغلال المساحات حسب طبيعة التشغيل وحجم الموقع.</p><ul>{warehouseTypes.map((type) => <li key={type}><span />{type}</li>)}</ul><div className="jeddah-solution-actions"><Link href="/warehouse-racking" className="jeddah-text-link">اكتشف حلول رفوف المستودعات <ArrowUpLeft size={17} aria-hidden="true" /></Link><WhatsAppButton message={warehouseMessage} label="استفسر عن رفوف مستودعات في جدة" /></div></div>
       </section>
 
       <section className="jeddah-solution jeddah-retail-solution" aria-labelledby="jeddah-retail-title">
-        <div className="jeddah-solution-photo"><Image src="/photos/market.jpeg" alt="رفوف عرض سوبر ماركت" fill sizes="(max-width: 720px) 100vw, 50vw" /><span>تجهيزات العرض التجاري</span></div>
+        <div className="jeddah-solution-photo"><Image src="/photos/market.webp" alt="رفوف عرض سوبر ماركت" fill sizes="(max-width: 720px) 100vw, 50vw" /><span>تجهيزات العرض التجاري</span></div>
         <div className="jeddah-solution-copy"><span className="jeddah-kicker">المتاجر</span><h2 id="jeddah-retail-title">رفوف السوبر ماركت والمحلات في جدة</h2><p>حلول عرض وتنظيم للمشاريع التجارية تساعد على ترتيب المنتجات واستغلال الجدران والممرات والمساحات الوسطية بصورة عملية.</p><ul>{retailTypes.map((type) => <li key={type}><span />{type}</li>)}</ul><div className="jeddah-solution-actions"><Link href="/retail-shelving" className="jeddah-text-link">اكتشف رفوف المحلات والسوبر ماركت <ArrowUpLeft size={17} aria-hidden="true" /></Link><WhatsAppButton message={retailMessage} label="استفسر عن تجهيز متجرك في جدة" /></div></div>
       </section>
 
       <section className="jeddah-specialty" aria-label="حلول الصيدليات والبقالات في جدة">
         <article className="jeddah-specialty-card">
-          <div className="jeddah-specialty-photo"><Image src="/photos/jeddah-pharmacy-interior.png" alt="صيدلية عصرية واسعة مع رفوف عرض وإضاءة مدمجة" fill sizes="(max-width: 720px) 100vw, 50vw" /></div>
+          <div className="jeddah-specialty-photo"><Image src="/photos/jeddah-pharmacy-interior.webp" alt="صيدلية عصرية واسعة مع رفوف عرض وإضاءة مدمجة" fill sizes="(max-width: 720px) 100vw, 50vw" /></div>
           <div className="jeddah-specialty-copy"><span className="jeddah-kicker">الصيدليات</span><h2>رفوف صيدليات في جدة</h2><p>أنظمة عرض وتنظيم تساعد على ترتيب المنتجات والاستفادة من المساحات الجدارية والوسطية بما يناسب طبيعة المكان.</p><WhatsAppButton message={pharmacyMessage} label="استفسر عن رفوف الصيدليات" /></div>
         </article>
         <article className="jeddah-specialty-card jeddah-grocery-card">
-          <div className="jeddah-specialty-photo"><Image src="/photos/store.jpeg" alt="رفوف محل تجاري" fill sizes="(max-width: 720px) 100vw, 50vw" /></div>
+          <div className="jeddah-specialty-photo"><Image src="/photos/store.webp" alt="رفوف محل تجاري" fill sizes="(max-width: 720px) 100vw, 50vw" /></div>
           <div className="jeddah-specialty-copy"><span className="jeddah-kicker">البقالات والمتاجر الغذائية</span><h2>رفوف البقالات والمتاجر الغذائية في جدة</h2><p>حلول مناسبة للمساحات الصغيرة والمتوسطة تساعد على تنظيم المنتجات وسهولة الوصول إليها مع استغلال المساحة المتوفرة بشكل أفضل.</p><WhatsAppButton message={groceryMessage} label="استفسر عن رفوف البقالات" /></div>
         </article>
       </section>

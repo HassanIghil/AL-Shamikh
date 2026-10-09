@@ -327,7 +327,7 @@
    ========================================================= */
 .solutions-decision-section {
   padding: 68px 0 72px;
-  background: linear-gradient(rgba(4, 37, 29, 0.92), rgba(4, 37, 29, 0.96)), url('/photos/warehouse-3.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(4, 37, 29, 0.92), rgba(4, 37, 29, 0.96)), url('/photos/warehouse-3.webp') center/cover no-repeat;
   color: var(--white);
 }
 

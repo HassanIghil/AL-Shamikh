@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { messages, nav, whatsapp } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -48,7 +49,7 @@ export default function SiteHeader() {
             rel="noopener noreferrer"
             aria-label="تواصل عبر واتساب"
           >
-            <MessageCircle size={18} aria-hidden="true" />
+            <WhatsAppIcon size={18} />
             <span>تواصل عبر واتساب</span>
           </a>
 
@@ -86,7 +87,7 @@ export default function SiteHeader() {
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
               >
-                <MessageCircle size={20} aria-hidden="true" />
+                <WhatsAppIcon size={20} />
                 <span>تواصل عبر واتساب</span>
               </a>
             </div>

@@ -34,7 +34,7 @@ const retailSections = [
     eyebrow: 'حلول للمتاجر الغذائية',
     title: 'رفوف السوبر ماركت',
     description: 'حلول عرض تساعد على تنظيم الأقسام والممرات، وترتيب المنتجات بصورة واضحة وسهلة الوصول.',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     alt: 'رفوف عرض تجارية داكنة بحواف خضراء في مساحة متجر',
     points: ['وحدات جدارية', 'وحدات وسطية', 'رفوف عرض', 'تنظيم الممرات'],
     cta: 'استفسر عن رفوف السوبر ماركت',
@@ -45,7 +45,7 @@ const retailSections = [
     eyebrow: 'حلول للمساحات المتنوعة',
     title: 'رفوف البقالات والمتاجر الغذائية',
     description: 'حلول مناسبة للمساحات الصغيرة والمتوسطة تساعد على استغلال كل جزء من المتجر مع سهولة ترتيب وعرض المنتجات.',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     alt: 'رفوف متجر غذائي مرتبة في مساحة عرض داخلية',
     points: ['استغلال المساحات الصغيرة', 'سهولة الوصول للمنتجات', 'ترتيب عملي وواضح'],
     message: 'السلام عليكم، وصلت لكم من صفحة رفوف المحلات والسوبر ماركت في موقع الشامخ وأرغب بالاستفسار عن رفوف بقالة لمشروعي.',
@@ -66,7 +66,7 @@ const retailSections = [
     eyebrow: 'تجهيزات للمساحات التجارية',
     title: 'رفوف المحلات التجارية والمعارض',
     description: 'حلول عرض تساعد على تنظيم المنتجات وتقديمها بصورة احترافية تتناسب مع هوية وطبيعة النشاط التجاري.',
-    image: '/photos/black.jpeg',
+    image: '/photos/black.webp',
     alt: 'رفوف عرض تجارية سوداء بحواف خضراء',
     points: ['وحدات جدارية', 'وحدات عرض', 'رفوف تجارية', 'تجهيزات محلات'],
     message: 'السلام عليكم، وصلت لكم من صفحة رفوف المحلات والسوبر ماركت في موقع الشامخ وأرغب بالاستفسار عن تجهيز محل تجاري.',
@@ -90,11 +90,11 @@ const displayTypes = [
 ];
 
 const gallery = [
-  { image: '/photos/store.jpeg', alt: 'رفوف متجر غذائي منظمة', label: 'تجهيز سوبر ماركت' },
-  { image: '/photos/black.jpeg', alt: 'رفوف عرض تجارية سوداء بحواف خضراء', label: 'رفوف عرض تجارية' },
+  { image: '/photos/store.webp', alt: 'رفوف متجر غذائي منظمة', label: 'تجهيز سوبر ماركت' },
+  { image: '/photos/black.webp', alt: 'رفوف عرض تجارية سوداء بحواف خضراء', label: 'رفوف عرض تجارية' },
   { image: '/photos/pharmacy.jpeg', alt: 'رفوف صيدلية بيضاء وزرقاء', label: 'تجهيز صيدلية' },
-  { image: '/photos/market.jpeg', alt: 'وحدات رفوف عرض متجر بحواف خضراء', label: 'وحدات عرض' },
-  { image: '/photos/white.jpeg', alt: 'رفوف عرض بيضاء في مساحة داخلية', label: 'رفوف متجر' },
+  { image: '/photos/market.webp', alt: 'وحدات رفوف عرض متجر بحواف خضراء', label: 'وحدات عرض' },
+  { image: '/photos/white.webp', alt: 'رفوف عرض بيضاء في مساحة داخلية', label: 'رفوف متجر' },
 ];
 
 const faqs = [
@@ -112,7 +112,7 @@ export default function RetailShelvingView() {
     <div className="retail-page">
       <section className="retail-hero" aria-labelledby="retail-title">
         <div className="retail-hero-photo">
-          <Image src="/photos/store.jpeg" alt="مساحة متجر مجهزة برفوف عرض وتنظيم المنتجات" fill priority sizes="(max-width: 700px) 100vw, 50vw" />
+          <Image src="/photos/store.webp" alt="مساحة متجر مجهزة برفوف عرض وتنظيم المنتجات" fill priority sizes="(max-width: 700px) 100vw, 50vw" />
           <div className="retail-hero-photo-shade" />
         </div>
         <div className="retail-hero-copy">
@@ -206,7 +206,7 @@ export default function RetailShelvingView() {
 
       <section className="retail-local" aria-labelledby="retail-local-title">
         <div className="retail-local-inner">
-          <div className="retail-local-photo"><Image src="/photos/white.jpeg" alt="رفوف عرض بيضاء في مساحة تجارية" fill sizes="(max-width:700px) 100vw,45vw"/></div>
+          <div className="retail-local-photo"><Image src="/photos/white.webp" alt="رفوف عرض بيضاء في مساحة تجارية" fill sizes="(max-width:700px) 100vw,45vw"/></div>
           <div className="retail-local-copy">
             <span className="retail-kicker">مناطق الخدمة</span>
             <h2 id="retail-local-title">تجهيز المحلات والسوبر ماركت في جدة والرياض</h2>

@@ -7,7 +7,6 @@ import {
   Briefcase,
   ChevronLeft,
   Maximize2,
-  MessageCircle,
   Package,
   Ruler,
   Settings2,
@@ -16,13 +15,15 @@ import {
   Wrench,
   MapPin,
 } from 'lucide-react';
+import { ResponsiveHeroImage } from '@/components/UI';
 import { buildWhatsappUrl, messages } from '@/lib/data';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import '@/app/solutions.css';
 
 const featuredSolutions = [
   {
     title: 'رفوف المستودعات',
-    image: '/photos/hero.jpeg',
+    image: '/photos/hero.webp',
     href: '/warehouse-racking',
     description:
       'حلول تخزين للمستودعات والمخازن تناسب الاستخدامات المختلفة وتساعد على استغلال المساحة بكفاءة.',
@@ -31,7 +32,7 @@ const featuredSolutions = [
   },
   {
     title: 'رفوف السوبر ماركت والمتاجر',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     href: '/retail-shelving',
     description:
       'أنظمة عرض وتنظيم للمحلات والسوبر ماركت تساعد على ترتيب المنتجات وتحسين استغلال المساحة.',
@@ -59,43 +60,43 @@ const secondarySolutions = [
   {
     title: 'رفوف التخزين المتوسط',
     description: 'توازن مثالي بين القوة والمرونة لتخزين الصناديق.',
-    image: '/photos/warehouse-3.jpeg',
+    image: '/photos/warehouse-3.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف التخزين الخفيف',
     description: 'حلول اقتصادية مرنة للأوزان والمساحات الصغيرة.',
-    image: '/photos/white.jpeg',
+    image: '/photos/white.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف البقالات',
     description: 'استغلال مثالي للمساحات مع متانة عالية وسهولة الوصول.',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف المحلات التجارية',
     description: 'حلول عرض متطورة للمعارض والمتاجر المتخصصة.',
-    image: '/photos/black.jpeg',
+    image: '/photos/black.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف التخزين المنزلي',
     description: 'تصاميم عملية وأنيقة لكل المساحات والغرف المنزلية.',
-    image: '/photos/home.jpeg',
+    image: '/photos/home.webp',
     href: '/solutions',
   },
   {
     title: 'أنظمة التخزين متعددة المستويات',
     description: 'استغلال رأسي كامل للارتفاعات وزيادة السعة التخزينية.',
-    image: '/photos/warehouse-5.jpeg',
+    image: '/photos/warehouse-5.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'تجهيزات المحلات',
     description: 'إكسسوارات ووحدات عرض متكاملة للمتاجر الحديثة.',
-    image: '/photos/store.jpeg',
+    image: '/photos/store.webp',
     href: '/retail-shelving',
   },
 ];
@@ -149,12 +150,12 @@ const processSteps = [
 const sectorsPreview = [
   {
     title: 'المستودعات',
-    image: '/photos/hero.jpeg',
+    image: '/photos/hero.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'السوبر ماركت والبقالات',
-    image: '/photos/market.jpeg',
+    image: '/photos/market.webp',
     href: '/retail-shelving',
   },
   {
@@ -164,7 +165,7 @@ const sectorsPreview = [
   },
   {
     title: 'المحلات التجارية',
-    image: '/photos/black.jpeg',
+    image: '/photos/black.webp',
     href: '/retail-shelving',
   },
 ];
@@ -202,13 +203,10 @@ export default function SolutionsView() {
       <section className="solutions-hero" aria-labelledby="solutions-hero-title">
         {/* Left Photo in RTL reading order */}
         <div className="solutions-hero-photo">
-          <Image
-            src="/photos/warehouse-2.jpeg"
+          <ResponsiveHeroImage
+            src="/photos/hero-solutions.webp"
+            mobileSrc="/photos/hero-solutions-mobile.webp"
             alt="حلول رفوف وتخزين متكاملة للمستودعات والمتاجر"
-            fill
-            priority
-            unoptimized
-            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div className="solutions-hero-photo-gradient" />
         </div>
@@ -258,7 +256,7 @@ export default function SolutionsView() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MessageCircle size={19} aria-hidden="true" />
+            <WhatsAppIcon size={19} />
             <span>استفسر عبر واتساب</span>
           </a>
         </div>
@@ -299,7 +297,7 @@ export default function SolutionsView() {
                       rel="noopener noreferrer"
                       className="featured-card-cta"
                     >
-                      <MessageCircle size={15} aria-hidden="true" />
+                      <WhatsAppIcon size={15} />
                       <span>استفسر عن هذا الحل</span>
                     </a>
                   </div>
@@ -345,7 +343,7 @@ export default function SolutionsView() {
                     className="circle-gold-arrow"
                     aria-label={`استفسر عن ${item.title}`}
                   >
-                    <ArrowUpLeft size={16} strokeWidth={2.4} aria-hidden="true" />
+                    <WhatsAppIcon size={16} />
                   </a>
                 </div>
               </article>
@@ -478,7 +476,7 @@ export default function SolutionsView() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <MessageCircle size={20} aria-hidden="true" />
+              <WhatsAppIcon size={20} />
               <span>أرسل تفاصيل مشروعك</span>
             </a>
           </div>

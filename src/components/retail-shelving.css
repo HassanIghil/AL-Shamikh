@@ -64,7 +64,7 @@
 .retail-inline-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--retail-emerald); font-size: 14px; font-weight: 700; }
 .retail-inline-link svg { color: var(--retail-gold); }
 
-.retail-design { position: relative; padding: 62px 0 68px; overflow: hidden; color: #fff; background: linear-gradient(rgba(4,36,28,.95),rgba(4,36,28,.96)),url('/photos/market.jpeg') center 52% / cover; }
+.retail-design { position: relative; padding: 62px 0 68px; overflow: hidden; color: #fff; background: linear-gradient(rgba(4,36,28,.95),rgba(4,36,28,.96)),url('/photos/market.webp') center 52% / cover; }
 .retail-design-inner,.retail-display-inner,.retail-gallery-inner,.retail-local-inner,.retail-faq-inner { width: min(calc(100% - 64px),1360px); margin-inline: auto; }
 .retail-design-heading { max-width: 800px; margin: 0 auto 30px; text-align: center; }
 .retail-design-heading h2 { margin: 7px 0; color: #fff; font-size: clamp(25px,2.5vw,35px); line-height: 1.45; }

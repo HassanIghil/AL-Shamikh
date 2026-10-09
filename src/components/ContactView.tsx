@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowUpLeft, Building2, Camera, MapPin, MessageCircle, Ruler, Warehouse } from 'lucide-react';
+import { ArrowLeft, ArrowUpLeft, Building2, Camera, MapPin, Ruler, Warehouse } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import { WhatsAppButton } from '@/components/UI';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { phone, phoneClean } from '@/lib/data';
 import './contact.css';
 
@@ -39,7 +40,7 @@ export default function ContactView() {
 
         <aside className="contact-side">
           <div className="contact-whatsapp-panel">
-            <div className="contact-whatsapp-icon"><MessageCircle size={27} aria-hidden="true" /></div>
+            <div className="contact-whatsapp-icon"><WhatsAppIcon size={27} /></div>
             <span className="contact-eyebrow">تواصل مباشر</span>
             <h2>ابدأ المحادثة مباشرة</h2>
             <p>شاركنا نوع المشروع والمدينة والمساحة التقريبية، وسنناقش معك ما تحتاجه.</p>

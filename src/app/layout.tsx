@@ -3,8 +3,9 @@ import './globals.css';
 import SiteHeader from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/UI';
 import { company, messages, pageMeta, phone, whatsapp } from '@/lib/data';
-import { MessageCircle } from 'lucide-react';
 import { canonicalUrl, isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
   ...(siteOrigin ? { metadataBase: new URL(siteOrigin) } : {}),
@@ -71,6 +72,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />}
         <SiteHeader />
+        <ScrollReveal />
         {children}
         <SiteFooter />
         <a
@@ -80,7 +82,7 @@ export default function RootLayout({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <MessageCircle size={26} aria-hidden="true" />
+          <WhatsAppIcon size={26} />
         </a>
       </body>
     </html>

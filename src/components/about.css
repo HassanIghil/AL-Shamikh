@@ -71,7 +71,7 @@
 .about-origin-copy p { max-width: 310px; color: #6c7972; font-size: 14px; line-height: 1.85; }
 
 /* Dark capabilities band */
-.about-why { position: relative; padding: 72px 0 58px; overflow: hidden; color: #fff; background: linear-gradient(90deg,rgba(4,35,28,.94),rgba(4,35,28,.97)),url('/photos/warehouse-3.jpeg') center 48%/cover; }
+.about-why { position: relative; padding: 72px 0 58px; overflow: hidden; color: #fff; background: linear-gradient(90deg,rgba(4,35,28,.94),rgba(4,35,28,.97)),url('/photos/warehouse-3.webp') center 48%/cover; }
 .about-why-heading { max-width: 850px; margin: 0 auto 35px; text-align: center; }
 .about-why-heading h2 { margin: 6px 0 8px; color: #fff; font-size: clamp(27px,2.7vw,38px); line-height: 1.45; }
 .about-why-heading p { color: #d8e4dc; font-size: 15px; }
