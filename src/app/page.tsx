@@ -25,25 +25,25 @@ export const metadata: Metadata = {
 const homeSolutions = [
   {
     title: 'رفوف مستودعات مركزية',
-    description: 'حلول تخزين قوية لجميع الاحتياجات',
+    description: 'خيارات تخزين للمستودعات والمخازن',
     image: '/photos/hero.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف بقالات',
-    description: 'استغلال مثالي للمساحات مع متانة عالية',
+    description: 'رفوف عرض وترتيب للبقالات والمتاجر الغذائية',
     image: '/photos/store.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف سوبر ماركت',
-    description: 'تصاميم عصرية للمتاجر والمراكز التجارية',
+    description: 'رفوف عرض وتنظيم لأقسام المتجر',
     image: '/photos/market.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف صيدليات',
-    description: 'حلول مخصصة لتنظيم الأدوية والمنتجات',
+    description: 'رفوف عرض وتنظيم لمساحات الصيدليات',
     image: '/photos/pharmacy.jpeg',
     href: '/retail-shelving',
   },
@@ -57,33 +57,33 @@ const homeSolutions = [
 
 const homeProjects = [
   {
-    title: 'تجهيز رفوف مستودع مركزي',
+    title: 'رفوف للمستودعات والمخازن',
     image: '/photos/hero.webp',
     type: 'مستودعات',
   },
   {
-    title: 'رفوف سوبر ماركت حديثة',
+    title: 'رفوف عرض للسوبر ماركت',
     image: '/photos/market.webp',
     type: 'متاجر',
   },
   {
-    title: 'رفوف صيدليات منظمة',
+    title: 'رفوف عرض للصيدليات',
     image: '/photos/pharmacy.jpeg',
     type: 'صيدليات',
   },
   {
-    title: 'تجهيزات عرض تجارية',
+    title: 'وحدات عرض للمحلات',
     image: '/photos/store.webp',
     type: 'محلات',
   },
   {
-    title: 'أنظمة تخزين صناعية',
+    title: 'خيارات تخزين للمستودعات',
     image: '/photos/warehouse-2.jpeg',
     type: 'مستودعات',
   },
 ];
 
-const contactMessage = 'السلام عليكم، وصلت لكم من موقع الشامخ وأرغب بمناقشة مشروع رفوف وتخزين.';
+const contactMessage = 'السلام عليكم، وصلت لكم من موقع الشامخ وأرغب بمناقشة مشروع رفوف. المدينة: [اكتب المدينة]، نوع النشاط: [اكتب النشاط]، المساحة التقريبية: [اكتب المساحة].';
 
 export default function Home() {
   return (
@@ -126,17 +126,17 @@ export default function Home() {
 
         {/* Right Deep Emerald Content (in RTL, content sits on the right) */}
         <div className="home-hero-content">
-          <span className="home-pill">خبرة في الرفوف والتخزين والديكورات</span>
+          <span className="home-pill">رفوف المستودعات والمتاجر</span>
           <h1 id="home-title">
-            حلول متكاملة <em>للرفوف</em>
+            رفوف <em>المستودعات</em>
             <br />
-            والتخزين والديكورات
+            والمتاجر
           </h1>
           <p className="home-hero-gold">
-            مستودعات أكثر كفاءة .. متاجر أكثر جاذبية .. مساحات أكثر تنظيماً
+            حلول تخزين وعرض تراعي احتياج المساحة
           </p>
           <p className="home-hero-description">
-            الشامخ للرفوف والديكورات يوفر حلول رفوف وتخزين متكاملة لجميع القطاعات: المستودعات، السوبر ماركت، الصيدليات، المعارض والمتاجر، بالإضافة إلى حلول التخزين المنزلي.
+            استكشف رفوف المستودعات والمتاجر، من حلول التخزين إلى وحدات العرض. يعتمد اختيار الرفوف على طبيعة النشاط والمنتجات ومساحة الموقع.
           </p>
 
           {/* 3 Key Feature Badges */}
@@ -144,22 +144,22 @@ export default function Home() {
             <div className="hero-feature-item">
               <Truck size={32} strokeWidth={2} aria-hidden="true" />
               <div className="hero-feature-text">
-                <strong>توريد سريع</strong>
-                <span>لجدة والرياض ومدن المملكة</span>
+                <strong>رفوف المستودعات</strong>
+                <span>للتخزين وتنظيم البضائع</span>
               </div>
             </div>
             <div className="hero-feature-item">
               <ShieldCheck size={32} strokeWidth={2} aria-hidden="true" />
               <div className="hero-feature-text">
-                <strong>منتجات عالية الجودة</strong>
-                <span>ومواصفات عالمية</span>
+                <strong>رفوف المتاجر</strong>
+                <span>للعرض وتنظيم المنتجات</span>
               </div>
             </div>
             <div className="hero-feature-item">
               <Settings2 size={32} strokeWidth={2} aria-hidden="true" />
               <div className="hero-feature-text">
-                <strong>تركيب احترافي</strong>
-                <span>بأعلى معايير الجودة</span>
+                <strong>جدة والرياض</strong>
+                <span>صفحتان لمعلومات الخدمة المحلية</span>
               </div>
             </div>
           </div>
@@ -208,8 +208,8 @@ export default function Home() {
         <div className="container">
           <div className="home-section-heading">
             <span className="eyebrow">— حلولنا —</span>
-            <h2 id="home-solutions-title">مجموعة متكاملة من الرفوف والديكورات</h2>
-            <p>حلول احترافية مصممة لتناسب جميع القطاعات بأعلى معايير الجودة</p>
+            <h2 id="home-solutions-title">رفوف المستودعات والمتاجر</h2>
+            <p>تعرّف على خيارات التخزين والعرض بحسب نوع الموقع والمنتجات.</p>
           </div>
 
           {/* Desktop: 5 Horizontal Cards in 1 Row. Mobile: stacked compact list */}
@@ -250,8 +250,8 @@ export default function Home() {
         <div className="container">
           <div className="home-section-heading home-heading-light">
             <span className="eyebrow">— لماذا الشامخ؟ —</span>
-            <h2 id="home-why-title">شريكك الموثوق في حلول التخزين والديكورات</h2>
-            <p>نجمع بين الجودة والخبرة لنقدم لك أفضل الحلول في جدة والرياض</p>
+            <h2 id="home-why-title">كيف تختار رفوف مشروعك؟</h2>
+            <p>ابدأ بنوع النشاط، ومساحة الموقع، وطبيعة المنتجات وطريقة الوصول إليها.</p>
           </div>
 
           <div className="home-why-grid">
@@ -259,29 +259,29 @@ export default function Home() {
               <div className="home-why-icon">
                 <MapPin size={34} strokeWidth={2} aria-hidden="true" />
               </div>
-              <strong>خدمة جدة والرياض</strong>
-              <span>وتوريد لجميع مناطق المملكة</span>
+              <strong>رفوف المستودعات</strong>
+              <span>تخزين ثقيل أو متوسط أو خفيف بحسب الاحتياج</span>
             </div>
             <div className="home-why-col">
               <div className="home-why-icon">
                 <Settings2 size={34} strokeWidth={2} aria-hidden="true" />
               </div>
-              <strong>تصميم مخصص</strong>
-              <span>حسب احتياجاتك</span>
+              <strong>رفوف المتاجر</strong>
+              <span>عرض جداري أو وسطي بحسب توزيع الموقع</span>
             </div>
             <div className="home-why-col">
               <div className="home-why-icon">
                 <BadgeCheck size={34} strokeWidth={2} aria-hidden="true" />
               </div>
-              <strong>جودة عالية</strong>
-              <span>في جميع المنتجات</span>
+              <strong>معايير الاختيار</strong>
+              <span>المساحة والمنتجات وطريقة الاستخدام</span>
             </div>
             <div className="home-why-col">
               <div className="home-why-icon">
                 <Wrench size={34} strokeWidth={2} aria-hidden="true" />
               </div>
-              <strong>توريد وتركيب</strong>
-              <span>بفريق متخصص</span>
+              <strong>ناقش احتياجك</strong>
+              <span>شارك تفاصيل الموقع قبل طلب عرض سعر</span>
             </div>
           </div>
         </div>
@@ -293,11 +293,11 @@ export default function Home() {
           <div className="home-projects-header">
             <div className="home-projects-title-wrap">
               <span className="eyebrow">— نماذج الحلول —</span>
-              <h2 id="home-projects-title">حلول الرفوف والتخزين لمختلف الأنشطة</h2>
-              <p>استكشف أنواعاً من أنظمة التخزين والعرض للمستودعات والمتاجر والصيدليات.</p>
+              <h2 id="home-projects-title">صور توضيحية لرفوف التخزين والعرض</h2>
+              <p>تعرّف على أشكال رفوف المستودعات والمتاجر. الصور للتوضيح وليست سجلّاً لمشاريع منفذة.</p>
             </div>
             <Link className="button button-outline home-projects-btn" href="/projects">
-              <span>استكشف جميع الحلول</span>
+              <span>استعرض الصور التوضيحية</span>
               <ArrowLeft size={16} aria-hidden="true" />
             </Link>
           </div>
@@ -332,7 +332,7 @@ export default function Home() {
             <span className="eyebrow">— تواصل معنا —</span>
             <h2>لنبدأ بمساحة أكثر تنظيماً</h2>
             <p>
-              أرسل لنا تفاصيل مشروعك، وسنساعدك في اختيار الحل المناسب لطبيعة المساحة والاستخدام.
+              أرسل نوع النشاط ومساحة الموقع وطبيعة المنتجات لمناقشة خيارات الرفوف. يمكنك الاطلاع على الخدمة في <Link href="/jeddah">جدة</Link> أو <Link href="/riyadh">الرياض</Link>.
             </p>
           </div>
           <div className="home-final-cta-btn-wrap">

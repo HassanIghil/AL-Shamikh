@@ -18,14 +18,14 @@ import {
 import { CtaBand, WhatsAppButton } from '@/components/UI';
 import './retail-shelving.css';
 
-const retailMessage = 'السلام عليكم، وصلت لكم من صفحة رفوف المحلات والسوبر ماركت في موقع الشامخ، وأرغب بالاستفسار عن تجهيز متجري.';
-const finalMessage = 'السلام عليكم، وصلت لكم من صفحة رفوف المحلات والسوبر ماركت في موقع الشامخ وأرغب بمناقشة تجهيز متجري.';
+const retailMessage = 'السلام عليكم، وصلت لكم من صفحة رفوف المتاجر. المدينة: [اكتب المدينة]، نوع النشاط: [اكتب النشاط]، المساحة والمنتجات: [اكتب التفاصيل].';
+const finalMessage = 'السلام عليكم، أود مناقشة رفوف لمتجري. المدينة: [اكتب المدينة]، النشاط: [اكتب النشاط]، المساحة التقريبية: [اكتب المساحة]، المنتجات: [اكتب التفاصيل].';
 
 const trustItems = [
-  { icon: Ruler, title: 'استغلال أفضل للمساحة' },
-  { icon: PackageCheck, title: 'تنظيم واضح للمنتجات' },
-  { icon: Store, title: 'حلول حسب طبيعة النشاط' },
-  { icon: Truck, title: 'توريد وتركيب' },
+  { icon: Ruler, title: 'مراعاة مساحة المتجر' },
+  { icon: PackageCheck, title: 'ترتيب المنتجات' },
+  { icon: Store, title: 'اختيار حسب النشاط' },
+  { icon: Truck, title: 'جدة والرياض' },
 ];
 
 const retailSections = [
@@ -98,13 +98,11 @@ const gallery = [
 ];
 
 const faqs = [
-  { q: 'ما أنواع رفوف السوبر ماركت المتوفرة؟', a: 'تشمل حلول العرض وحدات جدارية ووسطية ورفوفاً لتنظيم الممرات، ويُختار التوزيع بحسب المنتجات ومساحة المتجر.' },
-  { q: 'هل يمكن تصميم الرفوف حسب مساحة المتجر؟', a: 'نعم، تتم مراعاة أبعاد المتجر والممرات وطبيعة المنتجات وطريقة حركة العملاء عند مناقشة توزيع الرفوف.' },
-  { q: 'هل توفرون رفوف للبقالات الصغيرة؟', a: 'نعم، تتوفر حلول تناسب المساحات الصغيرة والمتوسطة مع ترتيب عملي للمنتجات وسهولة الوصول إليها.' },
-  { q: 'هل لديكم رفوف للصيدليات؟', a: 'نعم، تشمل الحلول رفوفاً جدارية ووحدات وسطية تساعد على تنظيم المنتجات والأدوية.' },
-  { q: 'هل يمكن تجهيز متجر كامل؟', a: 'يمكن مناقشة تجهيز المتجر وفق نوع النشاط ومساحة الموقع والأقسام وطريقة العرض المطلوبة.' },
-  { q: 'هل توفرون التركيب؟', a: 'نعم، تتوفر خدمة التوريد والتركيب، وتُناقش تفاصيلها بحسب احتياجات المشروع.' },
-  { q: 'هل تخدمون جدة والرياض؟', a: 'نخدم مشاريع جدة والرياض، كما يمكن الاستفسار عن خدمة المشاريع في مناطق أخرى من المملكة.' },
+  { q: 'ما رفوف العرض المناسبة لمتجري؟', a: 'يعتمد الاختيار على النشاط، ومساحة المتجر، والمنتجات، وحركة العملاء. شارك هذه التفاصيل لمناقشة توزيع الرفوف.' },
+  { q: 'ما المعلومات المطلوبة لطلب عرض سعر؟', a: 'أرسل المدينة، ونوع النشاط، وأبعاد المتجر أو مخططه إن توفر، وطبيعة المنتجات. تساعد الصور على فهم المساحة وطريقة العرض المطلوبة.' },
+  { q: 'هل يمكن توزيع الرفوف الجدارية والوسطية حسب مساحة المتجر؟', a: 'تُراجع الأبعاد والممرات والمنتجات ومسار الحركة قبل مناقشة التوزيع. لا يوجد مقاس واحد يناسب كل متجر.' },
+  { q: 'هل تخدمون المتاجر في جدة والرياض؟', a: 'نعم، نخدم المشاريع في جدة والرياض. اختر المدينة من روابط الخدمة المحلية أسفل الصفحة.' },
+  { q: 'هل يشمل عرض السعر التوريد أو التركيب؟', a: 'يتحدد نطاق العرض بحسب المشروع. اذكر المطلوب عند التواصل حتى تتضح الخيارات المتاحة قبل التسعير.' },
 ];
 
 export default function RetailShelvingView() {
@@ -122,9 +120,9 @@ export default function RetailShelvingView() {
             <span>رفوف المحلات والسوبر ماركت</span>
           </nav>
           <span className="retail-eyebrow">حلول العرض التجاري</span>
-          <h1 id="retail-title">رفوف المحلات<br />والسوبر ماركت</h1>
-          <p>نوفر حلول رفوف وعرض للمحلات والسوبر ماركت والبقالات والصيدليات، تساعد على تنظيم المنتجات واستغلال المساحة وتقديم المتجر بصورة أكثر احترافية.</p>
-          <div className="retail-service-line"><MapPin size={16} aria-hidden="true" />جدة <i /> الرياض <i /> مختلف مناطق المملكة</div>
+          <h1 id="retail-title">رفوف المحلات والسوبر ماركت</h1>
+          <p>تعرّف على رفوف العرض للمحلات والسوبر ماركت والبقالات. يعتمد توزيع الوحدات على مساحة المتجر وطبيعة المنتجات وحركة العملاء.</p>
+          <div className="retail-service-line"><MapPin size={16} aria-hidden="true" />جدة <i /> الرياض</div>
           <WhatsAppButton message={retailMessage} label="استفسر عن تجهيز متجرك" />
         </div>
       </section>
@@ -138,8 +136,8 @@ export default function RetailShelvingView() {
       <section className="retail-services" aria-labelledby="retail-services-title">
         <div className="retail-intro">
           <span className="retail-kicker">حلول العرض والتجهيز</span>
-          <h2 id="retail-services-title">أنظمة رفوف تناسب مختلف أنواع المتاجر</h2>
-          <p>يختلف تصميم الرفوف حسب طبيعة النشاط، حجم المساحة، نوع المنتجات وطريقة حركة العملاء داخل المتجر.</p>
+          <h2 id="retail-services-title">رفوف المتاجر والسوبر ماركت والبقالات</h2>
+          <p>تختلف احتياجات العرض بين نشاط وآخر؛ ابدأ بمساحة الموقع والمنتجات والممرات وطريقة حركة العملاء.</p>
           <div className="retail-related-links">
             <Link href="/solutions">تعرّف على حلولنا<ArrowUpLeft size={15} aria-hidden="true" /></Link>
             <Link href="/sectors">القطاعات التي نخدمها<ArrowUpLeft size={15} aria-hidden="true" /></Link>
@@ -171,8 +169,8 @@ export default function RetailShelvingView() {
         <div className="retail-design-inner">
           <div className="retail-design-heading">
             <span className="retail-kicker">تصميم يخدم تجربة المتجر</span>
-            <h2 id="retail-design-title">كيف نختار توزيع الرفوف داخل المتجر؟</h2>
-            <p>نراعي طريقة عرض المنتجات وحركة العملاء حتى يخدم التوزيع الاستخدام اليومي للمساحة.</p>
+            <h2 id="retail-design-title">كيف تختار توزيع رفوف المتجر؟</h2>
+            <p>قارن أبعاد الموقع والممرات، وطبيعة المنتجات، والوحدات الجدارية والوسطية المطلوبة قبل تحديد التوزيع.</p>
           </div>
           <div className="retail-factors">
             {factors.map(({ icon: Icon, title, text }, index) => <div className="retail-factor" key={title}><span>0{index + 1}</span><Icon size={27} strokeWidth={1.7} aria-hidden="true"/><strong>{title}</strong><small>{text}</small></div>)}
@@ -184,7 +182,7 @@ export default function RetailShelvingView() {
         <div className="retail-display-inner">
           <div className="retail-display-heading">
             <span className="retail-kicker">أنظمة العرض</span>
-            <h2 id="retail-display-title">خيارات متعددة لتجهيز المساحة</h2>
+          <h2 id="retail-display-title">أنواع رفوف العرض التجاري</h2>
           </div>
           <div className="retail-display-grid">
             {displayTypes.map(({ icon: Icon, title, text }, index) => <article className="retail-display-item" key={title}><span className="retail-display-number">0{index + 1}</span><Icon size={25} strokeWidth={1.7} aria-hidden="true"/><h3>{title}</h3><p>{text}</p></article>)}
@@ -227,8 +225,8 @@ export default function RetailShelvingView() {
       </section>
 
       <CtaBand
-        title="هل تخطط لتجهيز متجرك؟"
-        description="أرسل لنا نوع النشاط ومساحة الموقع، وسنساعدك في اختيار نظام العرض والرفوف المناسب."
+        title="ناقش رفوف متجرك"
+        description="أرسل المدينة ونوع النشاط وأبعاد المتجر وطبيعة المنتجات. أرفق صورة أو مخططاً إن توفر لمناقشة التوزيع وطلب عرض سعر."
         message={finalMessage}
       />
     </div>
