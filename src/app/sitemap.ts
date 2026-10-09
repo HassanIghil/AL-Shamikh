@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { canonicalUrl, isSearchIndexingEnabled } from '@/lib/seo';
 
+export const dynamic = 'force-static';
+
 const routes = [
   '/',
   '/warehouse-racking',
