@@ -28,7 +28,7 @@ const steps = [
   { number: '01', title: 'فهم احتياج المشروع', text: 'نبدأ بنوع النشاط وطريقة استخدام المساحة.' },
   { number: '02', title: 'مراجعة المساحة', text: 'نراجع الأبعاد والارتفاع ومسارات الحركة.' },
   { number: '03', title: 'اختيار الحل', text: 'نناقش الرفوف والتوزيع الملائم للاستخدام.' },
-  { number: '04', title: 'التوريد والتركيب', text: 'تُنسق تفاصيل التنفيذ وفق نطاق المشروع.' },
+  { number: '04', title: 'توضيح نطاق الخدمة', text: 'يمكنك توضيح احتياجك للتوريد أو التركيب عند التواصل معنا، وسيتم تأكيد الخدمات المتاحة ونطاق العمل قبل عرض السعر.' },
 ];
 
 const projectMessage = 'السلام عليكم، شاهدت حلول الرفوف والتخزين في الموقع وأرغب بالاستفسار عن حل يناسب مشروعي.';
@@ -53,7 +53,7 @@ export default function ProjectsView() {
           <Image src="/photos/market.webp" alt="رفوف عرض في متجر" fill sizes="(max-width: 700px) 35vw, 24vw" />
           <span>حلول العرض والتخزين</span>
         </a>
-        <span className="projects-hero-note"><MapPin size={16} aria-hidden="true" /> جدة · الرياض · مناطق المملكة</span>
+        <span className="projects-hero-note"><MapPin size={16} aria-hidden="true" /> جدة · الرياض</span>
       </section>
 
       <section className="projects-intro" aria-labelledby="projects-intro-title">
@@ -68,7 +68,7 @@ export default function ProjectsView() {
         <div className="projects-container">
           <div className="projects-section-heading">
             <div><span className="projects-kicker">صور توضيحية للحلول</span><h2 id="projects-gallery-title">رفوف المستودعات والمتاجر</h2></div>
-            <p>اختر فئة لمشاهدة الحلول المرتبطة بها.</p>
+            <p>الصور الحالية توضيحية. نضيف صور المشاريع المنفذة بعد مراجعة الصور ومعلومات كل مشروع.</p>
           </div>
           <ProjectFilter />
         </div>
@@ -76,7 +76,7 @@ export default function ProjectsView() {
 
       <section className="projects-featured" aria-labelledby="projects-featured-title">
         <div className="projects-featured-photo">
-          <Image src="/photos/warehouse-5.webp" alt="ممرات وسلالم معدنية ضمن مساحة تخزين متعددة المستويات" fill sizes="(max-width: 700px) 100vw, 50vw" />
+          <Image src="/photos/warehouse-5.webp" alt="صورة توضيحية لرفوف ومساحة تخزين داخلية" fill sizes="(max-width: 700px) 100vw, 50vw" />
           <span>أنظمة تخزين للمساحات الداخلية</span>
         </div>
         <div className="projects-featured-copy">

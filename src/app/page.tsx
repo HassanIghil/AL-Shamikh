@@ -83,7 +83,7 @@ const homeProjects = [
   },
 ];
 
-const contactMessage = 'السلام عليكم، وصلت لكم من موقع الشامخ وأرغب بمناقشة مشروع رفوف. المدينة: [اكتب المدينة]، نوع النشاط: [اكتب النشاط]، المساحة التقريبية: [اكتب المساحة].';
+const contactMessage = 'السلام عليكم، أريد الاستفسار عن رفوف لمشروعي.';
 
 export default function Home() {
   return (
@@ -136,7 +136,7 @@ export default function Home() {
             حلول تخزين وعرض تراعي احتياج المساحة
           </p>
           <p className="home-hero-description">
-            استكشف رفوف المستودعات والمتاجر، من حلول التخزين إلى وحدات العرض. يعتمد اختيار الرفوف على طبيعة النشاط والمنتجات ومساحة الموقع.
+            نوفر رفوف مستودعات ومحلات وسوبر ماركت في جدة والرياض. نناقش الاختيار وفق النشاط والمساحة.
           </p>
 
           {/* 3 Key Feature Badges */}
@@ -159,7 +159,7 @@ export default function Home() {
               <Settings2 size={32} strokeWidth={2} aria-hidden="true" />
               <div className="hero-feature-text">
                 <strong>جدة والرياض</strong>
-                <span>صفحتان لمعلومات الخدمة المحلية</span>
+                <span>نوفر رفوفاً للمشاريع في المدينتين</span>
               </div>
             </div>
           </div>

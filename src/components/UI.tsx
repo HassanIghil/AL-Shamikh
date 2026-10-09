@@ -161,22 +161,22 @@ export function FeatureStrip() {
     {
       icon: MapPin,
       title: 'خدمة جدة والرياض',
-      text: 'وتوريد لجميع مناطق المملكة',
+      text: 'للمستودعات والمتاجر في المدينتين',
     },
     {
       icon: Settings2,
-      title: 'تصميم مخصص',
-      text: 'حسب احتياجاتك ومساحتك',
+      title: 'اختيار حسب الاحتياج',
+      text: 'وفق النشاط والمساحة والاستخدام',
     },
     {
       icon: BadgeCheck,
-      title: 'جودة عالية',
-      text: 'في جميع المنتجات والمواصفات',
+      title: 'رفوف لقطاعات متعددة',
+      text: 'مستودعات ومتاجر وسوبر ماركت وصيدليات',
     },
     {
       icon: Wrench,
-      title: 'توريد وتركيب',
-      text: 'بفريق متخصص ذو خبرة',
+      title: 'توريد الرفوف',
+      text: 'استفسر عن المنتجات المتاحة لمشروعك',
     },
   ];
 
@@ -202,7 +202,7 @@ export function WhyPanel() {
         <SectionHeading
           eyebrow="لماذا الشامخ؟"
           title="شريكك الموثوق في حلول التخزين والديكورات"
-          description="نجمع بين الجودة والخبرة لنقدم لك أفضل الحلول في جدة والرياض ومدن المملكة"
+          description="رفوف للمستودعات والمتاجر في جدة والرياض، مع اختيار الفئة وفق طبيعة النشاط والمساحة."
           light
         />
         <FeatureStrip />
@@ -284,7 +284,7 @@ export function SiteFooter() {
           <h3>مناطق الخدمة</h3>
           <Link href="/jeddah">جدة</Link>
           <Link href="/riyadh">الرياض</Link>
-          <span>مختلف مناطق المملكة</span>
+          <span>نخدم مشاريع المدينتين</span>
         </div>
 
         {/* Contact Column */}
