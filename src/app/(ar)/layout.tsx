@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
+import '../english.css';
 import SiteHeader from '@/components/SiteHeader';
 import { SiteFooter } from '@/components/UI';
 import { company, messages, pageMeta, phone, whatsapp } from '@/lib/data';
 import { canonicalUrl, isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import ScrollReveal from '@/components/ScrollReveal';
+import { alternateMetadata } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   ...(siteOrigin ? { metadataBase: new URL(siteOrigin) } : {}),
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     follow: isSearchIndexingEnabled,
     ...(isSearchIndexingEnabled ? {} : { noarchive: true }),
   },
-  ...(canonicalUrl('/') ? { alternates: { canonical: canonicalUrl('/') } } : {}),
+  ...(alternateMetadata('', 'ar') ? { alternates: alternateMetadata('', 'ar') } : {}),
 };
 
 export default function RootLayout({

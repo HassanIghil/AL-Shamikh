@@ -1,32 +1,23 @@
 import type { MetadataRoute } from 'next';
 import { canonicalUrl, isSearchIndexingEnabled } from '@/lib/seo';
+import { localizedPath, type ContentSlug } from '@/lib/i18n/config';
 
 export const dynamic = 'force-static';
 
-const routes = [
-  '/',
-  '/warehouse-racking',
-  '/retail-shelving',
-  '/jeddah',
-  '/riyadh',
-  '/solutions',
-  '/sectors',
-  '/projects',
-  '/about',
-  '/contact',
-];
+const routes: ContentSlug[] = ['', 'warehouse-racking', 'retail-shelving', 'jeddah', 'riyadh', 'solutions', 'sectors', 'projects', 'about', 'contact'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!isSearchIndexingEnabled) return [];
 
-  return routes.flatMap((path) => {
-    const url = canonicalUrl(path);
-    if (!url) return [];
-
-    return [{
-      url,
-      changeFrequency: path === '/' ? 'weekly' as const : 'monthly' as const,
-      priority: path === '/' ? 1 : path === '/warehouse-racking' || path === '/retail-shelving' ? 0.9 : 0.7,
-    }];
+  return routes.flatMap((slug) => {
+    const arabic = canonicalUrl(localizedPath('ar', slug));
+    const english = canonicalUrl(localizedPath('en', slug));
+    if (!arabic || !english) return [];
+    const alternates = { languages: { 'ar-SA': arabic, en: english, 'x-default': arabic } };
+    return [arabic, english].map(url => ({
+      url, alternates,
+      changeFrequency: slug === '' ? 'weekly' as const : 'monthly' as const,
+      priority: slug === '' ? 1 : slug === 'warehouse-racking' || slug === 'retail-shelving' ? 0.9 : 0.7,
+    }));
   });
 }

@@ -403,7 +403,7 @@ img {
   width: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .desktop-nav,
   .header-whatsapp-btn {
     display: none;
