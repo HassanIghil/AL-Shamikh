@@ -50,9 +50,13 @@ export function EnglishLanding({ slug }: { slug: Exclude<ContentSlug, '' | 'cont
   };
   const hero = heroAssets[slug];
   return <main className="en-page">
-    <header className="en-hero">
+    <header className={`en-hero ${slug === 'projects' ? 'en-projects-hero' : ''}`}>
       <div className="en-hero-image"><ResponsiveHeroImage src={hero.desktop} mobileSrc={hero.mobile} desktopSrcSet={hero.desktopSrcSet} mobileSrcSet={hero.mobileSrcSet} alt={page.heroAlt} /></div>
       <div className="en-hero-content"><Breadcrumb current={page.eyebrow} /><span className="en-pill">{page.eyebrow}</span><h1>{page.h1}</h1><p>{page.lead}</p><WhatsAppLink message={page.message}>Ask on WhatsApp</WhatsAppLink></div>
+      {slug === 'projects' && <Link className="en-projects-hero-photo-inset" href="#project-gallery" aria-label="Explore shelving solution images">
+        <Image src="/photos/market.webp" alt="Illustrative retail shelving" fill sizes="(max-width: 1050px) 235px, (max-width: 1480px) 25vw, 370px" />
+        <span>Storage and display solutions</span>
+      </Link>}
     </header>
     {page.sections.map((section, index) => <section className={`en-section ${index % 2 ? 'en-section-tint' : ''}`} key={section.title} aria-labelledby={`en-section-${index}`}>
       <div className="container">
