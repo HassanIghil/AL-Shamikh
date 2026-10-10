@@ -89,18 +89,18 @@ export function EnglishHome() {
       <div className="en-hero-image"><picture><source media="(max-width: 768px)" srcSet="/photos/home-hero-1280-640.webp 640w, /photos/home-hero-1280-960.webp 960w" sizes="100vw" /><StaticResponsiveImage variants={[{src:'/photos/home-hero-new-1280.webp',width:1280}]} alt="Illustrative warehouse shelves with organized stock" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 50vw" /></picture></div>
       <div className="en-hero-content"><span className="en-pill">Warehouse and retail shelving</span><h1 id="en-home-title">Shelving for warehouses and stores</h1><p className="en-hero-lead">Storage and display options chosen around your space</p><p>Al Shamikh supplies warehouse racks and shelving for supermarkets, grocery stores and pharmacies in Jeddah and Riyadh. Tell us how you use your space and what you need to store or display.</p>
         <div className="en-home-features"><div><Warehouse size={26} aria-hidden="true" /><span>Warehouse storage</span></div><div><Store size={26} aria-hidden="true" /><span>Retail display</span></div><div><MapPin size={26} aria-hidden="true" /><span>Jeddah and Riyadh</span></div></div>
+        <div className="en-city-banner">
+          <StaticResponsiveImage
+            variants={[
+              { src: '/images/jeddah-riyadh-skyline-solutions-640.webp', width: 640 },
+              { src: '/images/jeddah-riyadh-skyline-solutions-1200.webp', width: 1200 },
+              { src: '/images/jeddah-riyadh-skyline-solutions.webp', width: 2157 },
+            ]}
+            alt="Jeddah and Riyadh skylines with complete shelving solutions in both cities"
+            sizes="(max-width: 338px) calc(100vw - 28px), (max-width: 768px) 310px, (max-width: 1364px) 44vw, 600px"
+          />
+        </div>
         <WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink>
-      </div>
-      <div className="en-city-banner">
-        <StaticResponsiveImage
-          variants={[
-            { src: '/images/jeddah-riyadh-skyline-solutions-640.webp', width: 640 },
-            { src: '/images/jeddah-riyadh-skyline-solutions-1200.webp', width: 1200 },
-            { src: '/images/jeddah-riyadh-skyline-solutions.webp', width: 2157 },
-          ]}
-          alt="Jeddah and Riyadh skylines with complete shelving solutions in both cities"
-          sizes="(max-width: 338px) calc(100vw - 28px), (max-width: 768px) 310px, (max-width: 1364px) 44vw, 600px"
-        />
       </div>
     </section>
     <section className="en-section" aria-labelledby="en-home-solutions"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Our solutions</span><h2 id="en-home-solutions">Shelving for different uses</h2><p>Explore storage and display categories, then compare what fits your site and products.</p></div><div className="en-card-grid">{categories.map(card => <Card card={card} key={card.title} />)}</div></div></section>
