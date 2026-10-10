@@ -6,6 +6,11 @@ html[lang="en"] .contact-field input, html[lang="en"] .contact-field select,
 html[lang="en"] .contact-field textarea { font-family: Arial, Helvetica, sans-serif; }
 html[lang="en"] .nav-link::after { left: 0; right: auto; }
 html[lang="en"] .mobile-nav-link:hover, html[lang="en"] .mobile-nav-link.active { padding-left: 8px; padding-right: 6px; }
+html[lang="en"] .site-header .header-inner,
+html[lang="en"] .site-header .desktop-nav,
+html[lang="en"] .site-header .header-actions { direction: rtl; }
+html[lang="en"] .site-header .nav-link,
+html[lang="en"] .site-header .header-whatsapp-btn { direction: ltr; }
 html[lang="en"] .legal-page, html[lang="en"] .contact-page { direction: ltr; text-align: left; }
 html[lang="en"] .legal-breadcrumb svg, html[lang="en"] .contact-breadcrumb svg { transform: rotate(180deg); }
 html[lang="en"] .legal-breadcrumb, html[lang="en"] .legal-layout, html[lang="en"] .legal-related,
