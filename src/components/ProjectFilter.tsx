@@ -49,6 +49,12 @@ export default function ProjectFilter({ locale = 'ar' }: { locale?: Locale }) {
   const [filter, setFilter] = useState(english ? 'All' : 'الكل');
   const list = english ? englishProjects : projects;
   const visible = filter === (english ? 'All' : 'الكل') ? list : list.filter((project) => project.category === filter);
+  const messageFor = (category: string) => {
+    const arabicCategory = english
+      ? ({ Warehouses: 'رفوف مستودعات', Supermarkets: 'رفوف سوبر ماركت', Pharmacies: 'رفوف صيدليات', Stores: 'رفوف المحلات', Storage: 'حلول تخزين' } as Record<string, string>)[category] || 'حلول الرفوف'
+      : category === 'مستودعات' ? 'رفوف مستودعات' : `رفوف ${category}`;
+    return `السلام عليكم، أود الاستفسار عن ${arabicCategory} لمشروعي.`;
+  };
 
   return (
     <div className="projects-gallery-block" id="project-gallery">
@@ -70,7 +76,7 @@ export default function ProjectFilter({ locale = 'ar' }: { locale?: Locale }) {
           <article className={`projects-card projects-card-${index + 1}`} key={project.image}>
             <a
               className="projects-card-image"
-              href={whatsapp(english ? `Hello, I would like to ask about ${project.category.toLowerCase()} shelving for my project.` : `السلام عليكم، أريد الاستفسار عن ${project.category === 'مستودعات' ? 'رفوف مستودعات' : `رفوف ${project.category}`} لمشروعي.`)}
+              href={whatsapp(messageFor(project.category))}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={english ? `Ask on WhatsApp about ${project.category.toLowerCase()} shelving` : `استفسر عبر واتساب عن فئة ${project.category}`}

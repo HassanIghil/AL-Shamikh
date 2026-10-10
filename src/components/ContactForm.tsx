@@ -28,15 +28,25 @@ export default function ContactForm({ locale = 'ar' }: { locale?: Locale }) {
       return entry || fallback;
     };
     const selectedCity = city === 'other' || city === 'مدينة أخرى' ? value('cityOther') : city;
+    const arabicCity = selectedCity === 'Jeddah' ? 'جدة' : selectedCity === 'Riyadh' ? 'الرياض' : selectedCity;
+    const projectTypeAr: Record<string, string> = {
+      'Warehouse or stockroom': 'مستودع أو مخزن',
+      Supermarket: 'سوبر ماركت',
+      'Grocery store': 'بقالة',
+      Pharmacy: 'صيدلية',
+      'Commercial store or showroom': 'محل تجاري أو معرض',
+      'Home storage': 'تخزين منزلي',
+      Other: 'أخرى',
+    };
     const message = english ? [
-      'Hello, I found Al Shamikh online and would like to ask about my shelving project.',
+      'السلام عليكم، وصلت لكم من موقع الشامخ وأرغب بالاستفسار عن مشروع الرفوف.',
       '',
-      `Name: ${value('name', 'Not provided')}`,
-      `Phone: ${value('phone', 'Not provided')}`,
-      `City: ${selectedCity || 'Not provided'}`,
-      `Project type: ${value('projectType', 'Not provided')}`,
-      `Approximate area: ${value('area', 'Not provided')}`,
-      `Project details: ${value('details', 'Not provided')}`,
+      `الاسم: ${value('name')}`,
+      `رقم الجوال: ${value('phone')}`,
+      `المدينة: ${arabicCity || 'غير محدد'}`,
+      `نوع المشروع: ${projectTypeAr[value('projectType')] || value('projectType')}`,
+      `المساحة التقريبية: ${value('area')}`,
+      `تفاصيل المشروع: ${value('details')}`,
     ].join('\n') : [
       'السلام عليكم، وصلت لكم من موقع الشامخ للرفوف والديكورات وأرغب بالاستفسار عن مشروعي.',
       '',
