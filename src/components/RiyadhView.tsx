@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpLeft, Boxes, Building2, Check, Expand, Layers3, MapPin, Package, Repeat2, Ruler, Store, Truck, Warehouse } from 'lucide-react';
 import { ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
@@ -59,7 +60,7 @@ export default function RiyadhView() {
           <span className="riyadh-service-area"><MapPin size={16} aria-hidden="true" /> خدمة مشاريع الرياض</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من الرياض" />
         </div>
-        <div className="riyadh-hero-photo"><ResponsiveHeroImage src="/photos/hero-riyadh.webp" mobileSrc="/photos/hero-riyadh-mobile.webp" alt="رفوف تخزين صناعية داخل مستودع منظم" /><span><Layers3 size={15} aria-hidden="true" /> حلول تخزين للمساحات الكبيرة</span></div>
+        <div className="riyadh-hero-photo"><ResponsiveHeroImage src="/photos/hero-riyadh-1280.webp" mobileSrc="/photos/hero-riyadh-mobile.webp" mobileSrcSet="/photos/hero-riyadh-mobile-640.webp 640w, /photos/hero-riyadh-mobile.webp 900w" desktopSrcSet="/photos/hero-riyadh-1280.webp 1280w" alt="رفوف تخزين صناعية داخل مستودع منظم" /><span><Layers3 size={15} aria-hidden="true" /> حلول تخزين للمساحات الكبيرة</span></div>
         <span className="riyadh-hero-index" aria-hidden="true">01 <i /> RIYADH</span>
       </section>
 
@@ -71,7 +72,7 @@ export default function RiyadhView() {
       </div></section>
 
       <section className="riyadh-warehouse" aria-labelledby="riyadh-warehouse-title">
-        <div className="riyadh-warehouse-photo"><Image src="/photos/riyadh-warehouse.webp" alt="رفوف مستودع مرتفعة محملة بالبضائع" fill sizes="(max-width: 720px) 100vw, 52vw" /><span>أنظمة التخزين</span></div>
+        <div className="riyadh-warehouse-photo"><StaticResponsiveImage variants={[{ src: '/photos/jeddah-stocked-warehouse-640.webp', width: 640 }, { src: '/photos/jeddah-stocked-warehouse-960.webp', width: 960 }]} alt="رفوف مستودع مرتفعة محملة بالبضائع" sizes="(max-width: 720px) 100vw, 52vw" /><span>أنظمة التخزين</span></div>
         <div className="riyadh-warehouse-copy"><span className="riyadh-kicker">المستودعات</span><h2 id="riyadh-warehouse-title">رفوف مستودعات في الرياض</h2><p>حلول تخزين للمستودعات تساعد على تنظيم البضائع واستغلال المساحة الرأسية والأفقية وفق طبيعة التشغيل.</p><ul>{warehouseSystems.map((item) => <li key={item}><Check size={15} aria-hidden="true" />{item}</li>)}</ul><div className="riyadh-actions"><Link className="riyadh-text-link" href="/warehouse-racking">اكتشف حلول رفوف المستودعات <ArrowUpLeft size={16} aria-hidden="true" /></Link><WhatsAppButton message={warehouseMessage} label="استفسر عن رفوف مستودعات الرياض" /></div></div>
       </section>
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -80,7 +81,7 @@ export default function JeddahView() {
           <span className="jeddah-service-area"><MapPin size={16} aria-hidden="true" /> خدمة مشاريع جدة</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من جدة" />
         </div>
-        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" alt="مساحة تجارية تتضمن رفوف عرض" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
+        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah-1280.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" mobileSrcSet="/photos/hero-jeddah-mobile-640.webp 640w, /photos/hero-jeddah-mobile.webp 900w" desktopSrcSet="/photos/hero-jeddah-1280.webp 1280w" alt="مساحة تجارية تتضمن رفوف عرض" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
       </section>
 
       <section className="jeddah-trust" aria-label="خدمات الشامخ في جدة">
@@ -95,7 +96,7 @@ export default function JeddahView() {
       </section>
 
       <section className="jeddah-solution jeddah-warehouse-solution" aria-labelledby="jeddah-warehouse-title">
-        <div className="jeddah-solution-photo"><Image src="/photos/jeddah-stocked-warehouse.webp" alt="رفوف مستودع صناعية مجهزة لتخزين البضائع على منصات" fill sizes="(max-width: 720px) 100vw, 50vw" /><span>أنظمة التخزين</span></div>
+        <div className="jeddah-solution-photo"><StaticResponsiveImage variants={[{ src: '/photos/jeddah-stocked-warehouse-640.webp', width: 640 }, { src: '/photos/jeddah-stocked-warehouse-960.webp', width: 960 }]} alt="رفوف مستودع صناعية مجهزة لتخزين البضائع على منصات" sizes="(max-width: 720px) 100vw, 50vw" /><span>أنظمة التخزين</span></div>
         <div className="jeddah-solution-copy"><span className="jeddah-kicker">المستودعات</span><h2 id="jeddah-warehouse-title">رفوف مستودعات في جدة</h2><p>حلول تخزين للمستودعات والمخازن تساعد على تنظيم البضائع واستغلال المساحات حسب طبيعة التشغيل وحجم الموقع.</p><ul>{warehouseTypes.map((type) => <li key={type}><span />{type}</li>)}</ul><div className="jeddah-solution-actions"><Link href="/warehouse-racking" className="jeddah-text-link">اكتشف حلول رفوف المستودعات <ArrowUpLeft size={17} aria-hidden="true" /></Link><WhatsAppButton message={warehouseMessage} label="استفسر عن رفوف مستودعات في جدة" /></div></div>
       </section>
 

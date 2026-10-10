@@ -214,9 +214,13 @@
 }
 
 .home-section-heading .eyebrow {
-  color: var(--gold-500);
+  color: #78591f;
   font-size: 13.5px;
   margin-bottom: 4px;
+}
+
+.home-projects-title-wrap .eyebrow {
+  color: #78591f;
 }
 
 .home-section-heading h2 {

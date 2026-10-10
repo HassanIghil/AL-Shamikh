@@ -51,18 +51,24 @@ export function ResponsiveHeroImage({
   mobileSrc,
   alt,
   className,
+  mobileSrcSet,
+  desktopSrcSet,
 }: {
   src: string;
   mobileSrc: string;
   alt: string;
   className?: string;
+  mobileSrcSet?: string;
+  desktopSrcSet?: string;
 }) {
   return (
     <picture>
-      <source media="(max-width: 768px)" srcSet={mobileSrc + ' 900w'} sizes="100vw" />
+      <source media="(max-width: 768px)" srcSet={mobileSrcSet ?? mobileSrc + ' 900w'} sizes="100vw" />
       <img
         className={className}
         src={src}
+        srcSet={desktopSrcSet}
+        sizes="(max-width: 768px) 100vw, 50vw"
         alt={alt}
         fetchPriority="high"
         loading="eager"
@@ -246,7 +252,7 @@ export function SiteFooter() {
         <div className="footer-col footer-brand-col">
           <Link href="/" className="footer-logo-link" aria-label="الشامخ للرفوف والديكورات">
             <Image
-              src="/logo.webp"
+              src="/logo-280.webp"
               alt="الشامخ للرفوف والديكورات"
               width={140}
               height={60}
