@@ -180,7 +180,7 @@
   position: absolute;
   left: 36px;
   /* Keep clear of the fixed WhatsApp control at the viewport's lower-left. */
-  bottom: 84px;
+  bottom: 74px;
   z-index: 20;
   display: block;
   width: clamp(500px, 44vw, 650px);
@@ -188,7 +188,7 @@
   object-fit: contain;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.16));
   will-change: transform;
-  animation: home-city-banner-float 4s ease-in-out infinite alternate;
+  animation: home-city-banner-float 5s ease-in-out infinite alternate;
 }
 
 @keyframes home-city-banner-float {
