@@ -91,7 +91,17 @@ export function EnglishHome() {
         <div className="en-home-features"><div><Warehouse size={26} aria-hidden="true" /><span>Warehouse storage</span></div><div><Store size={26} aria-hidden="true" /><span>Retail display</span></div><div><MapPin size={26} aria-hidden="true" /><span>Jeddah and Riyadh</span></div></div>
         <WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink>
       </div>
-      <div className="en-city-banner" role="img" aria-label="Al Shamikh serves projects in Jeddah and Riyadh"><strong>Serving Jeddah &amp; Riyadh</strong><span>Warehouse and retail shelving for projects in both cities</span></div>
+      <div className="en-city-banner">
+        <StaticResponsiveImage
+          variants={[
+            { src: '/images/jeddah-riyadh-skyline-solutions-640.webp', width: 640 },
+            { src: '/images/jeddah-riyadh-skyline-solutions-1200.webp', width: 1200 },
+            { src: '/images/jeddah-riyadh-skyline-solutions.webp', width: 2157 },
+          ]}
+          alt="Jeddah and Riyadh skylines with complete shelving solutions in both cities"
+          sizes="(max-width: 338px) calc(100vw - 28px), (max-width: 768px) 310px, (max-width: 1364px) 44vw, 600px"
+        />
+      </div>
     </section>
     <section className="en-section" aria-labelledby="en-home-solutions"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Our solutions</span><h2 id="en-home-solutions">Shelving for different uses</h2><p>Explore storage and display categories, then compare what fits your site and products.</p></div><div className="en-card-grid">{categories.map(card => <Card card={card} key={card.title} />)}</div></div></section>
     <section className="en-section en-section-dark" aria-labelledby="en-home-choice"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">How to choose</span><h2 id="en-home-choice">Start with the needs of your space</h2><p>Useful shelving depends on what you store or sell, site dimensions and the way people or stock move through it.</p></div><div className="en-point-grid"><div><Boxes size={26} aria-hidden="true" /><h3>Products and goods</h3><p>Type, size and intended arrangement.</p></div><div><Ruler size={26} aria-hidden="true" /><h3>Site dimensions</h3><p>Floor area, height and available aisles.</p></div><div><PackageCheck size={26} aria-hidden="true" /><h3>Daily use</h3><p>How products are accessed and moved.</p></div></div></div></section>
