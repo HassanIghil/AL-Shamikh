@@ -5,7 +5,8 @@ import EnglishSolutionsView from '@/components/EnglishSolutionsView';
 import LegalView from '@/components/LegalView';
 import { alternateMetadata, contentSlugs, isContentSlug, localizedPath, type ContentSlug } from '@/lib/i18n/config';
 import { englishPages, englishSpecialMeta } from '@/lib/i18n/en';
-import { canonicalUrl, isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
+import { canonicalUrl, isSearchIndexingEnabled, robotsMetadata, siteOrigin } from '@/lib/seo';
+import { getPageSeoImage } from '@/lib/seo-images';
 
 const slugs = contentSlugs.filter(slug => slug !== '');
 export function generateStaticParams() { return slugs.map(slug => ({ slug })); }
@@ -23,12 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const data = metaFor(slug);
   const legal = slug === 'privacy' || slug === 'terms';
   const canonical = canonicalUrl(localizedPath('en', slug));
+  const image = getPageSeoImage(slug, 'en');
   return {
     title: { absolute: data.title }, description: data.description,
     ...(alternateMetadata(slug, 'en') ? { alternates: alternateMetadata(slug, 'en') } : {}),
-    robots: { index: isSearchIndexingEnabled && !legal, follow: isSearchIndexingEnabled && !legal },
-    openGraph: { type: 'website', locale: 'en_US', siteName: 'Al Shamikh', title: data.title, description: data.description, ...(canonical ? { url: canonical } : {}) },
-    twitter: { card: 'summary_large_image', title: data.title, description: data.description },
+    robots: robotsMetadata(!legal),
+    openGraph: { type: 'website', locale: 'en_US', siteName: 'Al Shamikh', title: data.title, description: data.description, ...(canonical ? { url: canonical } : {}), ...(image ? { images: [image] } : {}) },
+    twitter: { card: 'summary_large_image', title: data.title, description: data.description, ...(image ? { images: [image.url] } : {}) },
   };
 }
 
@@ -36,6 +38,8 @@ function EnglishSchema({ slug }: { slug: ContentSlug }) {
   if (!isSearchIndexingEnabled || !siteOrigin || slug === '') return null;
   const data = metaFor(slug);
   const url = canonicalUrl(localizedPath('en', slug));
+  const image = getPageSeoImage(slug, 'en');
+  const webPage = { '@context': 'https://schema.org', '@type': 'WebPage', name: data.title.split('|')[0].trim(), url, inLanguage: 'en', ...(image ? { image: image.url } : {}) };
   const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: canonicalUrl('/en') },
     { '@type': 'ListItem', position: 2, name: data.title.split('|')[0].trim(), item: url },
@@ -44,8 +48,9 @@ function EnglishSchema({ slug }: { slug: ContentSlug }) {
     '@context': 'https://schema.org', '@type': 'Service', name: data.title.split('|')[0].trim(), serviceType: data.title.split('|')[0].trim(), url,
     provider: { '@id': `${siteOrigin}/#organization` },
     areaServed: slug === 'jeddah' || slug === 'riyadh' ? [{ '@type': 'City', name: slug === 'jeddah' ? 'Jeddah' : 'Riyadh' }] : [{ '@type': 'City', name: 'Jeddah' }, { '@type': 'City', name: 'Riyadh' }],
+    ...(image ? { image: image.url } : {}),
   } : null;
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />{service && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />}</>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPage) }} />{service && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />}</>;
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

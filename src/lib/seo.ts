@@ -33,6 +33,23 @@ const isCloudflarePreview =
 export const isSearchIndexingEnabled =
   Boolean(siteOrigin) && process.env.NODE_ENV === 'production' && !isPreviewDeployment && !isCloudflarePreview;
 
+/** Keep the preview and legal-page noindex rules while allowing large image previews on public pages. */
+export function robotsMetadata(indexable = true, noarchiveWhenIndexingDisabled = false) {
+  const enabled = isSearchIndexingEnabled && indexable;
+  return enabled
+    ? {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large' as const,
+        googleBot: { index: true, follow: true, 'max-image-preview': 'large' as const },
+      }
+    : {
+        index: false,
+        follow: false,
+        ...(!isSearchIndexingEnabled && noarchiveWhenIndexingDisabled ? { noarchive: true } : {}),
+      };
+}
+
 export function canonicalUrl(path: string): string | undefined {
   if (!isSearchIndexingEnabled || !siteOrigin) return undefined;
   return new URL(path, siteOrigin).toString();

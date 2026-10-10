@@ -15,6 +15,8 @@ import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import '../home.css';
 import { alternateMetadata } from '@/lib/i18n/config';
+import { canonicalUrl, isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
+import { getPageSeoImage } from '@/lib/seo-images';
 
 export const metadata: Metadata = {
   title: { absolute: pageMeta['/'].title },
@@ -90,8 +92,25 @@ const cardVariants = (source: string) => {
   return [320, 640].map((width) => ({ src: `${stem}-${width}.webp`, width }));
 };
 
+function HomePageSchema() {
+  if (!isSearchIndexingEnabled || !siteOrigin) return null;
+  const image = getPageSeoImage('', 'ar');
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: pageMeta['/'].title,
+    url: canonicalUrl('/'),
+    inLanguage: 'ar-SA',
+    ...(image ? { image: image.url } : {}),
+    isPartOf: { '@id': `${siteOrigin}/#website` },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}
+
 export default function Home() {
   return (
+    <>
+    <HomePageSchema />
     <main className="homepage">
       {/* 1. HERO SECTION */}
       <section className="home-hero" aria-labelledby="home-title">
@@ -340,6 +359,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

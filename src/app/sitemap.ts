@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { canonicalUrl, isSearchIndexingEnabled } from '@/lib/seo';
 import { localizedPath, type ContentSlug } from '@/lib/i18n/config';
+import { getPageSeoImage } from '@/lib/seo-images';
 
 export const dynamic = 'force-static';
 
@@ -13,9 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const arabic = canonicalUrl(localizedPath('ar', slug));
     const english = canonicalUrl(localizedPath('en', slug));
     if (!arabic || !english) return [];
+    const image = getPageSeoImage(slug, 'ar');
     const alternates = { languages: { 'ar-SA': arabic, en: english, 'x-default': arabic } };
     return [arabic, english].map(url => ({
       url, alternates,
+      ...(image ? { images: [image.url] } : {}),
       changeFrequency: slug === '' ? 'weekly' as const : 'monthly' as const,
       priority: slug === '' ? 1 : slug === 'warehouse-racking' || slug === 'retail-shelving' ? 0.9 : 0.7,
     }));
