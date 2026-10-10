@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ArrowUpLeft } from 'lucide-react';
 import { whatsapp } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import type { Locale } from '@/lib/i18n/config';
 
 const projects = [
   { title: 'رفوف مستودعات — صورة توضيحية', category: 'مستودعات', image: '/photos/hero.webp', alt: 'صورة توضيحية لممر رفوف تخزين زرقاء وبرتقالية' },
@@ -21,15 +22,38 @@ const projects = [
 ];
 
 const categories = ['الكل', 'مستودعات', 'سوبر ماركت', 'صيدليات', 'محلات', 'تخزين'];
+const englishCategories = ['All', 'Warehouses', 'Supermarkets', 'Pharmacies', 'Stores', 'Storage'];
+const englishProjects = projects.map((project, index) => ({
+  ...project,
+  title: [
+    'Warehouse racks — illustrative image', 'Supermarket shelving — illustrative image',
+    'Pharmacy shelving — illustrative image', 'Grocery store shelving — illustrative image',
+    'Industrial storage racks — illustrative image', 'Display units — illustrative image',
+    'Vertical storage — illustrative image', 'Warehouse shelving — illustrative image',
+    'White display shelving — illustrative image', 'Indoor storage — illustrative image',
+    'Warehouse rack systems — illustrative image',
+  ][index],
+  alt: [
+    'Illustrative blue and orange warehouse shelving aisle', 'Illustrative supermarket display shelving',
+    'Illustrative white pharmacy shelving', 'Illustrative grocery store shelving aisle',
+    'Illustrative industrial warehouse racks', 'Illustrative dark commercial display shelving',
+    'Illustrative shelving using vertical space', 'Illustrative rows of industrial warehouse racks',
+    'Illustrative white store display shelving', 'Illustrative indoor storage shelving',
+    'Illustrative metal shelving in a warehouse',
+  ][index],
+  category: ({ 'مستودعات': 'Warehouses', 'سوبر ماركت': 'Supermarkets', 'صيدليات': 'Pharmacies', 'محلات': 'Stores', 'تخزين': 'Storage' } as Record<string,string>)[project.category],
+}));
 
-export default function ProjectFilter() {
-  const [filter, setFilter] = useState('الكل');
-  const visible = filter === 'الكل' ? projects : projects.filter((project) => project.category === filter);
+export default function ProjectFilter({ locale = 'ar' }: { locale?: Locale }) {
+  const english = locale === 'en';
+  const [filter, setFilter] = useState(english ? 'All' : 'الكل');
+  const list = english ? englishProjects : projects;
+  const visible = filter === (english ? 'All' : 'الكل') ? list : list.filter((project) => project.category === filter);
 
   return (
     <div className="projects-gallery-block" id="project-gallery">
-      <div className="projects-filter-bar" role="group" aria-label="تصفية صور الحلول حسب الفئة">
-        {categories.map((category) => (
+      <div className="projects-filter-bar" role="group" aria-label={english ? 'Filter solution images by category' : 'تصفية صور الحلول حسب الفئة'}>
+        {(english ? englishCategories : categories).map((category) => (
           <button
             key={category}
             type="button"
@@ -46,14 +70,14 @@ export default function ProjectFilter() {
           <article className={`projects-card projects-card-${index + 1}`} key={project.image}>
             <a
               className="projects-card-image"
-              href={whatsapp(`السلام عليكم، أريد الاستفسار عن ${project.category === 'مستودعات' ? 'رفوف مستودعات' : `رفوف ${project.category}`} لمشروعي.`)}
+              href={whatsapp(english ? `Hello, I would like to ask about ${project.category.toLowerCase()} shelving for my project.` : `السلام عليكم، أريد الاستفسار عن ${project.category === 'مستودعات' ? 'رفوف مستودعات' : `رفوف ${project.category}`} لمشروعي.`)}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`استفسر عبر واتساب عن فئة ${project.category}`}
+              aria-label={english ? `Ask on WhatsApp about ${project.category.toLowerCase()} shelving` : `استفسر عبر واتساب عن فئة ${project.category}`}
             >
               <Image src={project.image} alt={project.alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 34vw" />
               <span className="projects-card-category">{project.category}</span>
-              <span className="projects-card-action" aria-hidden="true"><WhatsAppIcon size={18} /><span>استفسر عن هذه الفئة</span><ArrowUpLeft size={17} /></span>
+              <span className="projects-card-action" aria-hidden="true"><WhatsAppIcon size={18} /><span>{english ? 'Ask about this category' : 'استفسر عن هذه الفئة'}</span><ArrowUpLeft size={17} /></span>
             </a>
             <div className="projects-card-caption">
               <h3>{project.title}</h3>

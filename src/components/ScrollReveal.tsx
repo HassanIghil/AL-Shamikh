@@ -29,7 +29,7 @@ export default function ScrollReveal() {
 
   useEffect(() => {
     // Legal information stays readable without entrance animations.
-    if (pathname === '/privacy' || pathname === '/terms') return;
+    if (pathname === '/privacy' || pathname === '/terms' || pathname === '/en/privacy' || pathname === '/en/terms') return;
     if (
       !('IntersectionObserver' in window) ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches

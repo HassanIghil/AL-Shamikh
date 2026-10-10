@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { Locale } from '@/lib/i18n/config';
 
 export type JeddahGallerySlide = {
   image: string;
@@ -11,9 +12,10 @@ export type JeddahGallerySlide = {
   href: string;
 };
 
-type JeddahGalleryProps = { slides: JeddahGallerySlide[] };
+type JeddahGalleryProps = { slides: JeddahGallerySlide[]; locale?: Locale };
 
-export default function JeddahGallery({ slides }: JeddahGalleryProps) {
+export default function JeddahGallery({ slides, locale = 'ar' }: JeddahGalleryProps) {
+  const english = locale === 'en';
   const galleryRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<Array<HTMLAnchorElement | null>>([]);
   const resetTimeoutRef = useRef<number | null>(null);
@@ -168,8 +170,8 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
         id="jeddah-project-grid"
         ref={galleryRef}
         role="region"
-        aria-roledescription="معرض صور"
-        aria-label="صور توضيحية للرفوف والتخزين"
+        aria-roledescription={english ? 'image gallery' : 'معرض صور'}
+        aria-label={english ? 'Illustrative shelving and storage images' : 'صور توضيحية للرفوف والتخزين'}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={() => setIsTouching(true)}
@@ -183,7 +185,7 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
             key={slide.image}
             ref={(node) => { slideRefs.current[index] = node; }}
             data-slide-index={index}
-            aria-roledescription="شريحة"
+            aria-roledescription={english ? 'slide' : 'شريحة'}
           >
             <Image src={slide.image} alt={slide.alt} fill sizes="(max-width: 700px) 75vw, 25vw" />
             <span>{slide.label}</span>
@@ -207,7 +209,7 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
       <div
         className="jeddah-project-pagination"
         role="group"
-        aria-label="اختيار صورة المعرض"
+        aria-label={english ? 'Choose a gallery image' : 'اختيار صورة المعرض'}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -215,7 +217,7 @@ export default function JeddahGallery({ slides }: JeddahGalleryProps) {
           <button
             key={slide.image}
             type="button"
-            aria-label={`الانتقال إلى الشريحة ${index + 1} من ${slides.length}`}
+            aria-label={english ? `Go to slide ${index + 1} of ${slides.length}` : `الانتقال إلى الشريحة ${index + 1} من ${slides.length}`}
             aria-current={activeIndex === index ? 'true' : undefined}
             aria-controls="jeddah-project-grid"
             onClick={() => scrollToSlide(index)}

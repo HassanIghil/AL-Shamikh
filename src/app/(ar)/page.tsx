@@ -11,15 +11,15 @@ import {
   Wrench,
 } from 'lucide-react';
 import { messages, pageMeta, whatsapp } from '@/lib/data';
-import { canonicalUrl } from '@/lib/seo';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
-import './home.css';
+import '../home.css';
+import { alternateMetadata } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   title: { absolute: pageMeta['/'].title },
   description: pageMeta['/'].description,
-  ...(canonicalUrl('/') ? { alternates: { canonical: canonicalUrl('/') } } : {}),
+  ...(alternateMetadata('', 'ar') ? { alternates: alternateMetadata('', 'ar') } : {}),
 };
 
 const homeSolutions = [
