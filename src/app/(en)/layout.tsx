@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import '../globals.css';
 import '../home.css';
+import '../solutions.css';
 import '../english.css';
+import '../english-solutions.css';
 import SiteHeader from '@/components/SiteHeader';
 import EnglishFooter from '@/components/EnglishFooter';
 import ScrollReveal from '@/components/ScrollReveal';
