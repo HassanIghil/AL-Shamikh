@@ -7,17 +7,17 @@ import { whatsapp } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const projects = [
-  { title: 'تجهيز رفوف مستودع', category: 'مستودعات', image: '/photos/hero.webp', alt: 'ممر تخزين طويل بين رفوف مستودع زرقاء وبرتقالية' },
-  { title: 'رفوف سوبر ماركت', category: 'سوبر ماركت', image: '/photos/market.webp', alt: 'رفوف عرض تجارية داكنة بحواف خضراء' },
-  { title: 'تجهيز رفوف صيدلية', category: 'صيدليات', image: '/photos/pharmacy.jpeg', alt: 'أرفف بيضاء مرتبة داخل صيدلية' },
-  { title: 'رفوف متجر غذائي', category: 'محلات', image: '/photos/store.webp', alt: 'ممر متجر مع رفوف عرض بيضاء' },
-  { title: 'نظام تخزين صناعي', category: 'مستودعات', image: '/photos/warehouse-2.jpeg', alt: 'رفوف تخزين صناعية زرقاء وبرتقالية' },
-  { title: 'وحدات عرض داكنة', category: 'محلات', image: '/photos/black.webp', alt: 'رفوف عرض داكنة بحواف خضراء' },
-  { title: 'رفوف تخزين متعددة المستويات', category: 'تخزين', image: '/photos/warehouse-5.webp', alt: 'سلم وممرات معدنية ضمن مساحة تخزين متعددة المستويات' },
-  { title: 'تنظيم مساحة مستودع', category: 'مستودعات', image: '/photos/warehouse-3.webp', alt: 'صفوف رفوف تخزين صناعية في مستودع' },
-  { title: 'رفوف عرض بيضاء', category: 'محلات', image: '/photos/white.webp', alt: 'وحدات رفوف عرض بيضاء في مساحة تجارية' },
-  { title: 'حلول تخزين للمساحات الداخلية', category: 'تخزين', image: '/photos/home.webp', alt: 'رفوف تخزين داخلية لمنتجات متنوعة' },
-  { title: 'رفوف مستودع تجاري', category: 'مستودعات', image: '/photos/warehouse-4.jpeg', alt: 'أنظمة رفوف معدنية داخل مستودع واسع' },
+  { title: 'رفوف مستودعات — صورة توضيحية', category: 'مستودعات', image: '/photos/hero.webp', alt: 'صورة توضيحية لممر رفوف تخزين زرقاء وبرتقالية' },
+  { title: 'رفوف سوبر ماركت — صورة توضيحية', category: 'سوبر ماركت', image: '/photos/market.webp', alt: 'صورة توضيحية لرفوف عرض تجارية داكنة بحواف خضراء' },
+  { title: 'رفوف صيدليات — صورة توضيحية', category: 'صيدليات', image: '/photos/pharmacy.jpeg', alt: 'صورة توضيحية لأرفف بيضاء داخل صيدلية' },
+  { title: 'رفوف متجر غذائي — صورة توضيحية', category: 'محلات', image: '/photos/store.webp', alt: 'صورة توضيحية لممر متجر مع رفوف عرض بيضاء' },
+  { title: 'رفوف تخزين صناعي — صورة توضيحية', category: 'مستودعات', image: '/photos/warehouse-2.jpeg', alt: 'صورة توضيحية لرفوف تخزين صناعية زرقاء وبرتقالية' },
+  { title: 'وحدات عرض — صورة توضيحية', category: 'محلات', image: '/photos/black.webp', alt: 'صورة توضيحية لرفوف عرض داكنة بحواف خضراء' },
+  { title: 'رفوف ومساحة رأسية — صورة توضيحية', category: 'تخزين', image: '/photos/warehouse-5.webp', alt: 'صورة توضيحية لرفوف وممرات تخزين داخلية' },
+  { title: 'رفوف مستودع — صورة توضيحية', category: 'مستودعات', image: '/photos/warehouse-3.webp', alt: 'صورة توضيحية لصفوف رفوف تخزين صناعية' },
+  { title: 'رفوف عرض بيضاء — صورة توضيحية', category: 'محلات', image: '/photos/white.webp', alt: 'صورة توضيحية لوحدات رفوف عرض بيضاء في مساحة تجارية' },
+  { title: 'رفوف تخزين داخلية — صورة توضيحية', category: 'تخزين', image: '/photos/home.webp', alt: 'صورة توضيحية لرفوف تخزين داخلية لمنتجات متنوعة' },
+  { title: 'أنظمة رفوف مستودعات — صورة توضيحية', category: 'مستودعات', image: '/photos/warehouse-4.jpeg', alt: 'صورة توضيحية لرفوف معدنية داخل مستودع' },
 ];
 
 const categories = ['الكل', 'مستودعات', 'سوبر ماركت', 'صيدليات', 'محلات', 'تخزين'];
@@ -46,14 +46,14 @@ export default function ProjectFilter() {
           <article className={`projects-card projects-card-${index + 1}`} key={project.image}>
             <a
               className="projects-card-image"
-              href={whatsapp(`السلام عليكم، شاهدت مشروع ${project.title} في موقع الشامخ وأرغب بتنفيذ مشروع مشابه.`)}
+              href={whatsapp(`السلام عليكم، أريد الاستفسار عن ${project.category === 'مستودعات' ? 'رفوف مستودعات' : `رفوف ${project.category}`} لمشروعي.`)}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`استفسر عبر واتساب عن ${project.title}`}
+              aria-label={`استفسر عبر واتساب عن فئة ${project.category}`}
             >
               <Image src={project.image} alt={project.alt} fill sizes="(max-width: 680px) 100vw, (max-width: 1050px) 50vw, 34vw" />
               <span className="projects-card-category">{project.category}</span>
-              <span className="projects-card-action" aria-hidden="true"><WhatsAppIcon size={18} /><span>استفسر عن مشروع مشابه</span><ArrowUpLeft size={17} /></span>
+              <span className="projects-card-action" aria-hidden="true"><WhatsAppIcon size={18} /><span>استفسر عن هذه الفئة</span><ArrowUpLeft size={17} /></span>
             </a>
             <div className="projects-card-caption">
               <h3>{project.title}</h3>

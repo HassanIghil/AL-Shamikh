@@ -30,7 +30,7 @@ const sectors = [
     link: '/warehouse-racking',
     linkLabel: 'اكتشف حلول المستودعات',
     whatsappLabel: 'استفسر عن حلول المستودعات',
-    tags: ['تخزين ثقيل', 'تخزين متوسط', 'تخزين خفيف', 'أنظمة متعددة المستويات'],
+    tags: ['تخزين ثقيل', 'تخزين متوسط', 'تخزين خفيف'],
   },
   {
     number: '02',
@@ -137,7 +137,7 @@ export default function SectorsView() {
             mobileSrc="/photos/hero-sectors-mobile.webp"
             alt="استخدامات متنوعة لأنظمة رفوف العرض والتخزين في بيئة تجارية"
           />
-          <span className="sectors-image-note"><MapPin size={16} /> جدة · الرياض · مختلف مناطق المملكة</span>
+          <span className="sectors-image-note"><MapPin size={16} /> جدة · الرياض</span>
         </div>
         <div className="sectors-hero-copy">
           <nav className="sectors-breadcrumb" aria-label="مسار التنقل">
@@ -149,7 +149,7 @@ export default function SectorsView() {
           <div className="sectors-hero-benefits">
             <span><Store size={18} aria-hidden="true" />حل حسب النشاط</span>
             <span><Ruler size={18} aria-hidden="true" />استغلال أفضل للمساحة</span>
-            <span><Truck size={18} aria-hidden="true" />توريد وتركيب</span>
+            <span><Truck size={18} aria-hidden="true" />رفوف للمستودعات والمتاجر</span>
           </div>
           <WhatsAppLink label="استفسر عبر واتساب" message={sectorMessage} />
         </div>
@@ -209,7 +209,7 @@ export default function SectorsView() {
           <div>
             <span className="sectors-kicker">خدمة داخل المملكة</span>
             <h2 id="sectors-location-title">نخدم مشاريع جدة والرياض</h2>
-            <p>نوفر حلول الرفوف والتخزين للمشاريع في جدة والرياض مع إمكانية خدمة مشاريع في مناطق أخرى من المملكة.</p>
+            <p>نوفر رفوف المستودعات والمتاجر والسوبر ماركت والبقالات والصيدليات للمشاريع في جدة والرياض.</p>
           </div>
           <div className="sectors-location-links">
             <Link href="/jeddah">حلول الرفوف في جدة<ArrowUpLeft size={17} aria-hidden="true" /></Link>

@@ -31,7 +31,7 @@ const factors = [
 const pillars = [
   { icon: Ruler, title: 'حل حسب المشروع', text: 'اختيار النظام وفق طبيعة المساحة والاستخدام' },
   { icon: Truck, title: 'توريد', text: 'توفير الأنظمة والحلول المناسبة للمشروع' },
-  { icon: Wrench, title: 'تركيب', text: 'تنفيذ وتركيب بواسطة فريق متخصص' },
+  { icon: Wrench, title: 'توضيح نطاق الخدمة', text: 'تأكيد الخدمات المتاحة واحتياج المشروع عند التواصل' },
   { icon: Boxes, title: 'تنوع الحلول', text: 'للمستودعات والمتاجر والصيدليات والتخزين' },
 ];
 
@@ -39,8 +39,8 @@ const process = [
   { number: '01', title: 'نفهم احتياجك', text: 'نفهم طبيعة النشاط والمساحة والاستخدام.' },
   { number: '02', title: 'ندرس الموقع', text: 'نحدد المتطلبات والعوامل المؤثرة في اختيار النظام.' },
   { number: '03', title: 'نختار الحل', text: 'نقترح نوع الرفوف أو نظام العرض المناسب.' },
-  { number: '04', title: 'التوريد والتركيب', text: 'تجهيز النظام وتركيبه في الموقع.' },
-  { number: '05', title: 'التسليم', text: 'التأكد من جاهزية الحل للاستخدام.' },
+  { number: '04', title: 'توضيح نطاق الخدمة', text: 'نؤكد خدمات التوريد أو التركيب المتاحة ونطاق العمل قبل عرض السعر.' },
+  { number: '05', title: 'مراجعة العرض', text: 'تُناقش تفاصيل الحل والتكلفة بحسب المعلومات المتاحة عن المشروع.' },
 ];
 
 const sectors = [
@@ -54,7 +54,7 @@ const sectors = [
 const trust = [
   { icon: Ruler, title: 'حلول حسب المساحة' },
   { icon: Boxes, title: 'تنوع الأنظمة' },
-  { icon: Wrench, title: 'تجهيز وتركيب' },
+  { icon: Wrench, title: 'تحديد الخدمة المتاحة' },
   { icon: Building2, title: 'خدمة قطاعات متعددة' },
 ];
 
@@ -132,7 +132,7 @@ export default function AboutView() {
 
       <section className="about-why" aria-labelledby="about-why-title">
         <div className="about-container">
-          <div className="about-why-heading"><span className="about-kicker">لماذا الشامخ؟</span><h2 id="about-why-title">شريك في تنظيم المساحة من البداية إلى التنفيذ</h2><p>نناقش احتياج المشروع، ونساعد في اختيار الحل المناسب، ثم تنسيق التوريد والتركيب.</p></div>
+          <div className="about-why-heading"><span className="about-kicker">حلول الرفوف</span><h2 id="about-why-title">اختيار يبدأ من احتياج المساحة</h2><p>نناقش نوع النشاط والمساحة والمنتجات، ونوضح الخدمات المتاحة ونطاق العمل قبل عرض السعر.</p></div>
           <div className="about-pillars">
             {pillars.map(({ icon: Icon, title, text }) => <article className="about-pillar" key={title}><Icon size={28} strokeWidth={1.6} aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article>)}
           </div>
@@ -169,7 +169,7 @@ export default function AboutView() {
       <section className="about-local" aria-labelledby="about-local-title">
         <div className="about-container about-local-inner">
           <div className="about-local-mark"><MapPin size={26} aria-hidden="true" /></div>
-          <div className="about-local-copy"><span className="about-kicker">نطاق الخدمة</span><h2 id="about-local-title">نخدم مشاريع جدة والرياض</h2><p>نوفر حلول الرفوف والتخزين للمشاريع في جدة والرياض، مع إمكانية خدمة مشاريع أخرى في مختلف مناطق المملكة.</p></div>
+          <div className="about-local-copy"><span className="about-kicker">نطاق الخدمة</span><h2 id="about-local-title">نخدم مشاريع جدة والرياض</h2><p>نوفر رفوف المستودعات والمتاجر والسوبر ماركت والبقالات والصيدليات للمشاريع في جدة والرياض.</p></div>
           <div className="about-city-links"><Link href="/jeddah">خدماتنا في جدة <ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/riyadh">خدماتنا في الرياض <ArrowUpLeft size={16} aria-hidden="true" /></Link></div>
         </div>
       </section>

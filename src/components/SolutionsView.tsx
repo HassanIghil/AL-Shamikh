@@ -88,8 +88,8 @@ const secondarySolutions = [
     href: '/solutions',
   },
   {
-    title: 'أنظمة التخزين متعددة المستويات',
-    description: 'استغلال رأسي كامل للارتفاعات وزيادة السعة التخزينية.',
+    title: 'اختيار الرفوف حسب المساحة',
+    description: 'تُراجع أبعاد الموقع والارتفاع وطبيعة الاستخدام قبل مناقشة الفئة المناسبة.',
     image: '/photos/warehouse-5.webp',
     href: '/warehouse-racking',
   },
@@ -137,13 +137,13 @@ const processSteps = [
   },
   {
     number: '03',
-    title: 'التوريد والتركيب',
-    description: 'تجهيز وتوريد وتركيب النظام بواسطة فريق متخصص.',
+    title: 'توضيح الخدمة المطلوبة',
+    description: 'اذكر إن كنت تستفسر عن التوريد أو التركيب؛ نؤكد المتاح ونطاق العمل قبل عرض السعر.',
   },
   {
     number: '04',
-    title: 'التسليم والمتابعة',
-    description: 'التأكد من جاهزية الحل للاستخدام.',
+    title: 'مراجعة العرض',
+    description: 'نناقش الخيارات والتكلفة وفق نطاق الخدمة المؤكد للمشروع.',
   },
 ];
 
@@ -183,13 +183,13 @@ const trustItems = [
   },
   {
     icon: Wrench,
-    title: 'توريد وتركيب',
-    text: 'تنفيذ احترافي بواسطة فريق فني متخصص',
+    title: 'توريد الرفوف',
+    text: 'للمستودعات والمتاجر في جدة والرياض',
   },
   {
     icon: MapPin,
-    title: 'خدمة جدة والرياض ومناطق المملكة',
-    text: 'تغطية سريعة لمشاريع التخزين والعرض',
+    title: 'خدمة جدة والرياض',
+    text: 'للمستودعات والمتاجر والأنشطة التجارية',
   },
 ];
 
@@ -242,7 +242,7 @@ export default function SolutionsView() {
             </div>
             <div className="solutions-badge-item">
               <Wrench size={17} aria-hidden="true" />
-              <span>توريد وتركيب</span>
+              <span>توريد الرفوف</span>
             </div>
             <div className="solutions-badge-item">
               <Boxes size={17} aria-hidden="true" />

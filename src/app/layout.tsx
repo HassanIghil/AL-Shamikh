@@ -50,7 +50,6 @@ export default function RootLayout({
         areaServed: [
           { '@type': 'City', name: 'جدة' },
           { '@type': 'City', name: 'الرياض' },
-          { '@type': 'Country', name: 'المملكة العربية السعودية' },
         ],
       },
       {

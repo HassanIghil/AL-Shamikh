@@ -16,24 +16,23 @@ import {
 } from 'lucide-react';
 import { CtaBand, ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
 import JeddahGallery from '@/components/JeddahGallery';
-import { whatsapp } from '@/lib/data';
 import './jeddah.css';
 
-const heroMessage = 'السلام عليكم، وصلت لكم من صفحة خدمات الشامخ في جدة وأرغب بالاستفسار عن مشروع رفوف وتخزين في جدة.';
-const warehouseMessage = 'السلام عليكم، وصلت لكم من صفحة جدة وأرغب بالاستفسار عن رفوف مستودعات لمشروع في جدة.';
-const retailMessage = 'السلام عليكم، وصلت لكم من صفحة جدة وأرغب بالاستفسار عن تجهيز متجري في جدة.';
-const pharmacyMessage = 'السلام عليكم، وصلت لكم من صفحة جدة وأرغب بالاستفسار عن رفوف الصيدليات في جدة.';
-const groceryMessage = 'السلام عليكم، وصلت لكم من صفحة جدة وأرغب بالاستفسار عن رفوف بقالة في جدة.';
-const finalMessage = 'السلام عليكم، وصلت لكم من صفحة جدة في موقع الشامخ وأرغب بمناقشة مشروع رفوف وتخزين في جدة.';
+const heroMessage = 'السلام عليكم، أريد عرض سعر لرفوف مشروع في جدة.';
+const warehouseMessage = 'السلام عليكم، أريد الاستفسار عن رفوف مستودعات لمشروعي.';
+const retailMessage = 'السلام عليكم، أريد الاستفسار عن رفوف لمتجري.';
+const pharmacyMessage = 'السلام عليكم، أريد الاستفسار عن رفوف لصيدليتي.';
+const groceryMessage = 'السلام عليكم، أريد الاستفسار عن رفوف لبقالتي.';
+const finalMessage = heroMessage;
 
 const trustItems = [
-  { icon: Warehouse, title: 'حلول للمستودعات', text: 'أنظمة تخزين حسب طبيعة المشروع' },
-  { icon: Store, title: 'حلول للمتاجر', text: 'سوبر ماركت · بقالات · صيدليات' },
-  { icon: Truck, title: 'توريد وتركيب', text: 'تنفيذ وتجهيز حسب المشروع' },
-  { icon: MapPin, title: 'خدمة جدة', text: 'والمناطق المحيطة' },
+  { icon: Warehouse, title: 'رفوف المستودعات', text: 'احتياج ثقيل أو متوسط أو خفيف' },
+  { icon: Store, title: 'رفوف المتاجر', text: 'سوبر ماركت · بقالات · محلات' },
+  { icon: Truck, title: 'تحديد الاحتياج', text: 'المساحة والمنتجات وطريقة الاستخدام' },
+  { icon: MapPin, title: 'جدة', text: 'تغطية مشاريع المدينة' },
 ];
 
-const warehouseTypes = ['رفوف تخزين ثقيل', 'رفوف تخزين متوسط', 'رفوف تخزين خفيف', 'أنظمة تخزين متعددة المستويات'];
+const warehouseTypes = ['رفوف تخزين ثقيل', 'رفوف تخزين متوسط', 'رفوف تخزين خفيف'];
 const retailTypes = ['رفوف سوبر ماركت', 'رفوف بقالات', 'رفوف محلات', 'وحدات عرض'];
 
 const factors = [
@@ -45,11 +44,11 @@ const factors = [
 ];
 
 const process = [
-  { number: '01', title: 'فهم الاحتياج', text: 'نتعرف على النشاط وطبيعة الاستخدام.' },
-  { number: '02', title: 'دراسة المساحة', text: 'مراجعة الأبعاد ومتطلبات المشروع.' },
-  { number: '03', title: 'اختيار النظام', text: 'تحديد نوع الرفوف والتوزيع المناسب.' },
-  { number: '04', title: 'التوريد والتركيب', text: 'تنسيق التجهيز والتركيب حسب المشروع.' },
-  { number: '05', title: 'التسليم والمتابعة', text: 'مراجعة جاهزية الحل للاستخدام.' },
+  { number: '01', title: 'حدد نوع الموقع', text: 'مستودع أو متجر، مع نوع النشاط.' },
+  { number: '02', title: 'أرسل الأبعاد', text: 'المساحة والارتفاع والممرات إن توفرت.' },
+  { number: '03', title: 'صف المنتجات', text: 'الحجم والوزن وطريقة الوصول أو المناولة.' },
+  { number: '04', title: 'أرفق صورة أو مخططاً', text: 'المرفقات اختيارية وتساعد على فهم الموقع.' },
+  { number: '05', title: 'ناقش عرض السعر', text: 'يُوضح نطاق المطلوب قبل إعداد التسعير.' },
 ];
 
 const projects = [
@@ -62,14 +61,11 @@ const projects = [
 ];
 
 const faqs = [
-  { q: 'هل توفرون رفوف مستودعات في جدة؟', a: 'نعم، يوفر الشامخ حلول رفوف للمستودعات والمخازن في جدة تشمل أنظمة للتخزين الثقيل والمتوسط والخفيف، ويتم اختيار الحل وفق مساحة الموقع وطبيعة المنتجات وطريقة الاستخدام.' },
-  { q: 'ما أنواع رفوف المستودعات المتوفرة؟', a: 'تشمل الخيارات رفوف التخزين الثقيل والمتوسط والخفيف، إضافة إلى أنظمة التخزين متعددة المستويات. يعتمد الاختيار على البضائع والمساحة وطريقة المناولة.' },
-  { q: 'هل توفرون رفوف سوبر ماركت في جدة؟', a: 'نعم، تتوفر حلول رفوف وعرض للسوبر ماركت والبقالات والمحلات التجارية، بما يشمل الوحدات الجدارية والوسطية وحلول تنظيم المنتجات حسب طبيعة المشروع.' },
-  { q: 'هل لديكم رفوف للبقالات والصيدليات؟', a: 'نعم، تشمل الحلول رفوف عرض وتنظيم للبقالات والصيدليات والمتاجر، ويُحدد التوزيع وفق المساحة والمنتجات وطريقة الاستخدام.' },
-  { q: 'هل يمكن اختيار نظام الرفوف حسب مساحة المشروع؟', a: 'نعم، تتم مراجعة أبعاد الموقع وطبيعة النشاط والمنتجات قبل تحديد نوع الرفوف والتوزيع الملائم.' },
-  { q: 'هل تقدمون خدمة تركيب الرفوف في جدة؟', a: 'تتوفر خيارات التوريد والتركيب، وتُناقش تفاصيل التنفيذ وفق متطلبات المشروع ونطاقه.' },
-  { q: 'هل تتوفر منتجات صناعة وطنية وصناعة صينية؟', a: 'نعم، تتوفر خيارات من الصناعة الوطنية والصناعة الصينية، ويتم اختيار النظام وفق احتياج المشروع والمواصفات المطلوبة.' },
-  { q: 'هل تخدمون المناطق المحيطة بجدة؟', a: 'نخدم مشاريع جدة والمناطق المحيطة، ويمكن التواصل لمناقشة إمكانية خدمة موقع المشروع.' },
+  { q: 'هل تخدمون مشاريع الرفوف في جدة؟', a: 'نعم، تشمل تغطية الشامخ مشاريع جدة في المستودعات والمتاجر.' },
+  { q: 'ما المعلومات المطلوبة لطلب عرض سعر في جدة؟', a: 'أرسل نوع الموقع والنشاط والمساحة والأبعاد إن توفرت، وطبيعة المنتجات وطريقة التخزين أو العرض. تساعد صورة أو مخطط على توضيح الاحتياج.' },
+  { q: 'كيف أختار رفوف مستودع مناسبة؟', a: 'ابدأ بوزن وأبعاد البضائع، وارتفاع الموقع، ومساحة الممرات، وطريقة المناولة. لا يمكن تحديد السعة المناسبة من دون مواصفات معتمدة.' },
+  { q: 'ما خيارات رفوف المتاجر في جدة؟', a: 'تعرض الصفحة خيارات للسوبر ماركت والبقالات والمحلات، ومنها وحدات جدارية ووسطية. يعتمد التوزيع على النشاط ومساحة المتجر والمنتجات.' },
+  { q: 'هل تتوفر خدمة تركيب الرفوف؟', a: 'يمكنك توضيح احتياجك للتوريد أو التركيب عند التواصل معنا، وسيتم تأكيد الخدمات المتاحة ونطاق العمل قبل عرض السعر.' },
 ];
 
 export default function JeddahView() {
@@ -79,12 +75,12 @@ export default function JeddahView() {
         <div className="jeddah-hero-copy">
           <nav className="jeddah-breadcrumb" aria-label="مسار التنقل"><Link href="/">الرئيسية</Link><ArrowLeft size={14} aria-hidden="true" /><span>جدة</span></nav>
           <span className="jeddah-pill">خدماتنا في جدة</span>
-          <h1 id="jeddah-title">حلول الرفوف والتخزين<br />في جدة</h1>
-          <p>يقدم الشامخ للرفوف والديكورات حلول رفوف وتخزين للمشاريع في جدة تشمل المستودعات، السوبر ماركت، البقالات، الصيدليات والمحلات التجارية، مع اختيار النظام المناسب حسب مساحة الموقع وطبيعة الاستخدام.</p>
-          <span className="jeddah-service-area"><MapPin size={16} aria-hidden="true" /> جدة والمناطق المحيطة</span>
+          <h1 id="jeddah-title">رفوف مستودعات ومتاجر<br />في جدة</h1>
+          <p>تعرّف على رفوف المستودعات والتخزين الثقيل والمتوسط والخفيف، إلى جانب رفوف عرض المتاجر والسوبر ماركت والبقالات. يعتمد الاختيار على مساحة الموقع والمنتجات وطريقة الاستخدام.</p>
+          <span className="jeddah-service-area"><MapPin size={16} aria-hidden="true" /> خدمة مشاريع جدة</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من جدة" />
         </div>
-        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" alt="رفوف عرض ومساحة تجارية حديثة لخدمات المشاريع في جدة" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
+        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" alt="مساحة تجارية تتضمن رفوف عرض" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
       </section>
 
       <section className="jeddah-trust" aria-label="خدمات الشامخ في جدة">
@@ -94,7 +90,7 @@ export default function JeddahView() {
       <section className="jeddah-answer" aria-labelledby="jeddah-answer-title">
         <div className="jeddah-container jeddah-answer-inner">
           <div><span className="jeddah-kicker">حلول الرفوف في جدة</span><h2 id="jeddah-answer-title">ما حلول الرفوف والتخزين التي يوفرها الشامخ في جدة؟</h2></div>
-          <div className="jeddah-answer-copy"><p>يوفر الشامخ في جدة حلول رفوف وتخزين للمستودعات والمخازن، وأنظمة عرض للسوبر ماركت والبقالات والصيدليات والمحلات التجارية، إضافة إلى حلول التخزين الخفيف والمتوسط والثقيل حسب احتياج المشروع. يتم اختيار النظام وفق مساحة الموقع، وطبيعة المنتجات وطريقة الاستخدام، مع إمكانية التوريد والتركيب للمشاريع بحسب متطلباتها. وتُراجع متطلبات النشاط قبل تحديد التوزيع ومستويات التخزين أو ترتيب وحدات العرض، بما يساعد على تنظيم المنتجات واستغلال المساحة المتاحة.</p><div className="jeddah-answer-links"><Link href="/solutions">جميع حلولنا <ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/sectors">القطاعات التي نخدمها <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></div>
+          <div className="jeddah-answer-copy"><p>تخدم صفحة جدة الباحثين عن رفوف للمستودعات والمتاجر في المدينة. لرفوف المستودعات، ابدأ بوزن وأبعاد البضائع وارتفاع الموقع وطريقة المناولة. وللمتاجر، شارك نوع النشاط والمنتجات ومساحة الممرات. تساعد هذه التفاصيل على مناقشة فئة الرفوف والتوزيع المطلوبين قبل طلب عرض سعر.</p><div className="jeddah-answer-links"><Link href="/solutions">استكشف حلول التخزين والعرض <ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/sectors">تعرّف على حلول القطاعات <ArrowUpLeft size={16} aria-hidden="true" /></Link></div></div>
         </div>
       </section>
 
@@ -128,7 +124,7 @@ export default function JeddahView() {
 
       <section className="jeddah-process" aria-labelledby="jeddah-process-title">
         <div className="jeddah-container">
-          <div className="jeddah-section-heading"><span className="jeddah-kicker">خطوات العمل</span><h2 id="jeddah-process-title">من فهم المشروع إلى التركيب</h2></div>
+          <div className="jeddah-section-heading"><span className="jeddah-kicker">طلب عرض سعر</span><h2 id="jeddah-process-title">ما التفاصيل التي تساعد على تسعير مشروع الرفوف؟</h2></div>
           <ol className="jeddah-steps">{process.map((step) => <li key={step.number}><span className="jeddah-step-number">{step.number}</span><strong>{step.title}</strong><p>{step.text}</p></li>)}</ol>
         </div>
       </section>
@@ -149,10 +145,10 @@ export default function JeddahView() {
       </section>
 
       <section className="jeddah-related" aria-labelledby="jeddah-related-title">
-        <div className="jeddah-container"><div className="jeddah-related-heading"><span className="jeddah-kicker">روابط مفيدة</span><h2 id="jeddah-related-title">اكتشف المزيد من حلول الشامخ</h2></div><div className="jeddah-related-links"><Link href="/warehouse-racking"><Warehouse size={18} aria-hidden="true" />رفوف المستودعات<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/retail-shelving"><Store size={18} aria-hidden="true" />رفوف المحلات والسوبر ماركت<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/solutions"><Boxes size={18} aria-hidden="true" />جميع الحلول<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/sectors"><Building2 size={18} aria-hidden="true" />القطاعات التي نخدمها<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/projects"><Package size={18} aria-hidden="true" />مشاريعنا<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/riyadh"><MapPin size={18} aria-hidden="true" />خدماتنا في الرياض<ArrowUpLeft size={16} aria-hidden="true" /></Link></div></div>
+        <div className="jeddah-container"><div className="jeddah-related-heading"><span className="jeddah-kicker">روابط مفيدة</span><h2 id="jeddah-related-title">تابع إلى الصفحة المناسبة لاحتياجك</h2></div><div className="jeddah-related-links"><Link href="/warehouse-racking"><Warehouse size={18} aria-hidden="true" />رفوف المستودعات<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/retail-shelving"><Store size={18} aria-hidden="true" />رفوف المحلات والسوبر ماركت<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/solutions"><Boxes size={18} aria-hidden="true" />حلول التخزين والعرض<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/sectors"><Building2 size={18} aria-hidden="true" />حلول حسب نوع النشاط<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/projects"><Package size={18} aria-hidden="true" />صور توضيحية للرفوف<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/riyadh"><MapPin size={18} aria-hidden="true" />صفحة الخدمة في الرياض<ArrowUpLeft size={16} aria-hidden="true" /></Link><Link href="/contact">تواصل معنا لطلب عرض سعر<ArrowUpLeft size={16} aria-hidden="true" /></Link></div></div>
       </section>
 
-      <CtaBand title="هل لديك مشروع رفوف في جدة؟" description="أرسل لنا نوع المشروع ومساحة الموقع وطبيعة الاستخدام، وسنساعدك في تحديد الحل المناسب." message={finalMessage} buttonLabel="تواصل عبر واتساب" />
+      <CtaBand title="ناقش مشروع رفوف في جدة" description="أرسل نوع الموقع والنشاط ومساحته وطبيعة المنتجات. أرفق صورة أو مخططاً إن توفر لمناقشة الخيارات وطلب عرض سعر." message={finalMessage} buttonLabel="أرسل تفاصيل المشروع عبر واتساب" />
     </div>
   );
 }
