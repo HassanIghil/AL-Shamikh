@@ -23,7 +23,7 @@ export const nav = [
   { href: '/', label: 'الرئيسية' },
   { href: '/solutions', label: 'حلولنا' },
   { href: '/sectors', label: 'القطاعات' },
-  { href: '/projects', label: 'مشاريعنا' },
+  { href: '/projects', label: 'صور الحلول' },
   { href: '/about', label: 'من نحن' },
   { href: '/jeddah', label: 'جدة' },
   { href: '/riyadh', label: 'الرياض' },
@@ -38,14 +38,14 @@ export type Solution = {
 };
 
 export const solutions: Solution[] = [
-  { title: 'رفوف مستودعات مركزية', description: 'حلول تخزين قوية لجميع الاحتياجات للمستودعات والمخازن.', href: '/warehouse-racking', image: '/photos/hero.webp' },
-  { title: 'رفوف بقالات', description: 'استغلال مثالي للمساحات مع متانة عالية وسهولة الوصول.', href: '/retail-shelving', image: '/photos/store.webp' },
+  { title: 'رفوف مستودعات مركزية', description: 'خيارات تخزين للمستودعات والمخازن تُحدد وفق طبيعة الاستخدام.', href: '/warehouse-racking', image: '/photos/hero.webp' },
+  { title: 'رفوف بقالات', description: 'رفوف تساعد على تنظيم المنتجات وفق مساحة المتجر وطبيعة النشاط.', href: '/retail-shelving', image: '/photos/store.webp' },
   { title: 'رفوف سوبر ماركت', description: 'تصاميم عصرية للمتاجر والمراكز التجارية الكبرى.', href: '/retail-shelving', image: '/photos/market.webp' },
   { title: 'رفوف صيدليات', description: 'حلول مخصصة لتنظيم الأدوية والمنتجات بدقة ونظافة.', href: '/retail-shelving', image: '/photos/pharmacy.jpeg' },
   { title: 'رفوف تخزين منازل', description: 'تصاميم عملية وأنيقة لكل المساحات والغرف المنزلية.', href: '/solutions', image: '/photos/home.webp' },
-  { title: 'رفوف التخزين الثقيل', description: 'أنظمة متينة للمنتجات الكبيرة والصناعات الثقيلة.', href: '/warehouse-racking', image: '/photos/warehouse-2.jpeg' },
-  { title: 'رفوف التخزين المتوسط', description: 'توازن مثالي بين القوة والمرونة لتخزين الصناديق.', href: '/warehouse-racking', image: '/photos/warehouse-3.webp' },
-  { title: 'رفوف التخزين الخفيف', description: 'حلول اقتصادية مرنة للأوزان والمساحات الصغيرة.', href: '/warehouse-racking', image: '/photos/white.webp' },
+  { title: 'رفوف التخزين الثقيل', description: 'خيارات تخزين للمنتجات الكبيرة والاستخدامات الصناعية وفق متطلبات المشروع.', href: '/warehouse-racking', image: '/photos/warehouse-2.jpeg' },
+  { title: 'رفوف التخزين المتوسط', description: 'خيارات لتخزين الصناديق تُختار وفق المساحة وطبيعة الاستخدام.', href: '/warehouse-racking', image: '/photos/warehouse-3.webp' },
+  { title: 'رفوف التخزين الخفيف', description: 'خيارات تخزين للمساحات الصغيرة والاستخدامات الخفيفة.', href: '/warehouse-racking', image: '/photos/white.webp' },
   { title: 'تجهيزات المحلات التجارية', description: 'حلول عرض متطورة لمختلف الأنشطة التجارية.', href: '/retail-shelving', image: '/photos/black.webp' },
   { title: 'رفوف حسب طبيعة التخزين', description: 'يُناقش نوع الرفوف وفق البضائع والأبعاد وطريقة المناولة.', href: '/warehouse-racking', image: '/photos/warehouse-5.webp' },
 ];
