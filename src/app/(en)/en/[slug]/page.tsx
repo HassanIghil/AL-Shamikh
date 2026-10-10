@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { EnglishContact, EnglishLanding } from '@/components/EnglishViews';
+import EnglishSolutionsView from '@/components/EnglishSolutionsView';
 import LegalView from '@/components/LegalView';
 import { alternateMetadata, contentSlugs, isContentSlug, localizedPath, type ContentSlug } from '@/lib/i18n/config';
 import { englishPages, englishSpecialMeta } from '@/lib/i18n/en';
@@ -50,5 +51,5 @@ function EnglishSchema({ slug }: { slug: ContentSlug }) {
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   if (!isContentSlug(slug) || slug === '') notFound();
-  return <><EnglishSchema slug={slug} />{slug === 'contact' ? <EnglishContact /> : slug === 'privacy' || slug === 'terms' ? <main><LegalView type={slug} locale="en" /></main> : <EnglishLanding slug={slug} />}</>;
+  return <><EnglishSchema slug={slug} />{slug === 'contact' ? <EnglishContact /> : slug === 'privacy' || slug === 'terms' ? <main><LegalView type={slug} locale="en" /></main> : slug === 'solutions' ? <EnglishSolutionsView /> : <EnglishLanding slug={slug} />}</>;
 }
