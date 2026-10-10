@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { ResponsiveHeroImage } from '@/components/UI';
 import { buildWhatsappUrl } from '@/lib/data';
+import { englishMessages } from '@/lib/i18n/config';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 
 const featuredSolutions = [
@@ -24,33 +25,33 @@ const featuredSolutions = [
     image: '/photos/hero.webp',
     href: '/en/warehouse-racking',
     description: 'Discuss storage options around your goods, available space, access and handling needs. Product specifications are confirmed for each project.',
-    message: 'Hello, I would like to ask about warehouse shelving for my project.',
+    message: englishMessages.warehouse,
   },
   {
     title: 'Supermarket and retail shelving',
     image: '/photos/market.webp',
     href: '/en/retail-shelving',
     description: 'Explore shelving for supermarkets, grocery stores and commercial shops, selected around products, layout and customer access.',
-    message: 'Hello, I would like to ask about shelving for my store.',
+    message: englishMessages.retail,
   },
   {
     title: 'Pharmacy shelving',
     image: '/photos/pharmacy.jpeg',
     href: '/en/retail-shelving',
     description: 'Discuss display and storage shelving for a pharmacy based on product groups and the available space.',
-    message: 'Hello, I would like to ask about shelving for a pharmacy.',
+    message: englishMessages.pharmacy,
   },
 ];
 
 const secondarySolutions = [
-  { title: 'Heavy storage shelving', description: 'Options for larger or heavier goods, subject to confirming product and site requirements.', image: '/photos/warehouse-2.jpeg', href: '/en/warehouse-racking', message: 'Hello, I would like to ask about shelving for heavier warehouse goods.' },
-  { title: 'Medium storage shelving', description: 'Storage options for cartons and varied stock, discussed around dimensions and access.', image: '/photos/warehouse-3.webp', href: '/en/warehouse-racking', message: 'Hello, I would like to ask about medium storage shelving.' },
-  { title: 'Light storage shelving', description: 'Shelving options for smaller, lighter items and organized access.', image: '/photos/white.webp', href: '/en/warehouse-racking', message: 'Hello, I would like to ask about light storage shelving.' },
-  { title: 'Grocery shelving', description: 'Display options considered around the store footprint and product arrangement.', image: '/photos/store.webp', href: '/en/retail-shelving', message: 'Hello, I would like to ask about shelving for a grocery store.' },
-  { title: 'Commercial store shelving', description: 'Discuss display units for a specialist shop or commercial space.', image: '/photos/black.webp', href: '/en/retail-shelving', message: 'Hello, I would like to ask about shelving for a commercial store.' },
-  { title: 'Storage for smaller spaces', description: 'Storage options can be discussed according to the room dimensions and intended use.', image: '/photos/home.webp', href: '/en/solutions', message: 'Hello, I would like to ask about storage shelving for my space.' },
-  { title: 'Shelving by site dimensions', description: 'Share floor area, height and access needs to discuss relevant shelving categories.', image: '/photos/warehouse-5.webp', href: '/en/warehouse-racking', message: 'Hello, I would like to discuss shelving options for my site dimensions.' },
-  { title: 'Retail display fixtures', description: 'Compare display options based on the products and layout of your store.', image: '/photos/store.webp', href: '/en/retail-shelving', message: 'Hello, I would like to ask about display fixtures for my store.' },
+  { title: 'Heavy storage shelving', description: 'Options for larger or heavier goods, subject to confirming product and site requirements.', image: '/photos/warehouse-2.jpeg', href: '/en/warehouse-racking', message: 'السلام عليكم، أود الاستفسار عن رفوف لتخزين البضائع الثقيلة.' },
+  { title: 'Medium storage shelving', description: 'Storage options for cartons and varied stock, discussed around dimensions and access.', image: '/photos/warehouse-3.webp', href: '/en/warehouse-racking', message: 'السلام عليكم، أود الاستفسار عن رفوف تخزين متوسطة.' },
+  { title: 'Light storage shelving', description: 'Shelving options for smaller, lighter items and organized access.', image: '/photos/white.webp', href: '/en/warehouse-racking', message: 'السلام عليكم، أود الاستفسار عن رفوف لتخزين المنتجات الخفيفة.' },
+  { title: 'Grocery shelving', description: 'Display options considered around the store footprint and product arrangement.', image: '/photos/store.webp', href: '/en/retail-shelving', message: 'السلام عليكم، أود الاستفسار عن رفوف لبقالتي.' },
+  { title: 'Commercial store shelving', description: 'Discuss display units for a specialist shop or commercial space.', image: '/photos/black.webp', href: '/en/retail-shelving', message: 'السلام عليكم، أود الاستفسار عن رفوف لمتجري التجاري.' },
+  { title: 'Storage for smaller spaces', description: 'Storage options can be discussed according to the room dimensions and intended use.', image: '/photos/home.webp', href: '/en/solutions', message: 'السلام عليكم، أود الاستفسار عن رفوف تخزين لمساحتي.' },
+  { title: 'Shelving by site dimensions', description: 'Share floor area, height and access needs to discuss relevant shelving categories.', image: '/photos/warehouse-5.webp', href: '/en/warehouse-racking', message: 'السلام عليكم، أود مناقشة الرفوف المناسبة لأبعاد موقعي.' },
+  { title: 'Retail display fixtures', description: 'Compare display options based on the products and layout of your store.', image: '/photos/store.webp', href: '/en/retail-shelving', message: 'السلام عليكم، أود الاستفسار عن وحدات عرض لمتجري.' },
 ];
 
 const decisionFactors = [
@@ -81,7 +82,7 @@ const trustItems = [
   { icon: MapPin, title: 'Jeddah and Riyadh', text: 'Confirmed service areas' },
 ];
 
-const generalMessage = 'Hello, I would like to discuss a shelving solution for my project.';
+const generalMessage = englishMessages.solutions;
 
 export default function EnglishSolutionsView() {
   return (

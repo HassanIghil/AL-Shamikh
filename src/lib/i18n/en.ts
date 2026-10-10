@@ -1,4 +1,4 @@
-import type { ContentSlug } from './config';
+import { englishMessages, type ContentSlug } from './config';
 
 export type EnglishCard = { title: string; text: string; href?: ContentSlug; image?: string };
 export type EnglishSection = { eyebrow: string; title: string; intro?: string; cards?: EnglishCard[]; points?: string[]; image?: string };
@@ -42,7 +42,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { eyebrow: 'Your inquiry', title: 'Start with the details that matter', intro: quote, points: ['Type of business or storage use', 'City and site dimensions', 'Product types and approximate sizes', 'Photos or a floor plan, if available'] },
       { eyebrow: 'How we work', title: 'From your need to a defined quotation', intro: 'We start by understanding the site and how it is used, discuss a suitable shelving category, confirm available supply and any requested installation scope, then review the project quotation.', points: ['Understand your project and space', 'Discuss the shelving system', 'Clarify available services and scope', 'Review the options and quotation'] },
     ],
-    message: 'Hello, I would like to ask about a shelving solution for my project.',
+    message: englishMessages.solutions,
   },
   sectors: {
     title: 'Shelving by business sector | Al Shamikh',
@@ -65,7 +65,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
         { title: 'Riyadh', text: 'Shelving options for projects in Riyadh.', href: 'riyadh' },
       ] },
     ],
-    message: 'Hello, I would like to discuss shelving for my business.',
+    message: englishMessages.home,
   },
   'warehouse-racking': {
     title: 'Warehouse shelving and storage racks | Al Shamikh',
@@ -98,7 +98,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { question: 'Is installation included in a warehouse shelving quote?', answer: install },
       { question: 'Can I ask about a project in Jeddah or Riyadh?', answer: 'Yes. Al Shamikh serves projects in both Jeddah and Riyadh. Include the city when you contact us.' },
     ],
-    message: 'Hello, I would like to ask about warehouse shelving for my project.',
+    message: englishMessages.warehouse,
   },
   'retail-shelving': {
     title: 'Supermarket, grocery and pharmacy shelving | Al Shamikh',
@@ -128,7 +128,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { question: 'Do you serve stores in both Jeddah and Riyadh?', answer: 'Yes. Both cities are confirmed service areas for Al Shamikh.' },
       { question: 'Can you also install the shelving?', answer: install },
     ],
-    message: 'Hello, I would like to ask about shelving for my store.',
+    message: englishMessages.retail,
   },
   projects: {
     title: 'Shelving solution images | Al Shamikh',
@@ -148,7 +148,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { eyebrow: 'Project planning', title: 'From an image to a workable choice', intro: 'A reference image helps explain your preference. The final selection depends on site dimensions, the goods and the way the space is used.', points: ['Share the type of business or storage', 'Provide site dimensions and images if available', 'Describe products, access and movement', 'Confirm available products and the scope of work before a quote'] },
       { eyebrow: 'Real project photos', title: 'Completed-project evidence is being prepared', intro: 'Al Shamikh has confirmed that genuine completed-project photos are available for publication. They have not yet been identified and approved in this repository. Images currently shown on this page remain clearly illustrative.' },
     ],
-    message: 'Hello, I would like to discuss shelving for a project similar to the examples on your website.',
+    message: 'السلام عليكم، أود الاستفسار عن حلول الرفوف التي تناسب الصور التوضيحية في الموقع.',
   },
   about: {
     title: 'About Al Shamikh shelving and décor',
@@ -168,7 +168,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
         { title: 'Riyadh', text: 'Explore shelving for Riyadh projects.', href: 'riyadh' },
       ] },
     ],
-    message: 'Hello, I would like to discuss shelving for my project.',
+    message: englishMessages.contact,
   },
   jeddah: {
     title: 'Warehouse and store shelving in Jeddah | Al Shamikh',
@@ -198,7 +198,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { question: 'What store shelving can I discuss for Jeddah?', answer: 'Options include supermarket, grocery and commercial display shelving, including wall and central units. The layout depends on your products and site.' },
       { question: 'Is installation available?', answer: install },
     ],
-    message: 'Hello, I would like a quote for shelving for a project in Jeddah.',
+    message: englishMessages.jeddah,
   },
   riyadh: {
     title: 'Warehouse and store shelving in Riyadh | Al Shamikh',
@@ -229,7 +229,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
       { question: 'Which retail shelving categories are available?', answer: 'Discuss supermarket, grocery, pharmacy and other store shelving. Wall and central display units depend on the site and products.' },
       { question: 'Is installation included?', answer: install },
     ],
-    message: 'Hello, I would like a quote for shelving for a project in Riyadh.',
+    message: englishMessages.riyadh,
   },
 };
 

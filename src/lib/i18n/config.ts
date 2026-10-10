@@ -40,10 +40,12 @@ export const englishNav: { slug: ContentSlug; label: string }[] = [
 ];
 
 export const englishMessages = {
-  home: 'Hello, I would like to ask about shelving for my project.',
-  warehouse: 'Hello, I would like to ask about warehouse shelving for my project.',
-  retail: 'Hello, I would like to ask about shelving for my store.',
-  jeddah: 'Hello, I would like a quote for shelving for a project in Jeddah.',
-  riyadh: 'Hello, I would like a quote for shelving for a project in Riyadh.',
-  contact: 'Hello, I would like to discuss shelving for my project.',
+  home: 'السلام عليكم، أود الاستفسار عن رفوف لمشروعي.',
+  solutions: 'السلام عليكم، أود الاستفسار عن حلول الرفوف لمشروعي.',
+  warehouse: 'السلام عليكم، أود الاستفسار عن رفوف مستودعات لمشروعي.',
+  retail: 'السلام عليكم، أود الاستفسار عن رفوف لمتجري.',
+  pharmacy: 'السلام عليكم، أود الاستفسار عن رفوف لصيدليتي.',
+  jeddah: 'السلام عليكم، أريد عرض سعر لرفوف مشروع في جدة.',
+  riyadh: 'السلام عليكم، أريد عرض سعر لرفوف مشروع في الرياض.',
+  contact: 'السلام عليكم، أود مناقشة احتياج الرفوف لمشروعي.',
 };

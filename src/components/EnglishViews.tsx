@@ -87,8 +87,8 @@ export function EnglishHome() {
   return <main className="en-page en-home">
     <section className="en-hero en-home-hero" aria-labelledby="en-home-title">
       <div className="en-hero-image"><picture><source media="(max-width: 768px)" srcSet="/photos/home-hero-1280-640.webp 640w, /photos/home-hero-1280-960.webp 960w" sizes="100vw" /><StaticResponsiveImage variants={[{src:'/photos/home-hero-new-1280.webp',width:1280}]} alt="Illustrative warehouse shelves with organized stock" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 50vw" /></picture></div>
-      <div className="en-hero-content"><span className="en-pill">Warehouse and retail shelving</span><h1 id="en-home-title">Shelving for warehouses and stores</h1><p className="en-hero-lead">Storage and display options chosen around your space</p><p>Al Shamikh supplies warehouse racks and shelving for supermarkets, grocery stores and pharmacies in Jeddah and Riyadh. Tell us how you use your space and what you need to store or display.</p>
-        <div className="en-home-features"><div><Warehouse size={26} aria-hidden="true" /><span>Warehouse storage</span></div><div><Store size={26} aria-hidden="true" /><span>Retail display</span></div><div><MapPin size={26} aria-hidden="true" /><span>Jeddah and Riyadh</span></div></div>
+      <div className="en-hero-content"><span className="en-pill">Warehouse and store shelving</span><h1 id="en-home-title">Shelving for warehouses and stores</h1><p className="en-hero-lead">Storage and display solutions tailored to your space.</p><p>We supply shelving for warehouses, shops and supermarkets in Jeddah and Riyadh. We discuss the right option based on your business activity and available space.</p>
+        <div className="en-home-features"><div><Warehouse size={26} aria-hidden="true" /><span><strong>Warehouse shelving</strong><small>For storing and organizing goods</small></span></div><div><Store size={26} aria-hidden="true" /><span><strong>Store shelving</strong><small>For displaying and organizing products</small></span></div><div><MapPin size={26} aria-hidden="true" /><span><strong>Jeddah and Riyadh</strong><small>Shelving for projects in both cities</small></span></div></div>
         <img
           className="en-city-banner"
           src="/images/jeddah-riyadh-skyline-solutions.webp"
@@ -100,8 +100,9 @@ export function EnglishHome() {
           loading="lazy"
           decoding="async"
         />
-        <WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink>
+        <WhatsAppLink className="button button-whatsapp en-home-desktop-whatsapp" message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink>
       </div>
+      <div className="en-home-mobile-whatsapp-wrap"><WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink></div>
     </section>
     <section className="en-section" aria-labelledby="en-home-solutions"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Our solutions</span><h2 id="en-home-solutions">Shelving for different uses</h2><p>Explore storage and display categories, then compare what fits your site and products.</p></div><div className="en-card-grid">{categories.map(card => <Card card={card} key={card.title} />)}</div></div></section>
     <section className="en-section en-section-dark" aria-labelledby="en-home-choice"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">How to choose</span><h2 id="en-home-choice">Start with the needs of your space</h2><p>Useful shelving depends on what you store or sell, site dimensions and the way people or stock move through it.</p></div><div className="en-point-grid"><div><Boxes size={26} aria-hidden="true" /><h3>Products and goods</h3><p>Type, size and intended arrangement.</p></div><div><Ruler size={26} aria-hidden="true" /><h3>Site dimensions</h3><p>Floor area, height and available aisles.</p></div><div><PackageCheck size={26} aria-hidden="true" /><h3>Daily use</h3><p>How products are accessed and moved.</p></div></div></div></section>
