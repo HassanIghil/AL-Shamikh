@@ -274,7 +274,7 @@ export function SiteFooter() {
           <Link href="/">الرئيسية</Link>
           <Link href="/solutions">حلولنا</Link>
           <Link href="/sectors">القطاعات</Link>
-          <Link href="/projects">مشاريعنا</Link>
+          <Link href="/projects">صور الحلول</Link>
           <Link href="/about">من نحن</Link>
           <Link href="/contact">تواصل معنا</Link>
         </div>

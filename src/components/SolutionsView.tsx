@@ -53,31 +53,31 @@ const featuredSolutions = [
 const secondarySolutions = [
   {
     title: 'رفوف التخزين الثقيل',
-    description: 'أنظمة متينة للمنتجات الكبيرة والأحمال الصناعية.',
+    description: 'خيارات تخزين للمنتجات الكبيرة والاستخدامات الصناعية، وفق متطلبات المشروع.',
     image: '/photos/warehouse-2.jpeg',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف التخزين المتوسط',
-    description: 'توازن مثالي بين القوة والمرونة لتخزين الصناديق.',
+    description: 'خيارات لتخزين الصناديق تُختار وفق المساحة وطبيعة الاستخدام.',
     image: '/photos/warehouse-3.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف التخزين الخفيف',
-    description: 'حلول اقتصادية مرنة للأوزان والمساحات الصغيرة.',
+    description: 'خيارات تخزين للمساحات الصغيرة والاستخدامات الخفيفة.',
     image: '/photos/white.webp',
     href: '/warehouse-racking',
   },
   {
     title: 'رفوف البقالات',
-    description: 'استغلال مثالي للمساحات مع متانة عالية وسهولة الوصول.',
+    description: 'رفوف تساعد على تنظيم المنتجات وفق مساحة المتجر وطبيعة النشاط.',
     image: '/photos/store.webp',
     href: '/retail-shelving',
   },
   {
     title: 'رفوف المحلات التجارية',
-    description: 'حلول عرض متطورة للمعارض والمتاجر المتخصصة.',
+    description: 'خيارات عرض للمعارض والمتاجر المتخصصة بحسب المنتجات والمساحة.',
     image: '/photos/black.webp',
     href: '/retail-shelving',
   },
@@ -95,7 +95,7 @@ const secondarySolutions = [
   },
   {
     title: 'تجهيزات المحلات',
-    description: 'إكسسوارات ووحدات عرض متكاملة للمتاجر الحديثة.',
+    description: 'وحدات وإكسسوارات عرض يمكن مناقشتها وفق احتياج المتجر.',
     image: '/photos/store.webp',
     href: '/retail-shelving',
   },
@@ -173,8 +173,8 @@ const sectorsPreview = [
 const trustItems = [
   {
     icon: ShieldCheck,
-    title: 'صناعة وطنية وصينية',
-    text: 'خيارات متعددة تناسب معايير المشروع',
+    title: 'اختيار حسب احتياج المشروع',
+    text: 'تأكيد مواصفات المنتج وخياراته المتاحة',
   },
   {
     icon: Settings2,
@@ -228,7 +228,7 @@ export default function SolutionsView() {
           </h1>
 
           <p className="lead">
-            من المستودعات الكبيرة إلى المحلات والصيدليات والمنازل، نوفر أنظمة رفوف وتخزين مصممة حسب طبيعة الاستخدام والمساحة لتحقيق أفضل استغلال للمكان.
+            من المستودعات إلى المحلات والصيدليات والمنازل، نعرض خيارات رفوف وتخزين تُناقش وفق طبيعة الاستخدام والمساحة المتاحة.
           </p>
 
           <div className="solutions-hero-badges">
@@ -405,7 +405,7 @@ export default function SolutionsView() {
           <div className="section-heading">
             <span className="eyebrow">— القطاعات —</span>
             <h2 id="sectors-preview-title">حلول تناسب مختلف الأنشطة</h2>
-            <p>أنظمة مخصصة تخدم متطلبات كل قطاع بأعلى معايير الكفاءة والتنظيم.</p>
+            <p>خيارات رفوف تُناقش وفق طبيعة كل قطاع واحتياجات المساحة والتنظيم.</p>
           </div>
 
           <div className="solutions-sectors-grid">

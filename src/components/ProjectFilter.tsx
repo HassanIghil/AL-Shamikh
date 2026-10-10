@@ -28,7 +28,7 @@ export default function ProjectFilter() {
 
   return (
     <div className="projects-gallery-block" id="project-gallery">
-      <div className="projects-filter-bar" role="group" aria-label="تصفية المشاريع حسب نوع الحل">
+      <div className="projects-filter-bar" role="group" aria-label="تصفية صور الحلول حسب الفئة">
         {categories.map((category) => (
           <button
             key={category}

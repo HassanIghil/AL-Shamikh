@@ -90,7 +90,7 @@ export default function AboutView() {
             <p>نعمل مع مشاريع المستودعات، السوبر ماركت، البقالات، الصيدليات، المحلات التجارية وحلول التخزين الأخرى.</p>
             <div className="about-inline-links">
               <Link href="/solutions">تعرّف على حلولنا <ArrowUpLeft size={16} aria-hidden="true" /></Link>
-              <Link href="/projects">شاهد نماذج المشاريع <ArrowUpLeft size={16} aria-hidden="true" /></Link>
+              <Link href="/projects">شاهد صور الحلول <ArrowUpLeft size={16} aria-hidden="true" /></Link>
             </div>
           </div>
         </div>
@@ -114,17 +114,17 @@ export default function AboutView() {
         <div className="about-container">
           <div className="about-section-heading">
             <span className="about-kicker">خيارات متعددة</span>
-            <h2 id="about-options-title">صناعة وطنية وصناعة صينية</h2>
-            <p>نوفر خيارات من الأنظمة والمنتجات تشمل الصناعة الوطنية والصناعة الصينية، ويتم اختيار الحل المناسب بحسب احتياج المشروع والمواصفات المطلوبة.</p>
+            <h2 id="about-options-title">خيارات الرفوف حسب احتياج المشروع</h2>
+            <p>تختلف المنتجات والأنظمة المتاحة بحسب الاستخدام والمواصفات المطلوبة. تواصل معنا لتأكيد الخيارات المتوفرة وبيانات المنتج قبل طلب عرض السعر.</p>
           </div>
           <div className="about-origin-panels">
             <article className="about-origin-panel">
               <div className="about-origin-image"><Image src="/photos/white.webp" alt="رفوف عرض معدنية في مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
-              <div className="about-origin-copy"><span>الخيار الأول</span><h3>صناعة وطنية</h3><p>خيار ضمن المنتجات والأنظمة المتاحة لمناقشة احتياج المشروع ومواصفاته.</p></div>
+              <div className="about-origin-copy"><span>اختيار المنتج</span><h3>وفق مواصفات المشروع</h3><p>ناقش نوع الاستخدام والمواصفات المطلوبة، وتأكد من تفاصيل المنتج المتاح قبل الطلب.</p></div>
             </article>
             <article className="about-origin-panel">
               <div className="about-origin-image"><Image src="/photos/store.webp" alt="رفوف متجر معروضة داخل مساحة تجارية" fill sizes="(max-width: 720px) 100vw, 45vw" /></div>
-              <div className="about-origin-copy"><span>الخيار الثاني</span><h3>صناعة صينية</h3><p>خيار آخر ضمن الأنظمة والمنتجات، ويُناقش وفق متطلبات المشروع والمواصفات المطلوبة.</p></div>
+              <div className="about-origin-copy"><span>مقارنة الخيارات</span><h3>تفاصيل واضحة قبل الطلب</h3><p>اطلب معلومات المنتج ومصدره ومواصفاته المتاحة لمقارنتها باحتياج نشاطك.</p></div>
             </article>
           </div>
         </div>
@@ -156,7 +156,7 @@ export default function AboutView() {
           <div className="about-sector-strip">
             {sectors.map((sector) => <Link href={sector.href} className="about-sector-tile" key={sector.title}><Image src={sector.image} alt="" fill sizes="(max-width: 720px) 72vw, 20vw" /><span>{sector.title}</span></Link>)}
           </div>
-          <div className="about-sector-links"><Link href="/warehouse-racking">رفوف المستودعات</Link><Link href="/retail-shelving">رفوف المحلات والسوبر ماركت</Link><Link href="/projects">مشاريعنا</Link></div>
+          <div className="about-sector-links"><Link href="/warehouse-racking">رفوف المستودعات</Link><Link href="/retail-shelving">رفوف المحلات والسوبر ماركت</Link><Link href="/projects">صور الحلول</Link></div>
         </div>
       </section>
 

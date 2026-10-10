@@ -90,6 +90,14 @@ Confirm the owned HTTPS domain and preferred apex/`www` form; configure it as th
 
 ## Changed implementation files
 
+### Final copy review
+
+- Updated the site navigation, footer, project-page breadcrumb, About-page links and gallery filter label to call `/projects` “صور الحلول”; the URL and gallery route are unchanged. The gallery continues to label its current imagery as illustrative.
+- Removed unverified country-of-origin labels from About and Solutions copy. Product origin is now something customers can ask the business to confirm before ordering.
+- Neutralized unsupported product-strength, “ideal”, “economical” and superlative performance language in the reviewed solution cards. Confirmed warehouse, supermarket, grocery and pharmacy categories and Jeddah/Riyadh service coverage remain.
+- Installation remains unconfirmed and the existing neutral inquiry language is preserved. No paid OpenSEO calls were made for this follow-up.
+- Final follow-up validation: typecheck passed; production build passed after the sandboxed run was blocked by Windows SWC path access and the elevated retry completed all 17 static-generation tasks. Static route checks were repeated for all 12 expected routes, preview robots/sitemap, metadata and canonical safeguards. Browser-based visual testing remains unverified because the local browser/server path is unavailable in this environment.
+
 - `src/app/page.tsx`
 - `src/app/layout.tsx`
 - `src/app/[slug]/page.tsx`
