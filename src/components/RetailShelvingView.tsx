@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -110,7 +111,7 @@ export default function RetailShelvingView() {
     <div className="retail-page">
       <section className="retail-hero" aria-labelledby="retail-title">
         <div className="retail-hero-photo">
-          <Image src="/photos/store.webp" alt="مساحة متجر مجهزة برفوف عرض وتنظيم المنتجات" fill priority sizes="(max-width: 700px) 100vw, 50vw" />
+          <StaticResponsiveImage variants={[{ src: '/photos/store-320.webp', width: 320 }, { src: '/photos/store-640.webp', width: 640 }]} alt="مساحة متجر مجهزة برفوف عرض وتنظيم المنتجات" loading="eager" fetchPriority="high" sizes="(max-width: 700px) 100vw, 50vw" />
           <div className="retail-hero-photo-shade" />
         </div>
         <div className="retail-hero-copy">

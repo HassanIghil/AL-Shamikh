@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -14,6 +13,7 @@ import {
 import { messages, pageMeta, whatsapp } from '@/lib/data';
 import { canonicalUrl } from '@/lib/seo';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
+import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import './home.css';
 
 export const metadata: Metadata = {
@@ -85,6 +85,11 @@ const homeProjects = [
 
 const contactMessage = 'السلام عليكم، أريد الاستفسار عن رفوف لمشروعي.';
 
+const cardVariants = (source: string) => {
+  const stem = source.replace(/\.(?:webp|jpeg)$/, '');
+  return [320, 640].map((width) => ({ src: `${stem}-${width}.webp`, width }));
+};
+
 export default function Home() {
   return (
     <main className="homepage">
@@ -92,30 +97,16 @@ export default function Home() {
       <section className="home-hero" aria-labelledby="home-title">
         {/* Left Warehouse Photo (in RTL, photo sits on the left) */}
         <div className="home-hero-photo">
-          <link
-            rel="preload"
-            as="image"
-            href="/photos/home-hero-new.webp"
-            media="(min-width: 769px)"
-            fetchPriority="high"
-          />
-          <link
-            rel="preload"
-            as="image"
-            href="/photos/home-hero-1280.webp"
-            media="(max-width: 768px)"
-            fetchPriority="high"
-          />
           <picture>
             <source
               media="(max-width: 768px)"
-              srcSet="/photos/home-hero-1280.webp"
+              srcSet="/photos/home-hero-1280-640.webp 640w, /photos/home-hero-1280-960.webp 960w"
+              sizes="100vw"
               type="image/webp"
             />
-            <Image
-              src="/photos/home-hero-new.webp"
+            <StaticResponsiveImage
+              variants={[{ src: '/photos/home-hero-new-1280.webp', width: 1280 }]}
               alt="رفوف عرض أنيقة ومستودع تخزين متكامل بتصميم عصري"
-              fill
               loading="eager"
               fetchPriority="high"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -179,12 +170,14 @@ export default function Home() {
           </div>
         </div>
 
-        <Image
-          src="/images/jeddah-and-riyadh-night-banner.webp"
+        <img
+          src="/images/jeddah-and-riyadh-night-banner-1200.webp"
+          srcSet="/images/jeddah-and-riyadh-night-banner-640.webp 640w, /images/jeddah-and-riyadh-night-banner-1200.webp 1200w"
           alt="خدمة جدة والرياض"
-          width={1400}
-          height={467}
+          width={1200}
+          height={400}
           loading="lazy"
+          decoding="async"
           sizes="(max-width: 768px) calc(100vw - 28px), 650px"
           className="homeCityBanner"
         />
@@ -217,10 +210,9 @@ export default function Home() {
             {homeSolutions.map((solution) => (
               <article className="home-solution-card" key={solution.title}>
                 <Link className="home-solution-thumb" href={solution.href} aria-label={solution.title}>
-                  <Image
-                    src={solution.image}
+                  <StaticResponsiveImage
+                    variants={cardVariants(solution.image)}
                     alt={solution.title}
-                    fill
                     sizes="(max-width: 768px) 110px, 20vw"
                   />
                 </Link>
@@ -309,10 +301,9 @@ export default function Home() {
                 className={`home-project-tile home-project-tile-${index + 1}`}
                 key={project.title}
               >
-                <Image
-                  src={project.image}
+                <StaticResponsiveImage
+                  variants={cardVariants(project.image)}
                   alt={project.title}
-                  fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                 />
                 <span className="home-project-caption">

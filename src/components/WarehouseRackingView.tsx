@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -102,12 +103,16 @@ export default function WarehouseRackingView() {
   return (
     <div className="warehouse-page">
       <section className="warehouse-hero" aria-labelledby="warehouse-title">
-        <Image
+        <StaticResponsiveImage
           className="warehouse-hero-image"
-          src="/photos/hero.webp"
+          variants={[
+            { src: '/photos/hero-640.webp', width: 640 },
+            { src: '/photos/hero-960.webp', width: 960 },
+            { src: '/photos/hero-1280.webp', width: 1280 },
+          ]}
           alt="ممر مستودع عميق مجهز برفوف تخزين صناعية زرقاء وبرتقالية"
-          fill
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
         />
         <div className="warehouse-hero-shade" />
