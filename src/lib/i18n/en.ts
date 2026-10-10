@@ -68,7 +68,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
     message: englishMessages.home,
   },
   'warehouse-racking': {
-    title: 'Warehouse shelving and storage racks | Al Shamikh',
+    title: 'Warehouse racking and storage shelving | Al Shamikh',
     description: 'Explore heavy, medium and light warehouse storage needs. Discuss warehouse shelving and racks for projects in Jeddah and Riyadh with Al Shamikh.',
     eyebrow: 'Warehouse shelving', h1: 'Warehouse racks and storage shelving',
     lead: 'Explore shelving for heavy, medium and light storage needs. Choosing a system starts with the goods, their dimensions, the site height and the handling method.',
