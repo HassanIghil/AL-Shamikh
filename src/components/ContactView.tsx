@@ -57,7 +57,7 @@ export default function ContactView() {
             <div className="contact-service-icon"><Warehouse size={21} aria-hidden="true" /></div>
             <div className="contact-service-copy">
               <h3>نطاق خدمتنا</h3>
-              <p>جدة والرياض، ومناطق أخرى حسب نطاق المشروع.</p>
+              <p>نخدم المشاريع في جدة والرياض. للاستفسار عن مدينة أخرى، تواصل معنا لتأكيد نطاق الخدمة.</p>
             </div>
             <span className="contact-service-divider" aria-hidden="true" />
             <div className="contact-phone-copy">
