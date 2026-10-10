@@ -11,22 +11,26 @@ import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { buildWhatsappUrl, phone } from '@/lib/data';
 import { englishMessages } from '@/lib/i18n/config';
 import { englishSpecialMeta } from '@/lib/i18n/en';
-import { isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
+import { isSearchIndexingEnabled, robotsMetadata, siteOrigin } from '@/lib/seo';
+import { getPageSeoImage } from '@/lib/seo-images';
 
 export const metadata: Metadata = {
   ...(siteOrigin ? { metadataBase: new URL(siteOrigin) } : {}),
   title: { default: englishSpecialMeta[''].title, template: '%s | Al Shamikh' },
   description: englishSpecialMeta[''].description,
-  openGraph: { type: 'website', locale: 'en_US', siteName: 'Al Shamikh' },
-  robots: { index: isSearchIndexingEnabled, follow: isSearchIndexingEnabled, ...(isSearchIndexingEnabled ? {} : { noarchive: true }) },
+  openGraph: {
+    type: 'website', locale: 'en_US', siteName: 'Al Shamikh',
+    ...(getPageSeoImage('', 'en') ? { images: [getPageSeoImage('', 'en')!] } : {}),
+  },
+  robots: robotsMetadata(true, true),
 };
 
 export default function EnglishRootLayout({ children }: { children: React.ReactNode }) {
   const structuredData = isSearchIndexingEnabled && siteOrigin ? {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Organization', '@id': `${siteOrigin}/#organization`, name: 'Al Shamikh', url: siteOrigin, telephone: phone, areaServed: [{ '@type': 'City', name: 'Jeddah' }, { '@type': 'City', name: 'Riyadh' }] },
-      { '@type': 'WebSite', '@id': `${siteOrigin}/#website-en`, name: 'Al Shamikh', url: `${siteOrigin}/en`, inLanguage: 'en', publisher: { '@id': `${siteOrigin}/#organization` } },
+      { '@type': 'Organization', '@id': `${siteOrigin}/#organization`, name: 'Al Shamikh', url: siteOrigin, telephone: phone, ...(getPageSeoImage('', 'en') ? { image: getPageSeoImage('', 'en')!.url } : {}), areaServed: [{ '@type': 'City', name: 'Jeddah' }, { '@type': 'City', name: 'Riyadh' }] },
+      { '@type': 'WebSite', '@id': `${siteOrigin}/#website-en`, name: 'Al Shamikh', url: `${siteOrigin}/en`, inLanguage: 'en', ...(getPageSeoImage('', 'en') ? { image: getPageSeoImage('', 'en')!.url } : {}), publisher: { '@id': `${siteOrigin}/#organization` } },
     ],
   } : null;
   return <html lang="en" dir="ltr"><body>
