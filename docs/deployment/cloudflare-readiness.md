@@ -1,8 +1,8 @@
 # Cloudflare Pages readiness — Al Shamikh
 
-**Recommendation:** Cloudflare Pages with Next.js static HTML export. The repository is configured for Pages, and `npm run build` generates a static `out/` site. No Worker, OpenNext adapter, `wrangler deploy`, Cloudflare runtime binding, or deployment command is required.
+**Current status (Phase 28 review, 2026-10-10):** The public site is live on `https://alshamikhrufuf.com`, `https://www.alshamikhrufuf.com`, and the Pages host. Public checks found `noindex, nofollow, noarchive` on the apex, www, and Pages host. The www host did not redirect to the apex, and the Pages host did not redirect to the official domain. The Cloudflare dashboard is not connected to this workspace, so the Production environment variables and account-level redirect rules could not be inspected or changed. See [phase28-google-indexing-checklist.md](../seo/phase28-google-indexing-checklist.md) for the required owner actions.
 
-No Pages deployment has been started. The production domain has not been purchased or configured.
+The repository remains configured for Cloudflare Pages with Next.js static HTML export. `npm run build` generates a static `out/` site. No Worker, OpenNext adapter, `wrangler deploy`, Cloudflare runtime binding, or deployment command is required.
 
 ## Why static export fits this site
 
@@ -33,7 +33,7 @@ The routes use no request-time cookies, headers, middleware, API handlers, ISR, 
 
 ## Cloudflare Pages dashboard settings
 
-Create or select a **Pages** project, connect `HassanIghil/AL-Chamikh`, and set:
+For an existing **Pages** project, verify the repository and build settings. The public deployment indicates that a Pages project is already serving the site. Use:
 
 - Framework preset: **Next.js (Static HTML Export)**
 - Production branch: `main`
@@ -51,7 +51,7 @@ Configure the Pages project to use `main` as its production branch. Builds from 
 
 No environment variable is needed to build the static site. Keep `NEXT_PUBLIC_SITE_URL` unset until the client owns and approves the production domain. With it unset, even the production branch emits noindex, no canonical URLs, a disallow-all robots file, and an empty sitemap.
 
-After the domain is purchased and launch is approved, set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin in the Pages **Production** environment, then rebuild the production branch. Do not add it to the Preview environment. The Pages branch check separately keeps previews noindex. Never use a temporary `.pages.dev` or `.workers.dev` hostname as the canonical origin.
+For launch, set `NEXT_PUBLIC_SITE_URL=https://alshamikhrufuf.com` in the Pages **Production** build environment, then rebuild the production branch. Do not set it in Preview. Indexing is now gated on the exact approved origin, `NODE_ENV=production`, and Cloudflare's `CF_PAGES=1` with `CF_PAGES_BRANCH=main`; local and branch-preview builds remain blocked. Never use a temporary `.pages.dev` or `.workers.dev` hostname as the canonical origin.
 
 ## Limitations
 

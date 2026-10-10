@@ -14,10 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const english = canonicalUrl(localizedPath('en', slug));
     if (!arabic || !english) return [];
     const alternates = { languages: { 'ar-SA': arabic, en: english, 'x-default': arabic } };
-    return [arabic, english].map(url => ({
-      url, alternates,
-      changeFrequency: slug === '' ? 'weekly' as const : 'monthly' as const,
-      priority: slug === '' ? 1 : slug === 'warehouse-racking' || slug === 'retail-shelving' ? 0.9 : 0.7,
-    }));
+    return [arabic, english].map(url => ({ url, alternates }));
   });
 }
