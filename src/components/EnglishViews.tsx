@@ -45,8 +45,8 @@ export function EnglishLanding({ slug }: { slug: Exclude<ContentSlug, '' | 'cont
     'warehouse-racking': { desktop: '/photos/hero-1280.webp', mobile: '/photos/hero-640.webp', desktopSrcSet: '/photos/hero-960.webp 960w, /photos/hero-1280.webp 1280w', mobileSrcSet: '/photos/hero-640.webp 640w, /photos/hero-960.webp 960w' },
     'retail-shelving': { desktop: '/photos/market.webp', mobile: '/photos/market-640.webp' },
     projects: { desktop: '/photos/hero-projects.webp', mobile: '/photos/hero-projects-mobile.webp' },
-    about: { desktop: '/photos/hero-about.webp', mobile: '/photos/hero-about-mobile.webp' },
-    jeddah: { desktop: '/photos/hero-jeddah-1280.webp', mobile: '/photos/hero-jeddah-mobile-640.webp' },
+    about: { desktop: '/photos/about-original-shelving.jpeg', mobile: '/photos/about-original-shelving.jpeg' },
+    jeddah: { desktop: '/photos/retail-original-shelving.jpeg', mobile: '/photos/retail-original-shelving.jpeg' },
     riyadh: { desktop: '/photos/hero-riyadh-1280.webp', mobile: '/photos/hero-riyadh-mobile-640.webp' },
   };
   const hero = heroAssets[slug];

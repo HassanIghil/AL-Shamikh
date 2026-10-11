@@ -8,7 +8,7 @@ type PageImage = {
   alt: Record<Locale, string>;
 };
 
-// Reuse the relevant, already-published page hero assets; no project photos are implied.
+// Use relevant page hero assets without implying a specific project or photo location.
 const pageImages: Partial<Record<ContentSlug, PageImage>> = {
   '': {
     path: '/photos/home-hero-new-1280.webp', width: 1280, height: 720,
@@ -23,8 +23,8 @@ const pageImages: Partial<Record<ContentSlug, PageImage>> = {
     alt: { ar: 'صورة توضيحية لرفوف عرض في متجر غذائي', en: 'Illustrative shelving in a grocery store' },
   },
   jeddah: {
-    path: '/photos/hero-jeddah.webp', width: 1672, height: 941,
-    alt: { ar: 'صورة توضيحية لمساحة عرض ورفوف تجارية', en: 'Illustrative retail shelving and display space' },
+    path: '/photos/retail-original-shelving.jpeg', width: 899, height: 1599,
+    alt: { ar: 'رفوف عرض سوداء بحواف خضراء داخل مساحة متجر', en: 'Black retail display shelving with green trim inside a store' },
   },
   riyadh: {
     path: '/photos/hero-riyadh.webp', width: 1672, height: 941,
@@ -43,8 +43,8 @@ const pageImages: Partial<Record<ContentSlug, PageImage>> = {
     alt: { ar: 'صورة توضيحية لمستودع منظم مجهز بأنظمة رفوف تخزين', en: 'Illustrative warehouse with organized storage racks' },
   },
   about: {
-    path: '/photos/hero-about.webp', width: 1672, height: 941,
-    alt: { ar: 'صورة توضيحية لمساحة تجارية مجهزة بالرفوف', en: 'Illustrative shelving in a commercial space' },
+    path: '/photos/about-original-shelving.jpeg', width: 960, height: 1280,
+    alt: { ar: 'رفوف تخزين وعرض متنوعة داخل مساحة تجهيز', en: 'Warehouse and display shelving inside a commercial space' },
   },
   // The contact page has no dedicated hero photo; use the site's general product image.
   contact: {

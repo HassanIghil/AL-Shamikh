@@ -72,7 +72,7 @@ export default function AboutView() {
           <WhatsAppButton message={aboutMessage} label="تحدث معنا عن مشروعك" />
         </div>
         <div className="about-hero-photo">
-          <ResponsiveHeroImage src="/photos/hero-about.webp" mobileSrc="/photos/hero-about-mobile.webp" alt="مساحة استشارية مرتبة داخل بيئة عرض وتخزين احترافية" />
+          <ResponsiveHeroImage src="/photos/about-original-shelving.jpeg" mobileSrc="/photos/about-original-shelving.jpeg" mobileSrcSet="/photos/about-original-shelving.jpeg 960w" alt="رفوف تخزين وعرض متنوعة داخل مساحة تجهيز" />
           <span>حلول تبدأ من احتياج المكان</span>
         </div>
       </section>
