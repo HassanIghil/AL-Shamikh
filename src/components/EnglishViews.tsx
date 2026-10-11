@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, Boxes, MapPin, PackageCheck, Ruler, Store, Warehouse } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BadgeCheck, Boxes, MapPin, PackageCheck, Ruler, Settings2, Store, Warehouse, Wrench } from 'lucide-react';
 import { buildWhatsappUrl, phone, phoneClean } from '@/lib/data';
 import { englishMessages, localizedPath, type ContentSlug } from '@/lib/i18n/config';
 import { englishPages, type EnglishCard } from '@/lib/i18n/en';
@@ -86,6 +86,13 @@ export function EnglishHome() {
     { title: 'Pharmacy shelving', text: 'Plan display and storage around product categories.', href: 'retail-shelving', image: '/photos/pharmacy.jpeg' },
     { title: 'Home storage shelving', text: 'Practical shelving options for home spaces.', href: 'solutions', image: '/photos/home.webp' },
   ];
+  const projectImages = [
+    { title: 'Warehouse and stockroom shelving', image: '/photos/hero.webp', type: 'Warehouses' },
+    { title: 'Supermarket display shelving', image: '/photos/market.webp', type: 'Stores' },
+    { title: 'Pharmacy display shelving', image: '/photos/pharmacy.jpeg', type: 'Pharmacies' },
+    { title: 'Store display units', image: '/photos/store.webp', type: 'Shops' },
+    { title: 'Warehouse storage options', image: '/photos/warehouse-2.jpeg', type: 'Warehouses' },
+  ];
   return <main className="en-page en-home">
     <section className="en-hero en-home-hero" aria-labelledby="en-home-title">
       <div className="en-hero-image"><picture><source media="(max-width: 768px)" srcSet="/photos/home-hero-1280-640.webp 640w, /photos/home-hero-1280-960.webp 960w" sizes="100vw" /><StaticResponsiveImage variants={[{src:'/photos/home-hero-new-1280.webp',width:1280}]} alt="Illustrative warehouse shelves with organized stock" loading="eager" fetchPriority="high" sizes="(max-width: 768px) 100vw, 50vw" /></picture></div>
@@ -140,8 +147,64 @@ export function EnglishHome() {
       </div>
     </section>
     <VideoShowcase locale="en" variant="home" />
-    <section className="en-section en-section-dark" aria-labelledby="en-home-choice"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">How to choose</span><h2 id="en-home-choice">Start with the needs of your space</h2><p>Useful shelving depends on what you store or sell, site dimensions and the way people or stock move through it.</p></div><div className="en-point-grid"><div><Boxes size={26} aria-hidden="true" /><h3>Products and goods</h3><p>Type, size and intended arrangement.</p></div><div><Ruler size={26} aria-hidden="true" /><h3>Site dimensions</h3><p>Floor area, height and available aisles.</p></div><div><PackageCheck size={26} aria-hidden="true" /><h3>Daily use</h3><p>How products are accessed and moved.</p></div></div></div></section>
-    <section className="en-section en-section-tint" aria-labelledby="en-home-images"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Solution images</span><h2 id="en-home-images">See illustrative shelving examples</h2><p>Current images show product categories. They are illustrative and are not a record of completed Al Shamikh projects.</p></div><div className="en-card-grid">{categories.slice(0, 3).map(card => <Card card={{...card, href:'projects'}} key={card.title} />)}</div><Link className="en-text-link" href="/en/projects">Browse all solution images <ArrowRight size={17} aria-hidden="true" /></Link></div></section>
+    <section className="home-why en-home-why" aria-labelledby="en-home-choice">
+      <div className="container">
+        <div className="home-section-heading home-heading-light">
+          <span className="eyebrow">— Why Al Shamikh? —</span>
+          <h2 id="en-home-choice">How to choose shelving for your project</h2>
+          <p>Start with the business type, site dimensions, products and how they are accessed.</p>
+        </div>
+        <div className="home-why-grid">
+          <div className="home-why-col">
+            <div className="home-why-icon"><MapPin size={34} strokeWidth={2} aria-hidden="true" /></div>
+            <strong>Warehouse shelving</strong>
+            <span>Heavy, medium or light storage needs, depending on the use</span>
+          </div>
+          <div className="home-why-col">
+            <div className="home-why-icon"><Settings2 size={34} strokeWidth={2} aria-hidden="true" /></div>
+            <strong>Store shelving</strong>
+            <span>Wall or central display layouts suited to the site</span>
+          </div>
+          <div className="home-why-col">
+            <div className="home-why-icon"><BadgeCheck size={34} strokeWidth={2} aria-hidden="true" /></div>
+            <strong>Selection criteria</strong>
+            <span>Space, products and the way shelving will be used</span>
+          </div>
+          <div className="home-why-col">
+            <div className="home-why-icon"><Wrench size={34} strokeWidth={2} aria-hidden="true" /></div>
+            <strong>Discuss your needs</strong>
+            <span>Share site details before requesting a quote</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="home-projects en-home-projects" aria-labelledby="en-home-images">
+      <div className="container">
+        <div className="home-projects-header">
+          <div className="home-projects-title-wrap">
+            <span className="eyebrow">— Solution examples —</span>
+            <h2 id="en-home-images">Illustrative storage and display shelving</h2>
+            <p>Explore warehouse and store shelving examples. These images are illustrative, not a record of completed projects.</p>
+          </div>
+          <Link className="button button-outline home-projects-btn" href="/en/projects">
+            <span>Browse solution images</span><ArrowRight size={16} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="home-projects-grid">
+          {projectImages.map((project, index) => {
+            const stem = project.image.replace(/\.(?:webp|jpeg)$/, '');
+            return <Link href="/en/projects" className={`home-project-tile home-project-tile-${index + 1}`} key={project.title}>
+              <StaticResponsiveImage
+                variants={[{ src: `${stem}-320.webp`, width: 320 }, { src: `${stem}-640.webp`, width: 640 }]}
+                alt={project.title}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              />
+              <span className="home-project-caption"><small>{project.type}</small><strong>{project.title}</strong></span>
+            </Link>;
+          })}
+        </div>
+      </div>
+    </section>
     <section className="en-section" aria-labelledby="en-home-cities"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Service areas</span><h2 id="en-home-cities">Shelving projects in Jeddah and Riyadh</h2><p>Al Shamikh serves projects in both cities. Share your location and requirements when you inquire.</p></div><div className="en-card-grid"><Card card={{title:'Jeddah',text:'Warehouse and retail shelving for projects in Jeddah.',href:'jeddah'}} /><Card card={{title:'Riyadh',text:'Warehouse and retail shelving for projects in Riyadh.',href:'riyadh'}} /></div></div></section>
     <EnglishFinalCta message={englishMessages.home} />
   </main>;
