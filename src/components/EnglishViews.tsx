@@ -8,6 +8,7 @@ import { StaticResponsiveImage } from './StaticResponsiveImage';
 import { ResponsiveHeroImage } from './UI';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import ProjectFilter from './ProjectFilter';
+import VideoShowcase from './VideoShowcase';
 import JeddahGallery from './JeddahGallery';
 import ContactForm from './ContactForm';
 import './contact.css';
@@ -54,6 +55,7 @@ export function EnglishLanding({ slug }: { slug: Exclude<ContentSlug, '' | 'cont
       <div className="en-hero-image"><ResponsiveHeroImage src={hero.desktop} mobileSrc={hero.mobile} desktopSrcSet={hero.desktopSrcSet} mobileSrcSet={hero.mobileSrcSet} alt={page.heroAlt} /></div>
       <div className="en-hero-content"><Breadcrumb current={page.eyebrow} /><span className="en-pill">{page.eyebrow}</span><h1>{page.h1}</h1><p>{page.lead}</p><WhatsAppLink message={page.message}>Ask on WhatsApp</WhatsAppLink></div>
     </header>
+    {slug === 'projects' && <VideoShowcase locale="en" variant="projects" />}
     {page.sections.map((section, index) => <section className={`en-section ${index % 2 ? 'en-section-tint' : ''}`} key={section.title} aria-labelledby={`en-section-${index}`}>
       <div className="container">
         <div className="en-section-heading"><span className="en-eyebrow">{section.eyebrow}</span><h2 id={`en-section-${index}`}>{section.title}</h2>{section.intro && <p>{section.intro}</p>}</div>
@@ -105,6 +107,7 @@ export function EnglishHome() {
       <div className="en-home-mobile-whatsapp-wrap"><WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink></div>
     </section>
     <section className="en-section" aria-labelledby="en-home-solutions"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Our solutions</span><h2 id="en-home-solutions">Shelving for different uses</h2><p>Explore storage and display categories, then compare what fits your site and products.</p></div><div className="en-card-grid">{categories.map(card => <Card card={card} key={card.title} />)}</div></div></section>
+    <VideoShowcase locale="en" variant="home" />
     <section className="en-section en-section-dark" aria-labelledby="en-home-choice"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">How to choose</span><h2 id="en-home-choice">Start with the needs of your space</h2><p>Useful shelving depends on what you store or sell, site dimensions and the way people or stock move through it.</p></div><div className="en-point-grid"><div><Boxes size={26} aria-hidden="true" /><h3>Products and goods</h3><p>Type, size and intended arrangement.</p></div><div><Ruler size={26} aria-hidden="true" /><h3>Site dimensions</h3><p>Floor area, height and available aisles.</p></div><div><PackageCheck size={26} aria-hidden="true" /><h3>Daily use</h3><p>How products are accessed and moved.</p></div></div></div></section>
     <section className="en-section en-section-tint" aria-labelledby="en-home-images"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Solution images</span><h2 id="en-home-images">See illustrative shelving examples</h2><p>Current images show product categories. They are illustrative and are not a record of completed Al Shamikh projects.</p></div><div className="en-card-grid">{categories.slice(0, 3).map(card => <Card card={{...card, href:'projects'}} key={card.title} />)}</div><Link className="en-text-link" href="/en/projects">Browse all solution images <ArrowRight size={17} aria-hidden="true" /></Link></div></section>
     <section className="en-section" aria-labelledby="en-home-cities"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Service areas</span><h2 id="en-home-cities">Shelving projects in Jeddah and Riyadh</h2><p>Al Shamikh serves projects in both cities. Share your location and requirements when you inquire.</p></div><div className="en-card-grid"><Card card={{title:'Jeddah',text:'Warehouse and retail shelving for projects in Jeddah.',href:'jeddah'}} /><Card card={{title:'Riyadh',text:'Warehouse and retail shelving for projects in Riyadh.',href:'riyadh'}} /></div></div></section>

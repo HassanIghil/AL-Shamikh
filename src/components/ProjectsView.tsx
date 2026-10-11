@@ -11,6 +11,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import ProjectFilter from '@/components/ProjectFilter';
+import VideoShowcase from '@/components/VideoShowcase';
 import { ResponsiveHeroImage, WhatsAppButton } from '@/components/UI';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { whatsapp } from '@/lib/data';
@@ -63,6 +64,8 @@ export default function ProjectsView() {
           <a href="#project-gallery" className="projects-text-link">استكشف الصور <ArrowUpLeft size={17} aria-hidden="true" /></a>
         </div>
       </section>
+
+      <VideoShowcase locale="ar" variant="projects" />
 
       <section className="projects-gallery-section" aria-labelledby="projects-gallery-title">
         <div className="projects-container">
