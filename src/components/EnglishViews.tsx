@@ -40,7 +40,7 @@ export function EnglishLanding({ slug }: { slug: Exclude<ContentSlug, '' | 'cont
   const page = englishPages[slug];
   const heroAssets: Record<typeof slug, { desktop: string; mobile: string; desktopSrcSet?: string; mobileSrcSet?: string }> = {
     solutions: { desktop: '/photos/hero-solutions.webp', mobile: '/photos/hero-solutions-mobile.webp' },
-    sectors: { desktop: '/photos/hero-sectors.webp', mobile: '/photos/hero-sectors-mobile.webp' },
+    sectors: { desktop: '/photos/hero-1280.webp', mobile: '/photos/hero-640.webp', desktopSrcSet: '/photos/hero-960.webp 960w, /photos/hero-1280.webp 1280w', mobileSrcSet: '/photos/hero-640.webp 640w, /photos/hero-960.webp 960w' },
     'warehouse-racking': { desktop: '/photos/hero-1280.webp', mobile: '/photos/hero-640.webp', desktopSrcSet: '/photos/hero-960.webp 960w, /photos/hero-1280.webp 1280w', mobileSrcSet: '/photos/hero-640.webp 640w, /photos/hero-960.webp 960w' },
     'retail-shelving': { desktop: '/photos/market.webp', mobile: '/photos/market-640.webp' },
     projects: { desktop: '/photos/hero-projects.webp', mobile: '/photos/hero-projects-mobile.webp' },

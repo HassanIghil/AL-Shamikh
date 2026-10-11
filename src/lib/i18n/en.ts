@@ -49,7 +49,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
     description: 'Find shelving options for warehouses, supermarkets, grocery stores, pharmacies and commercial spaces in Jeddah and Riyadh.',
     eyebrow: 'Business sectors', h1: 'Shelving shaped by how you use your space',
     lead: 'A warehouse, supermarket and pharmacy have different storage and display needs. Start with your business type, then review the relevant shelving options.',
-    heroImage: '/photos/hero-sectors.webp', heroAlt: 'Illustrative organized shelving for a commercial space',
+    heroImage: '/photos/hero-1280.webp', heroAlt: 'Photograph of storage racks inside a warehouse',
     sections: [
       { eyebrow: 'Where shelving is used', title: 'Find your business type', cards: [
         { title: 'Warehouses and stockrooms', text: 'Plan stock organization and access around your goods, aisles and handling method.', href: 'warehouse-racking', image: '/photos/hero.webp' },
