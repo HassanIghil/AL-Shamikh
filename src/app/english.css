@@ -88,6 +88,12 @@ ul.en-point-grid li svg { flex: none; color: #9b752f; }
 .en-home-hero .en-hero-content > .button { align-self: flex-start; margin-top: clamp(4px, 1svh, 12px); }
 .en-home-mobile-whatsapp-wrap { display: none; }
 .en-home-hero .en-hero-lead { color: var(--gold-300); font-weight: 700; }
+.en-home-projects .home-projects-title-wrap { text-align: left; }
+.en-home-why .home-why-col { border-left: 0; border-right: 1px solid rgba(217, 184, 112, .3); }
+.en-home-why .home-why-col:last-child { border-right: 0; }
+@media (max-width: 768px) {
+  .en-home-why .home-why-col:nth-child(2) { border-right: 0; }
+}
 .en-city-banner { position: absolute; right: 36px; bottom: 74px; z-index: 20; display: block; width: clamp(500px, 44vw, 650px); height: auto; flex: none; object-fit: contain; filter: drop-shadow(0 14px 30px rgba(0, 0, 0, .16)); will-change: transform; animation: home-city-banner-float 1.5s ease-in-out infinite alternate; }
 .en-text-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 25px; color: #086044; font-weight: 700; }
 .en-contact .contact-intro > .en-breadcrumb { margin-bottom: 17px; color: #65776d; }
