@@ -79,12 +79,12 @@ export function EnglishLanding({ slug }: { slug: Exclude<ContentSlug, '' | 'cont
 }
 
 export function EnglishHome() {
-  const categories: EnglishCard[] = [
+  const categories: (EnglishCard & { href: ContentSlug; image: string })[] = [
     { title: 'Warehouse shelving', text: 'Storage racks selected around your goods, site dimensions and handling method.', href: 'warehouse-racking', image: '/photos/hero.webp' },
     { title: 'Grocery store shelving', text: 'Display and organize products within your store layout.', href: 'retail-shelving', image: '/photos/store.webp' },
     { title: 'Supermarket shelving', text: 'Discuss units for product sections and customer access.', href: 'retail-shelving', image: '/photos/market.webp' },
     { title: 'Pharmacy shelving', text: 'Plan display and storage around product categories.', href: 'retail-shelving', image: '/photos/pharmacy.jpeg' },
-    { title: 'Other storage', text: 'Explore options for smaller spaces and varied use.', href: 'solutions', image: '/photos/home.webp' },
+    { title: 'Home storage shelving', text: 'Practical shelving options for home spaces.', href: 'solutions', image: '/photos/home.webp' },
   ];
   return <main className="en-page en-home">
     <section className="en-hero en-home-hero" aria-labelledby="en-home-title">
@@ -106,7 +106,39 @@ export function EnglishHome() {
       </div>
       <div className="en-home-mobile-whatsapp-wrap"><WhatsAppLink message={englishMessages.home}>Chat on WhatsApp</WhatsAppLink></div>
     </section>
-    <section className="en-section" aria-labelledby="en-home-solutions"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Our solutions</span><h2 id="en-home-solutions">Shelving for different uses</h2><p>Explore storage and display categories, then compare what fits your site and products.</p></div><div className="en-card-grid">{categories.map(card => <Card card={card} key={card.title} />)}</div></div></section>
+    <section className="home-solutions en-home-solutions" aria-labelledby="en-home-solutions">
+      <div className="container">
+        <div className="home-section-heading">
+          <span className="eyebrow">— Our solutions —</span>
+          <h2 id="en-home-solutions">Warehouse and retail shelving</h2>
+          <p>Explore storage and display options by site type and products.</p>
+        </div>
+        <div className="home-solutions-grid">
+          {categories.map((card) => {
+            const href = localizedPath('en', card.href);
+            const stem = card.image.replace(/\.(?:webp|jpeg)$/, '');
+            return <article className="home-solution-card" key={card.title}>
+              <Link className="home-solution-thumb" href={href} aria-label={card.title}>
+                <StaticResponsiveImage
+                  variants={[{ src: `${stem}-320.webp`, width: 320 }, { src: `${stem}-640.webp`, width: 640 }]}
+                  alt={card.title}
+                  sizes="(max-width: 768px) 110px, 20vw"
+                />
+              </Link>
+              <div className="home-solution-info">
+                <div className="home-solution-texts">
+                  <h3><Link href={href}>{card.title}</Link></h3>
+                  <p>{card.text}</p>
+                </div>
+                <Link href={href} className="circle-gold-arrow" aria-label={`Explore ${card.title}`}>
+                  <ArrowUpRight size={16} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            </article>;
+          })}
+        </div>
+      </div>
+    </section>
     <VideoShowcase locale="en" variant="home" />
     <section className="en-section en-section-dark" aria-labelledby="en-home-choice"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">How to choose</span><h2 id="en-home-choice">Start with the needs of your space</h2><p>Useful shelving depends on what you store or sell, site dimensions and the way people or stock move through it.</p></div><div className="en-point-grid"><div><Boxes size={26} aria-hidden="true" /><h3>Products and goods</h3><p>Type, size and intended arrangement.</p></div><div><Ruler size={26} aria-hidden="true" /><h3>Site dimensions</h3><p>Floor area, height and available aisles.</p></div><div><PackageCheck size={26} aria-hidden="true" /><h3>Daily use</h3><p>How products are accessed and moved.</p></div></div></div></section>
     <section className="en-section en-section-tint" aria-labelledby="en-home-images"><div className="container"><div className="en-section-heading"><span className="en-eyebrow">Solution images</span><h2 id="en-home-images">See illustrative shelving examples</h2><p>Current images show product categories. They are illustrative and are not a record of completed Al Shamikh projects.</p></div><div className="en-card-grid">{categories.slice(0, 3).map(card => <Card card={{...card, href:'projects'}} key={card.title} />)}</div><Link className="en-text-link" href="/en/projects">Browse all solution images <ArrowRight size={17} aria-hidden="true" /></Link></div></section>

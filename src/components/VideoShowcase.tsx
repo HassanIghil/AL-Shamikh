@@ -96,7 +96,7 @@ export default function VideoShowcase({ locale, variant }: { locale: Locale; var
               />
             ) : (
               <button className="video-showcase-play" type="button" onClick={startPlayback} aria-label={content.play}>
-                <img src={posterSrc} width="476" height="848" alt="" loading="lazy" />
+                <img src={posterSrc} width="780" height="1386" alt="" loading="lazy" />
                 <span className="video-showcase-play-icon"><Play size={30} fill="currentColor" aria-hidden="true" /></span>
                 <span className="video-showcase-play-label">{content.play}</span>
               </button>
