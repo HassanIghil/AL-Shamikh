@@ -81,7 +81,7 @@ export default function JeddahView() {
           <span className="jeddah-service-area"><MapPin size={16} aria-hidden="true" /> خدمة مشاريع جدة</span>
           <WhatsAppButton message={heroMessage} label="تواصل معنا من جدة" />
         </div>
-        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/hero-jeddah-1280.webp" mobileSrc="/photos/hero-jeddah-mobile.webp" mobileSrcSet="/photos/hero-jeddah-mobile-640.webp 640w, /photos/hero-jeddah-mobile.webp 900w" desktopSrcSet="/photos/hero-jeddah-1280.webp 1280w" alt="مساحة تجارية تتضمن رفوف عرض" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
+        <div className="jeddah-hero-photo"><ResponsiveHeroImage src="/photos/retail-original-shelving.jpeg" mobileSrc="/photos/retail-original-shelving.jpeg" mobileSrcSet="/photos/retail-original-shelving.jpeg 899w" alt="رفوف عرض سوداء بحواف خضراء داخل مساحة متجر" /><span>رفوف عرض للمحلات والسوبر ماركت</span></div>
       </section>
 
       <section className="jeddah-trust" aria-label="خدمات الشامخ في جدة">

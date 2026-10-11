@@ -133,9 +133,11 @@ export default function SectorsView() {
       <section className="sectors-hero" aria-labelledby="sectors-title">
         <div className="sectors-hero-image">
           <ResponsiveHeroImage
-            src="/photos/hero-sectors.webp"
-            mobileSrc="/photos/hero-sectors-mobile.webp"
-            alt="استخدامات متنوعة لأنظمة رفوف العرض والتخزين في بيئة تجارية"
+            src="/photos/hero-1280.webp"
+            mobileSrc="/photos/hero-640.webp"
+            desktopSrcSet="/photos/hero-960.webp 960w, /photos/hero-1280.webp 1280w"
+            mobileSrcSet="/photos/hero-640.webp 640w, /photos/hero-960.webp 960w"
+            alt="صورة لرفوف تخزين داخل مستودع"
           />
           <span className="sectors-image-note"><MapPin size={16} /> جدة · الرياض</span>
         </div>

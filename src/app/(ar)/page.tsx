@@ -13,6 +13,7 @@ import {
 import { messages, pageMeta, whatsapp } from '@/lib/data';
 import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import { StaticResponsiveImage } from '@/components/StaticResponsiveImage';
+import VideoShowcase from '@/components/VideoShowcase';
 import '../home.css';
 import { alternateMetadata } from '@/lib/i18n/config';
 import { canonicalUrl, isSearchIndexingEnabled, siteOrigin } from '@/lib/seo';
@@ -257,6 +258,7 @@ export default function Home() {
       </section>
 
       {/* 3. WHY AL SHAMIKH SECTION (Dark Emerald Band with warehouse background) */}
+      <VideoShowcase locale="ar" variant="home" />
       <section className="home-why" aria-labelledby="home-why-title">
         <div className="container">
           <div className="home-section-heading home-heading-light">

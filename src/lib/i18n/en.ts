@@ -49,7 +49,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
     description: 'Find shelving options for warehouses, supermarkets, grocery stores, pharmacies and commercial spaces in Jeddah and Riyadh.',
     eyebrow: 'Business sectors', h1: 'Shelving shaped by how you use your space',
     lead: 'A warehouse, supermarket and pharmacy have different storage and display needs. Start with your business type, then review the relevant shelving options.',
-    heroImage: '/photos/hero-sectors.webp', heroAlt: 'Illustrative organized shelving for a commercial space',
+    heroImage: '/photos/hero-1280.webp', heroAlt: 'Photograph of storage racks inside a warehouse',
     sections: [
       { eyebrow: 'Where shelving is used', title: 'Find your business type', cards: [
         { title: 'Warehouses and stockrooms', text: 'Plan stock organization and access around your goods, aisles and handling method.', href: 'warehouse-racking', image: '/photos/hero.webp' },
@@ -155,7 +155,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
     description: 'Learn how Al Shamikh discusses shelving and storage needs for warehouses, stores, supermarkets, grocery businesses and pharmacies in Jeddah and Riyadh.',
     eyebrow: 'About Al Shamikh', h1: 'Storage and display start with understanding the space',
     lead: 'Al Shamikh supplies shelving for warehouses, stores, supermarkets, grocery businesses and pharmacies. We discuss the site, products and intended use before recommending options.',
-    heroImage: '/photos/hero-about.webp', heroAlt: 'Illustrative organized storage and display environment',
+    heroImage: '/photos/about-original-shelving.jpeg', heroAlt: 'Warehouse and display shelving inside a commercial space',
     sections: [
       { eyebrow: 'Our approach', title: 'A solution shaped around your project', intro: 'Useful shelving depends on the activity, available dimensions, products and the movement of people or stock.', points: ['Understand the type of business', 'Review the available floor area and height', 'Discuss the goods and how they are accessed', 'Confirm product details and available services before quoting'] },
       { eyebrow: 'Product choice', title: 'Compare the options that fit', intro: 'Available systems and product specifications vary. Ask for the origin, dimensions and other confirmed product details when discussing an option; do not assume an image is a final specification.', cards: [
@@ -175,7 +175,7 @@ export const englishPages: Record<Exclude<ContentSlug, '' | 'contact' | 'privacy
     description: 'Al Shamikh serves shelving projects in Jeddah. Discuss warehouse racks, supermarket, grocery and pharmacy shelving for your site.',
     eyebrow: 'Serving Jeddah', h1: 'Warehouse and retail shelving in Jeddah',
     lead: 'Al Shamikh serves shelving projects in Jeddah. Tell us whether you need warehouse storage or retail display, and share your site details to discuss suitable options.',
-    heroImage: '/photos/hero-jeddah.webp', heroAlt: 'Illustrative warehouse shelving for a Jeddah project inquiry',
+    heroImage: '/photos/retail-original-shelving.jpeg', heroAlt: 'Black retail display shelving with green trim inside a store',
     sections: [
       { eyebrow: 'For your business', title: 'Shelving categories available to discuss', cards: [
         { title: 'Warehouse racks', text: 'Heavy, medium and light storage needs assessed against the goods and site.', href: 'warehouse-racking', image: '/photos/warehouse-2.jpeg' },
