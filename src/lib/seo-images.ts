@@ -35,8 +35,8 @@ const pageImages: Partial<Record<ContentSlug, PageImage>> = {
     alt: { ar: 'صورة توضيحية لحلول رفوف التخزين والعرض', en: 'Illustrative shelving solutions for storage and display' },
   },
   sectors: {
-    path: '/photos/hero-sectors.webp', width: 1672, height: 941,
-    alt: { ar: 'صورة توضيحية لمساحة مستودع ورفوف تخزين', en: 'Illustrative warehouse shelving and storage space' },
+    path: '/photos/hero-1280.webp', width: 1280, height: 720,
+    alt: { ar: 'صورة لرفوف تخزين داخل مستودع', en: 'Photograph of storage racks inside a warehouse' },
   },
   projects: {
     path: '/photos/hero-projects.webp', width: 1672, height: 941,
